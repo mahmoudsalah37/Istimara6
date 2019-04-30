@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="Astmara6Con.Controls.UCChangingData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Astmara6Con.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Height="484" Width="746">
+    <UserControl.Resources>
+        <Color x:Key="Color1">#FF3580BF</Color>
+    </UserControl.Resources>
+    <Grid  FlowDirection="RightToLeft">
+
+
+
+        <Image Margin="269,49,266,48" Source="/Astmara6Con;component/12.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform AngleY="0.006"/>
+                    <RotateTransform Angle="0.122"/>
+                    <TranslateTransform Y="-0.002"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Margin="374,49,161,48" Source="/Astmara6Con;component/121.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform AngleY="0.006"/>
+                    <RotateTransform Angle="0.122"/>
+                    <TranslateTransform Y="0.203"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Margin="269,-152,266,-153" Source="/Astmara6Con;component/123.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1.085" ScaleY="0.921"/>
+                    <SkewTransform AngleY="0.589"/>
+                    <RotateTransform Angle="-89.63"/>
+                    <TranslateTransform Y="-1.7" X="0.004"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="302,220,0,0" TextWrapping="Wrap" Text="المعيدين" VerticalAlignment="Top">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Button x:Name="ButtonOpenMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="275,124,0,0" Height="112" Width="94">
+            <materialDesign:PackIcon Kind="Teaching" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="308,340,0,0" TextWrapping="Wrap" Text="المواد" VerticalAlignment="Top" OpacityMask="Black">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Button x:Name="ButtonOpenMenu_Copy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="275,244,0,0"  Height="112" Width="94">
+            <materialDesign:PackIcon Kind="Book" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="195,220,0,0" TextWrapping="Wrap" Text="الدكاترة" VerticalAlignment="Top">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Button x:Name="ButtonOpenMenu_Copy1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="156,124,0,0" Height="114" Width="111">
+
+            <materialDesign:PackIcon Kind="Teacher" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="400,220,0,0" TextWrapping="Wrap" Text="المستويات" VerticalAlignment="Top" OpacityMask="Black">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Button x:Name="ButtonOpenMenu_Copy2" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="374,124,0,0" Height="112" Width="102">
+            <materialDesign:PackIcon Kind="Menu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="522,220,0,0" TextWrapping="Wrap" Text="الاقسام" VerticalAlignment="Top">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Button x:Name="ButtonOpenMenu_Copy3" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="481,124,0,0" Height="114" Width="111">
+            <materialDesign:PackIcon Kind="ChartBubble" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="196,340,0,0" TextWrapping="Wrap" Text="الشعب" VerticalAlignment="Top">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Button x:Name="ButtonOpenMenu_Copy4" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="156,244,0,0" Height="114" Width="111">
+            <materialDesign:PackIcon Kind="ChartArc" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="381,340,0,0" TextWrapping="Wrap" Text="عدد ساعات العمل" VerticalAlignment="Top">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="#FF3580BF"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Button x:Name="ButtonOpenMenu_Copy6" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="374,246,0,0" Height="112" Width="102">
+            <materialDesign:PackIcon Kind="Hourglass" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+        </Button>
+        <Image Margin="163,49,372,48" Source="/Astmara6Con;component/12.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform AngleY="0.006"/>
+                    <RotateTransform Angle="0.122"/>
+                    <TranslateTransform Y="-0.002"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Astmara6Con.Controls.UCDepartment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Astmara6Con.Controls"
+             mc:Ignorable="d" 
+              Height="484" Width="746" >
+    <UserControl.Resources>
+        <Color x:Key="1">#FF3580BF</Color>
+    </UserControl.Resources>
+    <Grid>
+        <Label Content="اسم القسم" HorizontalAlignment="Left" Margin="646,224,0,0" VerticalAlignment="Top" Background="{x:Null}">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Label.Foreground>
+        </Label>
+        <TextBox x:Name="TBNameDepartment" HorizontalAlignment="Right" Height="23" Margin="0,0,137,232" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" Background="#FFECE3E3">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button x:Name="BTNBack" Content="عودة" HorizontalAlignment="Right" Margin="0,0,669,37" VerticalAlignment="Bottom" Width="77" Height="29" Click="BTNBack_Click">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNNext" Content="التالي" HorizontalAlignment="Left" Margin="0,452,0,0" VerticalAlignment="Top" Width="77" Height="29" Click="BTNNext_Click">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Right" Margin="0,0,262,227" VerticalAlignment="Bottom" Width="68" Height="28">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="BGDepartment" HorizontalAlignment="Right" Height="191" FlowDirection="RightToLeft" VerticalAlignment="Bottom" Width="280" Margin="0,0,64,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="             اسم القسم      "/>
+                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="تعديل"/>
+                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="حذف"/>
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
