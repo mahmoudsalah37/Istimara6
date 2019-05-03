@@ -20,7 +20,7 @@ namespace Astmara6Con.Controls
         private void BtNLevels_Click(object sender, RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCWorkHours());
+            Form.gridShow.Children.Add(new UCLevels());
             STRNamePage = "المستويات";
             Form.ChFormName(STRNamePage);
         }

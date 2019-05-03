@@ -16,7 +16,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <TextBox x:Name="TBNameLevels" HorizontalAlignment="Left" Height="23" Margin="511,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFECE3E3">
+        <TextBox x:Name="TBNameLevels" HorizontalAlignment="Left" Height="26" Margin="480,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Background="#FFECE3E3">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>
@@ -26,14 +26,14 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Left" Margin="401,232,0,0" VerticalAlignment="Top" Width="68" Height="28">
+        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Left" Margin="401,232,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BTNAdd_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="DGLevelsView" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="397,283,0,0" VerticalAlignment="Top" Width="259">
+        <DataGrid x:Name="DGLevelsView" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="406,283,0,0" VerticalAlignment="Top" Width="259">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="         اسم المستوي " />
+                <DataGridTextColumn Header="اسم المستوي" />
                 <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="تعديل"/>
                 <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="حذف"/>
 

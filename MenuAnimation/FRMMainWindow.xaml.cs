@@ -1,7 +1,8 @@
 ﻿using MenuAnimado1.Controls;
 using Astmara6Con.Controls;
 using System.Windows;
-
+using Astmara6.Data;
+using System.Data.Entity;
 
 namespace Astmara6Con
 {
@@ -15,6 +16,12 @@ namespace Astmara6Con
             InitializeComponent();
             gridShow.Children.Clear();
             gridShow.Children.Add(new UCFixedData());
+            Model1 model = new Model1();
+            if(model.Database.CreateIfNotExists()){
+                model.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction,
+                            "ALTER DATABASE DoctorsSchedule COLLATE Arabic_CI_AI_KS_WS");
+            }
+
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
