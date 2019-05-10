@@ -25,9 +25,9 @@ namespace Astmara6Con
         }
         private void getData()
         {
-            DbSet<Level> DSLevels =context.Levels;
+            DbSet<Level> DSLevels = context.Levelss;
 
-            DGLevelsView.ItemsSource = DSLevels.ToArray();
+            DGLevelsView.ItemsSource = DSLevels.ToList();
         }
         private void BTNBack_Click(object sender, RoutedEventArgs e)
         {

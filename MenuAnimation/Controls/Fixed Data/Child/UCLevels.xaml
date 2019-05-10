@@ -1,9 +1,10 @@
-﻿<UserControl x:Class="Astmara6Con.UCLevels"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Astmara6Con"
+             xmlns:Data="clr-namespace:Astmara6.Data" x:Class="Astmara6Con.UCLevels"
              mc:Ignorable="d" 
               Height="484" Width="746" >
     <UserControl.Resources>
@@ -31,9 +32,10 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="DGLevelsView" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="406,283,0,0" VerticalAlignment="Top" Width="259">
+        <DataGrid x:Name="DGLevelsView" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="406,283,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="DGLevelsView_SelectionChanged"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="اسم المستوي" />
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}" Header="ID" SortMemberPath="ID"/>
+                <DataGridTextColumn  SortMemberPath="Name" Header="المستوي"/>
                 <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="تعديل"/>
                 <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="حذف"/>
 
