@@ -11,6 +11,7 @@
         <Color x:Key="1">#FF3580BF</Color>
         <Color x:Key="Color2">Transparent</Color>
         <Color x:Key="Color3">#FFF1EFEF</Color>
+        <Color x:Key="Color4">#FFECE3E3</Color>
     </UserControl.Resources>
     <Grid>
         <TextBox x:Name="cou_name" HorizontalAlignment="Left" Height="28" Margin="491,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177">
@@ -21,7 +22,7 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <TextBox x:Name="cou_nic_name" HorizontalAlignment="Left" Height="28" Margin="210,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178">
+        <TextBox x:Name="cou_nic_name" HorizontalAlignment="Left" Height="28" Margin="282,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106">
             <TextBox.Background>
                 <SolidColorBrush Color="{DynamicResource Color3}"/>
             </TextBox.Background>
@@ -29,7 +30,7 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <ComboBox x:Name="degree" HorizontalAlignment="Left" Margin="419,217,0,0" VerticalAlignment="Top" Width="99" SelectedIndex="0" Height="22">
+        <ComboBox x:Name="degree" HorizontalAlignment="Left" Margin="569,217,0,0" VerticalAlignment="Top" Width="99" SelectedIndex="0" Height="22">
             <ComboBox.Background>
                 <SolidColorBrush Color="{DynamicResource Color3}"/>
             </ComboBox.Background>
@@ -65,7 +66,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <Label Content="الرتبة" HorizontalAlignment="Left" Margin="540,213,0,0" VerticalAlignment="Top" Background="{x:Null}">
+        <Label Content="الرتبة" HorizontalAlignment="Left" Margin="690,213,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </Label.Foreground>
@@ -82,6 +83,16 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <ComboBox Margin="282,217,0,0" x:Name="department1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
+            <ComboBox.Background>
+                <SolidColorBrush Color="{DynamicResource Color4}"/>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Content="االقسم" HorizontalAlignment="Left" Margin="393,215,0,0" VerticalAlignment="Top" Background="{x:Null}">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Label.Foreground>
+        </Label>
 
 
         <!--<Frame x:Name="main"  />-->

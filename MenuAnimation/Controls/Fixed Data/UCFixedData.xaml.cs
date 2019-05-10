@@ -67,10 +67,10 @@ namespace Astmara6Con.Controls
 
         private void BTNAssistant_Click(object sender, RoutedEventArgs e)
         {
-            Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCAssistant());
-            STRNamePage = "السماعدين";
-            Form.ChFormName(STRNamePage);
+            //Form.gridShow.Children.Clear();
+            //Form.gridShow.Children.Add(new UCAssistant());
+            //STRNamePage = "السماعدين";
+            //Form.ChFormName(STRNamePage);
         }
     }
 }

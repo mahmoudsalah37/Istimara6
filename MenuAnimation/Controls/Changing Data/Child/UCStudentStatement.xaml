@@ -13,23 +13,23 @@
     </UserControl.Resources>
     <Grid>
         <Grid>
-            <ComboBox Margin="332,186,0,0" x:Name="cou_code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
+            <ComboBox Margin="348,240,0,0" x:Name="cou_code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
                 <ComboBox.Background>
                     <SolidColorBrush Color="{DynamicResource Color1}"/>
                 </ComboBox.Background>
             </ComboBox>
 
-            <ComboBox Margin="492,186,0,0" x:Name="doc_name1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="185" Height="24" BorderBrush="#FF3580BF">
+            <ComboBox Margin="518,242,0,0" x:Name="doc_name1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Height="24" BorderBrush="#FF3580BF">
                 <ComboBox.Background>
                     <SolidColorBrush Color="{DynamicResource Color1}"/>
                 </ComboBox.Background>
             </ComboBox>
-            <ComboBox Margin="582,244,0,0" x:Name="department1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
+            <ComboBox Margin="578,186,0,0" x:Name="department1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF" SelectionChanged="department1_SelectionChanged">
                 <ComboBox.Background>
                     <SolidColorBrush Color="{DynamicResource Color1}"/>
                 </ComboBox.Background>
             </ComboBox>
-            <ComboBox Margin="352,244,0,0" x:Name="mejor1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
+            <ComboBox Margin="348,186,0,0" x:Name="mejor1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF" >
                 <ComboBox.Background>
                     <SolidColorBrush Color="{DynamicResource Color1}"/>
                 </ComboBox.Background>
@@ -39,17 +39,17 @@
                     <SolidColorBrush Color="{DynamicResource Color1}"/>
                 </ComboBox.Background>
             </ComboBox>
-            <Label Content="اسم المادة" HorizontalAlignment="Left" Margin="682,184,0,0" VerticalAlignment="Top" Background="{x:Null}">
+            <Label Content="اسم المادة" HorizontalAlignment="Left" Margin="674,240,0,0" VerticalAlignment="Top" Background="{x:Null}">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
             </Label>
-            <Label Content="االقسم" HorizontalAlignment="Left" Margin="693,242,0,0" VerticalAlignment="Top" Background="{x:Null}">
+            <Label Content="االقسم" HorizontalAlignment="Left" Margin="689,184,0,0" VerticalAlignment="Top" Background="{x:Null}">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
             </Label>
-            <Label Content="الشعبة " HorizontalAlignment="Left" Margin="491,242,0,0" VerticalAlignment="Top" Background="{x:Null}">
+            <Label Content="الشعبة " HorizontalAlignment="Left" Margin="487,184,0,0" VerticalAlignment="Top" Background="{x:Null}">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
@@ -59,7 +59,7 @@
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
             </Label>
-            <Label Content="كود المادة" HorizontalAlignment="Left" Margin="419,186,0,0" VerticalAlignment="Top" Background="{x:Null}">
+            <Label Content="كود المادة" HorizontalAlignment="Left" Margin="435,240,0,0" VerticalAlignment="Top" Background="{x:Null}">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
@@ -84,7 +84,7 @@
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
             </Label>
-            <TextBox HorizontalAlignment="Left" Height="26" Margin="190,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66">
+            <TextBox x:Name="stud_num" HorizontalAlignment="Left" Height="26" Margin="190,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66">
                 <TextBox.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </TextBox.Foreground>

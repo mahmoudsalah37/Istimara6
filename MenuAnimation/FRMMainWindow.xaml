@@ -224,7 +224,7 @@
 
             </Grid>
             <Grid Margin=" 0 88 0 0">
-                <Grid x:Name="gridShow" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,0,0" Width="764" Height="484">
+                <Grid x:Name="gridShow" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,10" Width="764" Height="484">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="492*"/>
                         <ColumnDefinition/>

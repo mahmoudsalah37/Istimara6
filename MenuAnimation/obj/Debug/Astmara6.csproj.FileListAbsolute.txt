@@ -1,0 +1,302 @@
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\App.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.cache
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.lref
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe.config
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\Astmara6.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.xml
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.xml
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\App.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.g.resources
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.Properties.Resources.resources
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.GenerateResource.cache
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CoreCompileInputs.cache
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCAssistant.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCAssistant.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.Migrations.Db.resources
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.Migrations.Db1.resources
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Astmara6.csprojAssemblyReference.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe.config
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\Astmara6.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\EntityFramework.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\EntityFramework.xml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.xml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.csprojResolveAssemblyReference.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCAssistant.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\App.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.lref
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\App.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCAssistant.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.g.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.Migrations.Db.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.Migrations.Db1.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.Properties.Resources.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.GenerateResource.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CoreCompileInputs.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe
+E:\ah\استمارات  (2017-2018)الترم الثانى\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.csprojAssemblyReference.cache
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\App.g.cs
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.cache
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.lref
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
+F:\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe.config
+F:\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe
+F:\Istimara6\MenuAnimation\bin\Debug\Astmara6.pdb
+F:\Istimara6\MenuAnimation\bin\Debug\EntityFramework.dll
+F:\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.dll
+F:\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+F:\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+F:\Istimara6\MenuAnimation\bin\Debug\EntityFramework.xml
+F:\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.xml
+F:\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+F:\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+F:\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+F:\Istimara6\MenuAnimation\obj\Debug\App.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.baml
+F:\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.baml
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.g.resources
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.Migrations.Db.resources
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.Migrations.Db1.resources
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.Properties.Resources.resources
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.GenerateResource.cache
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CoreCompileInputs.cache
+F:\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\Astmara6.exe.config
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\Astmara6.exe
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\Astmara6.pdb
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\EntityFramework.dll
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.dll
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\EntityFramework.xml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.xml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\FRMMainWindow.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\App.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.cache
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.lref
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\App.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\FRMMainWindow.baml
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.g.resources
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.Properties.Resources.resources
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.csproj.GenerateResource.cache
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.csproj.CoreCompileInputs.cache
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.exe
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.pdb
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Project\GP\Istimara6\Astmara6\MenuAnimation\obj\Debug\Astmara6.Migrations.Db.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\Astmara6.exe.config
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\Astmara6.exe
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\Astmara6.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\EntityFramework.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\EntityFramework.xml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.xml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.csprojResolveAssemblyReference.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\FRMMainWindow.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\App.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.lref
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\App.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\FRMMainWindow.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.g.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.Properties.Resources.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.csproj.GenerateResource.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.csproj.CoreCompileInputs.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.exe
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.pdb

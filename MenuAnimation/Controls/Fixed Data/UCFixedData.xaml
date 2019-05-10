@@ -109,14 +109,6 @@
         <Button x:Name="BTNWorkHours" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="156,244,0,0" Click="BTNWorkHours_Click" Height="114" Width="111">
             <materialDesign:PackIcon Kind="Hourglass" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="399,340,0,0" TextWrapping="Wrap" Text="المساعدين" VerticalAlignment="Top">
-            <TextBlock.Foreground>
-                <SolidColorBrush Color="#FF3580BF"/>
-            </TextBlock.Foreground>
-        </TextBlock>
-        <Button x:Name="BTNAssistant" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="374,246,0,0" Click="BTNAssistant_Click" Height="112" Width="102">
-            <materialDesign:PackIcon Kind="Assistant" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
-        </Button>
         <!--<Image Margin="163,49,372,48" Source="/MenuAnimado1;component/12.png" RenderTransformOrigin="0.5,0.5">
 =======
         <Image Margin="163,49,372,48" Source="/Astmara6Con;component/12.png" RenderTransformOrigin="0.5,0.5">

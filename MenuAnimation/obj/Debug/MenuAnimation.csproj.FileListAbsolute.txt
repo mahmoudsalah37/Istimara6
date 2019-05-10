@@ -1,0 +1,168 @@
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.exe.config
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.exe
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.pdb
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csprojAssemblyReference.cache
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MainWindow.g.cs
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\App.g.cs
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.cache
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.lref
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\App.baml
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MainWindow.baml
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.g.resources
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.Properties.Resources.resources
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.GenerateResource.cache
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.CoreCompileInputs.cache
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.CopyComplete
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.exe
+C:\projectTeam\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.exe.config
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.exe
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csprojResolveAssemblyReference.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MainWindow.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\App.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.lref
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\App.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MainWindow.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.g.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.Properties.Resources.resources
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.GenerateResource.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.CoreCompileInputs.cache
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.CopyComplete
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.exe
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\levels.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\levels.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\courses.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\El5ta.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\courses.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\El5ta.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\docinfo.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\docinfo.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\student inf.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\student inf.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\work hours.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\work hours.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\department.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\department.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\majors.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\majors.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataAsasya.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\datamot3yra.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataPrint.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataAsasya.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\datamot3yra.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataPrint.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\asisinfo.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\asisinfo.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\home.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\home.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.exe.config
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.exe
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MenuAnimation.pdb
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csprojAssemblyReference.cache
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\asisinfo.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\courses.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataAsasya.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\datamot3yra.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataPrint.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\department.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\docinfo.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\El5ta.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\home.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\levels.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\majors.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\student inf.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\work hours.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MainWindow.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\App.g.cs
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.cache
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.lref
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\App.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\asisinfo.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\courses.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataAsasya.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\datamot3yra.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\dataPrint.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\department.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\docinfo.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\El5ta.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\home.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\levels.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\majors.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\student inf.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\Controls\work hours.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MainWindow.baml
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.g.resources
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.Properties.Resources.resources
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.GenerateResource.cache
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.CoreCompileInputs.cache
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.csproj.CopyComplete
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.exe
+E:\graduate project\AnimatedMenu1-master\MenuAnimation\obj\Debug\MenuAnimation.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MainWindow.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\App.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.cache
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation_MarkupCompile.lref
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation.exe
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MenuAnimation.exe.config
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MenuAnimation.exe
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MenuAnimation.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\App.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MainWindow.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation.g.resources
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation.Properties.Resources.resources
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation.csproj.GenerateResource.cache
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation.csproj.CoreCompileInputs.cache
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\MenuAnimation.csproj.CopyComplete
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCAssistant.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCCourses.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCFixedData.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCChangingData.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCDataPrint.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCDepartment.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCDoctors.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCPlan.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCLevels.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCMajors.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCStudentStatement.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCWorkHours.g.cs
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCAssistant.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCCourses.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCFixedData.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCChangingData.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCDataPrint.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCDepartment.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCDoctors.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCPlan.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCLevels.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCMajors.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCStudentStatement.baml
+E:\graduate project\github\Istimara6\MenuAnimation\obj\Debug\Controls\UCWorkHours.baml
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.dll
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.xml
+E:\graduate project\github\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.xml

@@ -36,5 +36,10 @@ namespace Astmara6Con.Controls
             Form.ChFormName(STRNamePage);
 
         }
+
+        private void department1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
