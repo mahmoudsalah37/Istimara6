@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using System;
 using System.Text.RegularExpressions;
 using Astmara6.Data;
+using System.Windows.Input;
+using Astmara6.Classes;
 
 namespace Astmara6Con.Controls
 {
@@ -80,86 +82,15 @@ namespace Astmara6Con.Controls
             
         }
 
-        private void SubjectsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            CheckInput.numberOnly(e);
         }
 
-        private void TBVirtual_TextChanged(object sender, TextChangedEventArgs e)
-        {
-             if (!String.IsNullOrEmpty(TBVirtual.Text))
-            {
-                TBExprement.IsReadOnly = true;
-              TotalHour  =
-              int.Parse(TBPaper.Text)
-              + int.Parse(TBVirtual.Text);
-                Virtuale = int.Parse(TBVirtual.Text);
-                
-            }
-            else
-            {
-                TBExprement.IsReadOnly = false;
-
-            }
-
-        }
-
-        private void TBExprement_TextChanged(object sender, TextChangedEventArgs e)
-        {
-           
 
 
-            if (!String.IsNullOrEmpty(TBExprement.Text))
-            {
-                TBVirtual.IsReadOnly = true;
-
-                TotalHour =
-                 int.Parse(TBPaper.Text)
-                + int.Parse(TBExprement.Text);
-                Expremente = int.Parse(TBExprement.Text);
-                TotalHour = Expremente + Academee;
-
-
-            }
-            else
-            {
-                TBVirtual.IsReadOnly = false;
-
-            }
-        }
-
-       
-
-        private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-           //can't write but numbers for TBexprement
-                Regex regex = new Regex("[^0-9]+");
-                e.Handled = regex.IsMatch(e.Text);
-            
-        }
-
-        private void NumberValidationTextBox1(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-            //can't write but numbers for TBVirtual
-
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
-
-     
-
-        private void NumberValidationTextBox2(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-            //can't write but numbers for TBPaper
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
-
-        private void TBPaper_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
+        
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
         {
 
