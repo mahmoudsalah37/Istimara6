@@ -70,8 +70,8 @@ namespace Astmara6Con.Controls
         private void BTNNext_Click(object sender, RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCWorkHours());
-            STRNamePage = "النصاب القانوني";
+            Form.gridShow.Children.Add(new UCCourses());
+            STRNamePage = "المواد";
             Form.ChFormName(STRNamePage);
         }
 

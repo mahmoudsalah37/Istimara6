@@ -1,6 +1,7 @@
 ﻿
 
 using Data.Context;
+using MenuAnimado1.Controls;
 using System.Data;
 using System.Linq;
 using System.Windows;
@@ -48,11 +49,13 @@ namespace Astmara6Con.Controls
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //Form.gridShow.Children.Clear();
-            //Form.gridShow.Children.Add(new UCAssistant());
-            //STRNamePage = "المعيدين";
-            //Form.ChFormName(STRNamePage);
+            Form.gridShow.Children.Clear();
+            Form.gridShow.Children.Add(new UCChangingData());
+            STRNamePage = "البيانات المتغيرة";
+            Form.ChFormName(STRNamePage);
 
         }
+
+       
     }
 }

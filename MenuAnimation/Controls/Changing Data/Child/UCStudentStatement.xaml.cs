@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using MenuAnimado1.Controls;
+using System.Windows;
 
 using System.Windows.Controls;
 
@@ -31,8 +32,8 @@ namespace Astmara6Con.Controls
         {
 
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCCourses());
-            STRNamePage = "المقرارت";
+            Form.gridShow.Children.Add(new UCChangingData());
+            STRNamePage = "البيانات المتغيرة";
             Form.ChFormName(STRNamePage);
 
         }

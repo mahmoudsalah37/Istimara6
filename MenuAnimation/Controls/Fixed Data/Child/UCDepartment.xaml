@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Astmara6Con.Controls"
+                  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+
              xmlns:Astmara6="clr-namespace:Astmara6" x:Class="Astmara6Con.Controls.UCDepartment"
              mc:Ignorable="d" 
               Height="484" Width="746" >
@@ -14,13 +16,14 @@
         <Astmara6:Astmara6DataSet1 x:Key="astmara6DataSet1"/>
         <CollectionViewSource x:Key="sectionsViewSource" Source="{Binding Sections, Source={StaticResource astmara6DataSet1}}"/>
     </UserControl.Resources>
-    <Grid><!--DataContext="{StaticResource levelsViewSource}"-->
+    <Grid>
+        <!--DataContext="{StaticResource levelsViewSource}"-->
         <Label Content="اسم القسم" HorizontalAlignment="Left" Margin="646,224,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <TextBox x:Name="TBNameDepartment"  Text="{Binding SelectedItem.TypeOfSection, ElementName=DGDepartmentView}" HorizontalAlignment="Right" Height="23" Margin="0,0,137,232" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" Background="#FFECE3E3">
+        <TextBox x:Name="TBNameDepartment" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:قسم رياضة" Text="{Binding SelectedItem.TypeOfSection, ElementName=DGDepartmentView}" HorizontalAlignment="Right" Height="28" Margin="0,0,107,232" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" Background="#FFECE3E3">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>
@@ -35,7 +38,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Right" Margin="0,0,262,227" VerticalAlignment="Bottom" Width="68" Height="28" Click="BTNAdd_Click">
+        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Right" Margin="0,0,262,223" VerticalAlignment="Bottom" Width="68" Height="28" Click="BTNAdd_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>

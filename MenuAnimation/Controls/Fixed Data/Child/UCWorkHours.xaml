@@ -4,13 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Astmara6Con.Controls"
+                           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+
              mc:Ignorable="d" 
               Height="484" Width="746" >
     <UserControl.Resources>
         <Color x:Key="1">#FF3580BF</Color>
     </UserControl.Resources>
     <Grid >
-        <TextBox x:Name="TBRank" HorizontalAlignment="Left" Height="31" Margin="553,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="91" Background="#FFECE3E3" >
+        <TextBox x:Name="TBRank" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:استاذ مساعد" HorizontalAlignment="Left" Height="31" Margin="553,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="91" Background="#FFECE3E3" >
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>
@@ -20,7 +22,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <TextBox x:Name="TBLegalMonument" HorizontalAlignment="Left" Height="31" Margin="300,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" Background="#FFECE3E3" >
+        <TextBox x:Name="TBLegalMonument" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات العمل " HorizontalAlignment="Left" Height="31" Margin="300,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" Background="#FFECE3E3" >
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>

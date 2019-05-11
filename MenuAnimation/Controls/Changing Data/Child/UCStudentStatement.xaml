@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Astmara6Con.Controls"
+                                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+
              mc:Ignorable="d" 
               Height="484" Width="746" >
     <UserControl.Resources>
@@ -13,31 +15,19 @@
     </UserControl.Resources>
     <Grid>
         <Grid>
-            <ComboBox Margin="348,240,0,0" x:Name="cou_code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
-                <ComboBox.Background>
-                    <SolidColorBrush Color="{DynamicResource Color1}"/>
-                </ComboBox.Background>
-            </ComboBox>
+            <ComboBox Margin="348,235,0,0" x:Name="cou_code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="كودالمادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" BorderBrush="#FF3580BF"/>
+            <ComboBox Margin="518,235,0,0" x:Name="cou_name1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  BorderBrush="#FF3580BF"/>
 
-            <ComboBox Margin="518,242,0,0" x:Name="doc_name1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Height="24" BorderBrush="#FF3580BF">
-                <ComboBox.Background>
-                    <SolidColorBrush Color="{DynamicResource Color1}"/>
-                </ComboBox.Background>
+            <ComboBox Margin="578,179,0,0" x:Name="department1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectedIndex="0" >
+                <ComboBox.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource 1}"/>
+                </ComboBox.BorderBrush>
             </ComboBox>
-            <ComboBox Margin="578,186,0,0" x:Name="department1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF" SelectionChanged="department1_SelectionChanged">
-                <ComboBox.Background>
-                    <SolidColorBrush Color="{DynamicResource Color1}"/>
-                </ComboBox.Background>
+            <ComboBox Margin="348,179,0,0" x:Name="mejor1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم الشعبة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" BorderBrush="#FF3580BF" >
+
             </ComboBox>
-            <ComboBox Margin="348,186,0,0" x:Name="mejor1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF" >
-                <ComboBox.Background>
-                    <SolidColorBrush Color="{DynamicResource Color1}"/>
-                </ComboBox.Background>
-            </ComboBox>
-            <ComboBox Margin="190,186,0,0" x:Name="level1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
-                <ComboBox.Background>
-                    <SolidColorBrush Color="{DynamicResource Color1}"/>
-                </ComboBox.Background>
+            <ComboBox Margin="175,179,0,0" x:Name="level1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint=" المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" BorderBrush="#FF3580BF">
+
             </ComboBox>
             <Label Content="اسم المادة" HorizontalAlignment="Left" Margin="674,240,0,0" VerticalAlignment="Top" Background="{x:Null}">
                 <Label.Foreground>
@@ -84,10 +74,7 @@
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
             </Label>
-            <TextBox x:Name="stud_num" HorizontalAlignment="Left" Height="26" Margin="190,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66">
-                <TextBox.Foreground>
-                    <SolidColorBrush Color="{DynamicResource 1}"/>
-                </TextBox.Foreground>
+            <TextBox x:Name="stud_num" HorizontalAlignment="Left" Height="26" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="عدد الطلاب" Margin="175,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionBrush="{x:Null}">
                 <TextBox.BorderBrush>
                     <SolidColorBrush Color="{DynamicResource Color2}"/>
                 </TextBox.BorderBrush>

@@ -54,8 +54,8 @@ namespace Astmara6Con.Controls
         private void BTNNext_Click(object sender, RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCChangingData());
-            STRNamePage = "ٍساعات العمل";
+            Form.gridShow.Children.Add(new UCWorkHours());
+            STRNamePage = "ساعات العمل";
             Form.ChFormName(STRNamePage);
         }
         

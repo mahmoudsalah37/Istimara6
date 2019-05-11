@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Astmara6Con"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              xmlns:Astmara6="clr-namespace:Astmara6" x:Class="Astmara6Con.UCLevels"
              mc:Ignorable="d" 
               Height="484" Width="746" >
@@ -15,12 +16,12 @@
     </UserControl.Resources>
     <Grid >
         <!--DataContext="{StaticResource levelsViewSource}"-->
-        <Label Content="اسم المستوي" HorizontalAlignment="Left" Margin="668,288,0,0" VerticalAlignment="Top" Background="{x:Null}">
+        <Label Content="اسم المستوي" HorizontalAlignment="Left" Margin="660,252,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <TextBox x:Name="TBNameLevels" Text="{Binding SelectedItem.Name, ElementName=DGLevelsView}" HorizontalAlignment="Left" Height="22" Margin="510,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFECE3E3" TextChanged="TBNameLevels_TextChanged_1">
+        <TextBox x:Name="TBNameLevels"  FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:الاول" Text="{Binding SelectedItem.Name, ElementName=DGLevelsView}" HorizontalAlignment="Left" Height="26" Margin="534,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFECE3E3" TextChanged="TBNameLevels_TextChanged_1">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>

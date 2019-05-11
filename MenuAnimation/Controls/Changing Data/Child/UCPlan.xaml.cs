@@ -22,22 +22,20 @@ namespace Astmara6Con.Controls
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
             Form.gridShow.Children.Clear();
             Form.gridShow.Children.Add(new UCStudentStatement());
             STRNamePage = "بيان الطلاب";
             Form.ChFormName(STRNamePage);
-
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnnext_Click(object sender, RoutedEventArgs e)
         {
-            STRNamePage = "";
-            Form.ChFormName(STRNamePage);
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCDataPrint()); 
+            Form.gridShow.Children.Add(new UCDataPrint());
+            STRNamePage = "الاستمارات و الطباعة";
+            Form.ChFormName(STRNamePage);
         }
     }
 }
