@@ -1,12 +1,11 @@
-﻿using Data.Context;
-using MenuAnimado1.Controls;
+﻿using MenuAnimado1.Controls;
 using System.Windows;
 using System.Linq;
 
 using System.Windows.Controls;
-using Data.Entities;
 using System;
 using System.Text.RegularExpressions;
+using Astmara6.Data;
 
 namespace Astmara6Con.Controls
 {
