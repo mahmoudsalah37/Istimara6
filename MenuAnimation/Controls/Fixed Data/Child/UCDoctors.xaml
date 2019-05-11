@@ -74,12 +74,13 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </Label.BorderBrush>
         </Label>
-        <DataGrid HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="322,293,0,0" VerticalAlignment="Top" Width="424">
+        <DataGrid Name="DGTeachersView" HorizontalAlignment="Left" Height="191" AutoGenerateColumns="False" FlowDirection="RightToLeft" ItemsSource="{Binding WorkHours}" Margin="322,293,0,0" VerticalAlignment="Top" Width="424">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="              الاسم كاملاً             "/>
-                <DataGridTextColumn Header="     اللقب      "/>
-                <DataGridTextColumn Header="الرتبة"/>
-                <DataGridTextColumn Header="عدد الساعات"/>
+                <DataGridTextColumn Binding="{Binding Teachers.Id}" Header="id" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Teachers.Name}" Header="الاسم كاملاً"/>
+                <DataGridTextColumn Binding="{Binding Teachers.NickName}" Header="اللقب"/>
+                <DataGridTextColumn Binding="{Binding Rank}" Header="الرتبة"/>
+                <DataGridTextColumn Binding="{Binding Quorum}" Header="عدد الساعات"/>
 
             </DataGrid.Columns>
         </DataGrid>

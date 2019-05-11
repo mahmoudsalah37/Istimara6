@@ -1,6 +1,10 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿
 
+using Data.Context;
+using System.Data;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Astmara6Con.Controls
 {
@@ -11,10 +15,24 @@ namespace Astmara6Con.Controls
     {
         string STRNamePage;
         readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
+        readonly CollegeContext context = new CollegeContext();
+
+        public void loadData()
+        {
+
+            var teachers = (from p in context.Teachers 
+                          select p).ToList();
+            var teachersANDWorkHours = (from r in context.Teachers  
+                             join w in context.WorkHours
+                              on r.IdWorkHours equals w.Id
+                                        select r).ToList();
+            DGTeachersView.ItemsSource = teachersANDWorkHours;
+        }
 
         public UCDoctors()
         {
             InitializeComponent();
+            loadData();
         }
 
    

@@ -83,13 +83,18 @@ namespace Astmara6Con.Controls
 
         private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
         {
-            WorkHour workHour = DGWorkHours.SelectedItem as WorkHour;
-            WorkHour row = (from p in context.WorkHours
-                            where p.Id == workHour.Id
-                            select p).Single();
-            context.WorkHours.Remove(row);
-            context.SaveChanges();
-            loadData();
+            try
+            {
+                WorkHour workHour = DGWorkHours.SelectedItem as WorkHour;
+                WorkHour row = (from p in context.WorkHours
+                                where p.Id == workHour.Id
+                                select p).Single();
+                context.WorkHours.Remove(row);
+                context.SaveChanges();
+                loadData();
+            }
+            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+
         }
 
         private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
