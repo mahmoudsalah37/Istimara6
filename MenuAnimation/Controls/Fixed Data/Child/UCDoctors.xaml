@@ -15,19 +15,18 @@
         <Color x:Key="Color4">#FFECE3E3</Color>
     </UserControl.Resources>
     <Grid>
-
+ 
 
 
         <ComboBox  Margin="0,199,78,0" x:Name="Dgree"  HorizontalAlignment="Right"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="الرتبة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"   VerticalAlignment="Top" Width="128"  >
-            
-
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
 
 
-        <TextBox x:Name="cou_name" HorizontalAlignment="Left" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:احمد حمدي مغربي" Height="28" Margin="491,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177">
+        <TextBox x:Name="cou_name" HorizontalAlignment="Left" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:احمد حمدي مغربي" Height="28" Margin="491,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+        <TextBox x:Name="TBName" HorizontalAlignment="Left" Height="28" Margin="491,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177">
             <TextBox.Background>
                 <SolidColorBrush Color="{DynamicResource Color3}"/>
             </TextBox.Background>
@@ -35,7 +34,11 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <TextBox x:Name="cou_nic_name" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:مغربي" HorizontalAlignment="Left" Height="28" Margin="282,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106">
+
+        <TextBox x:Name="cou_nic_name" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:مغربي" HorizontalAlignment="Left" Height="28" Margin="282,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
+
+        <TextBox x:Name="TBNickName" HorizontalAlignment="Left" Height="28" Margin="282,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106">
+
             <TextBox.Background>
                 <SolidColorBrush Color="{DynamicResource Color3}"/>
             </TextBox.Background>
@@ -43,6 +46,15 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </TextBox.BorderBrush>
         </TextBox>
+
+        <ComboBox x:Name="CBRank"   HorizontalAlignment="Left" Margin="569,217,0,0" VerticalAlignment="Top" Width="99" SelectedIndex="0" Height="22">
+            <ComboBox.Background>
+                <SolidColorBrush Color="{DynamicResource Color3}"/>
+            </ComboBox.Background>
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         <Label Content="اللقب" HorizontalAlignment="Left" Margin="393,164,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
@@ -56,7 +68,7 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </Label.Foreground>
         </Label>
-        <Button Content="اضافة" HorizontalAlignment="Left" Margin="210,293,0,0" VerticalAlignment="Top" Width="68" Height="28">
+        <Button  Content="اضافة" HorizontalAlignment="Left" Margin="210,293,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="Button_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
@@ -79,21 +91,27 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </Label.BorderBrush>
         </Label>
-        <DataGrid Name="DGTeachersView" HorizontalAlignment="Left" Height="191" AutoGenerateColumns="False" FlowDirection="RightToLeft" ItemsSource="{Binding WorkHours}" Margin="322,293,0,0" VerticalAlignment="Top" Width="424">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Teachers.Id}" Header="id" Visibility="Hidden"/>
-                <DataGridTextColumn Binding="{Binding Teachers.Name}" Header="الاسم كاملاً"/>
-                <DataGridTextColumn Binding="{Binding Teachers.NickName}" Header="اللقب"/>
-                <DataGridTextColumn Binding="{Binding Rank}" Header="الرتبة"/>
-                <DataGridTextColumn Binding="{Binding Quorum}" Header="عدد الساعات"/>
+      <DataGrid Name="DGTeachersView" HorizontalAlignment="Left" Height="191" AutoGenerateColumns="False" FlowDirection="RightToLeft" ItemsSource="{Binding WorkHours}" Margin="322,293,0,0" VerticalAlignment="Top" Width="424">
+        <DataGrid.Columns>
+          <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden"/>
+          <DataGridTextColumn Binding="{Binding Name}" Header="الاسم كاملاً"/>
+          <DataGridTextColumn Binding="{Binding NickName}" Header="اللقب"/>
+          <DataGridTextColumn Binding="{Binding Rank}" Header="الرتبة"/>
+          <DataGridTextColumn Binding="{Binding Quorum}" Header="عدد الساعات"/>
 
-            </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid.Columns>
+      </DataGrid>
+
         <ComboBox  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="القسم" IsEditable="True" IsTextSearchCaseSensitive="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  Margin="282,199,0,0" x:Name="department1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" >
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
+    </ComboBox>
 
+        <ComboBox Name="CBDepartment" Margin="282,217,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="24" SelectedIndex="0" BorderBrush="#FF3580BF">
+            <ComboBox.Background>
+                <SolidColorBrush Color="{DynamicResource Color4}"/>
+            </ComboBox.Background>
         </ComboBox>
         <Label Content="االقسم" HorizontalAlignment="Left" Margin="393,215,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>

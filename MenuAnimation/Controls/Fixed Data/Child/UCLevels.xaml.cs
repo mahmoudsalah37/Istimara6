@@ -1,6 +1,5 @@
+using Astmara6.Data;
 using Astmara6Con.Controls;
-using Data.Context;
-using Data.Entities;
 using System;
 using System.Collections;
 using System.Collections.Generic;

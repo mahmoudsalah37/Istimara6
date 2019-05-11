@@ -1,9 +1,9 @@
-﻿using Data.Context;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
-using Data.Entities;
 using System;
+using Astmara6.Data;
+
 namespace Astmara6Con.Controls
 {
     /// <summary>

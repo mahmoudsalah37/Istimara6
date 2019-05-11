@@ -1,8 +1,8 @@
 ﻿using MenuAnimado1.Controls;
 using Astmara6Con.Controls;
 using System.Windows;
-using Data.Context;
 using System.Data.Entity;
+using Astmara6.Data;
 
 namespace Astmara6Con
 {
