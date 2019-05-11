@@ -1,6 +1,11 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using Data.Context;
+using System.Windows;
+using System.Linq;
 
+using System.Windows.Controls;
+using Data.Entities;
+using System.Collections.Generic;
+using System;
 
 namespace Astmara6Con.Controls
 {
@@ -9,12 +14,20 @@ namespace Astmara6Con.Controls
     /// </summary>
     public partial class UCWorkHours : UserControl
     {
-        string STRNamePage;
-        readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
+        private string STRNamePage;
+        private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
+        private readonly CollegeContext context = new CollegeContext();
 
+        private void loadData()
+        {
+            List<WorkHour> workHours = (from p in context.WorkHours
+                            select p).ToList();
+            DGWorkHours.ItemsSource = workHours;
+        }
         public UCWorkHours()
         {
             InitializeComponent();
+            loadData();
         }
 
 
@@ -32,6 +45,62 @@ namespace Astmara6Con.Controls
             Form.gridShow.Children.Add(new UCDoctors());
             STRNamePage = "الدكاترة";
             Form.ChFormName(STRNamePage);
+        }
+
+        private void BTNAdd_Click(object sender, RoutedEventArgs e)
+        {
+            context.WorkHours.Add(new WorkHour()
+                {
+                    Rank = TBRank.Text,
+                    Quorum = int.Parse(TBLegalMonument.Text),
+                    AcademicOrVirtual = RBPaper.IsChecked,
+                }
+            );
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNEdit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                WorkHour workHour = DGWorkHours.SelectedItem as WorkHour;
+                WorkHour row = (from p in context.WorkHours
+                                where p.Id == workHour.Id
+                                select p).Single();
+                row.Rank = workHour.Rank;
+                row.Quorum = workHour.Quorum;
+                row.AcademicOrVirtual = workHour.AcademicOrVirtual;
+                context.SaveChanges();
+                loadData();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return;
+            }
+        }
+
+        private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
+        {
+            WorkHour workHour = DGWorkHours.SelectedItem as WorkHour;
+            WorkHour row = (from p in context.WorkHours
+                            where p.Id == workHour.Id
+                            select p).Single();
+            context.WorkHours.Remove(row);
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                context.WorkHours.RemoveRange(context.WorkHours);
+                context.SaveChanges();
+                loadData();
+            }
+            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
         }
     }
 }

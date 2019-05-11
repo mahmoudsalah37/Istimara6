@@ -300,3 +300,62 @@ E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\M
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.exe
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\Astmara6\MenuAnimation\obj\Debug\Astmara6.pdb
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe.config
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\Astmara6.pdb
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\EntityFramework.dll
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.dll
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\EntityFramework.xml
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\EntityFramework.SqlServer.xml
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\App.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.cache
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6_MarkupCompile.lref
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\App.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCCourses.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDepartment.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCDoctors.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCFixedData.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCLevels.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCMajors.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\Child\UCWorkHours.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\UCChangingData.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.baml
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.g.resources
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.Properties.Resources.resources
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.GenerateResource.cache
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CoreCompileInputs.cache
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csprojAssemblyReference.cache

@@ -9,12 +9,12 @@
               Height="484" Width="746" >
     <UserControl.Resources>
         <Color x:Key="1">#FF3580BF</Color>
-        <Astmara6:Astmara6DataSet x:Key="astmara6DataSet"/>
-        <CollectionViewSource x:Key="levelsViewSource" Source="{Binding Levels, Source={StaticResource astmara6DataSet}}"/>
+        <!--<Astmara6:Astmara6DataSet x:Key="astmara6DataSet"/>-->
+        <!--<CollectionViewSource x:Key="levelsViewSource" Source="{Binding Levels, Source={StaticResource astmara6DataSet}}"/>-->
         <Astmara6:Astmara6DataSet1 x:Key="astmara6DataSet1"/>
         <CollectionViewSource x:Key="sectionsViewSource" Source="{Binding Sections, Source={StaticResource astmara6DataSet1}}"/>
     </UserControl.Resources>
-    <Grid DataContext="{StaticResource levelsViewSource}">
+    <Grid><!--DataContext="{StaticResource levelsViewSource}"-->
         <Label Content="اسم القسم" HorizontalAlignment="Left" Margin="646,224,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>

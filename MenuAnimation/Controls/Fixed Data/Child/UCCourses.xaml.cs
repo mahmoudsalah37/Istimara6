@@ -15,23 +15,24 @@ namespace Astmara6Con.Controls
     /// </summary>
     public partial class UCCourses : UserControl
     {
-        int? TotalHour;
-        int? Expremente =null;
-        int? Virtuale=null;
-        string codee;
-        int? Academee;
-        public void loadData()
-        {
-            CollegeContext cd = new CollegeContext();
+        private int? TotalHour;
+        private int? Expremente =null;
+        private int? Virtuale=null;
+        private string codee;
+        private int? Academee;
+        private string STRNamePage;
+        private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
+        private readonly CollegeContext context = new CollegeContext();
 
-            var subjects = (from p in cd.Subjects
+        private void loadData()
+        {
+
+            var subjects = (from p in context.Subjects
                             select p).ToList();
 
             DGCoursesView.ItemsSource = subjects;
         }
-        string STRNamePage;
-        readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
-
+        
         public UCCourses()
         {
 
@@ -63,8 +64,7 @@ namespace Astmara6Con.Controls
              codee = TBCode.Text;
               Academee = int.Parse(TBPaper.Text);
             
-                CollegeContext db = new CollegeContext();
-            db.Subjects.Add(new Subject()
+            context.Subjects.Add(new Subject()
             {
                 Code = codee,
                 Name = TBNameCourse.Text,
@@ -75,7 +75,7 @@ namespace Astmara6Con.Controls
                 TotalHours = TotalHour
                 
             });
-            db.SaveChanges();
+            context.SaveChanges();
             loadData();
             MessageBox.Show("تم حفظ العملية بنجاح");
             
@@ -166,9 +166,8 @@ namespace Astmara6Con.Controls
 
             try
             {
-                CollegeContext dataContext = new CollegeContext();
                 Subject CoursesRow = DGCoursesView.SelectedItem as Subject;
-                Subject subjects = (from p in dataContext.Subjects
+                Subject subjects = (from p in context.Subjects
                                     where p.Id == CoursesRow.Id
                                     select p).Single();
                 subjects.Name = CoursesRow.Name;
@@ -176,7 +175,7 @@ namespace Astmara6Con.Controls
                 subjects.Academic = CoursesRow.Academic;
                 subjects.Virtual = CoursesRow.Virtual;
                 subjects.Exprement = CoursesRow.Exprement;
-                dataContext.SaveChanges();
+                context.SaveChanges();
                 loadData();
                 MessageBox.Show("تم تعديل الصف بنجاح");
             }
@@ -192,14 +191,13 @@ namespace Astmara6Con.Controls
             try
             {
 
-                CollegeContext cd = new CollegeContext();
                 Subject SubjectRow = DGCoursesView.SelectedItem as Subject;
 
-                Subject subjects = (from p in cd.Subjects
+                Subject subjects = (from p in context.Subjects
                                     where p.Id == SubjectRow.Id
                                     select p).Single();
-                cd.Subjects.Remove(subjects);
-                cd.SaveChanges();
+                context.Subjects.Remove(subjects);
+                context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("تم مسح العنصر بنجاح");
@@ -211,11 +209,9 @@ namespace Astmara6Con.Controls
         {
             try
             {
-                CollegeContext cd = new CollegeContext();
+                context.Subjects.RemoveRange(context.Subjects);
 
-                cd.Subjects.RemoveRange(cd.Subjects);
-
-                cd.SaveChanges();
+                context.SaveChanges();
                 loadData();
                 MessageBox.Show("تم مسح كل البيانات");
             }

@@ -11,13 +11,15 @@ namespace Astmara6Con.Controls
     /// </summary>
     public partial class UCMajors : UserControl
     {
+        private readonly CollegeContext context = new CollegeContext();
+        private string STRNamePage;
+        private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
         public void loadData()
         {
-            CollegeContext cd = new CollegeContext();
 
-            var sections = (from p in cd.Sections
+            var sections = (from p in context.Sections
                             select p).ToList();
-            var branchs = (from p in cd.Branches
+            var branchs = (from p in context.Branches
                            select p).ToList();
 
             DGMajorsView.ItemsSource = sections;
@@ -25,18 +27,17 @@ namespace Astmara6Con.Controls
         }
         public void TakeDataFromCombo()
         {
-            CollegeContext cd = new CollegeContext();
             Section SectionCB = CBNameDepartment.SelectedItem as Section;
-            Section sections = (from p in cd.Sections
+            Section sections = (from p in context.Sections
                                 where p.Id == SectionCB.Id
                                 select p).Single();
 
-            cd.Branches.Add(new Branch()
+            context.Branches.Add(new Branch()
             {
                 IdSection = SectionCB.Id,
                 Name = TBNameMajors.Text
             });
-            cd.SaveChanges();
+            context.SaveChanges();
             loadData();
             MessageBox.Show("تم حفظ البيانات بنجاح ");
 
@@ -44,15 +45,12 @@ namespace Astmara6Con.Controls
         }
         public void loadDataCombo()
         {
-            CollegeContext cd = new CollegeContext();
 
-            var sections = (from p in cd.Sections
+            var sections = (from p in context.Sections
                             select p).ToList();
 
             CBNameDepartment.ItemsSource = sections;
         }
-        string STRNamePage;
-        readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
 
         public UCMajors()
         {
@@ -92,15 +90,14 @@ namespace Astmara6Con.Controls
         {
             try
             {
-                CollegeContext dataContext = new CollegeContext();
                 Branch DepartmentRow = DGMajorsView.SelectedItem as Branch;
 
 
-                Branch departments = (from p in dataContext.Branches
+                Branch departments = (from p in context.Branches
                                       where p.Id == DepartmentRow.Id
                                       select p).Single();
                 departments.Name = DepartmentRow.Name;
-                dataContext.SaveChanges();
+                context.SaveChanges();
                 loadData();
 
 
@@ -120,14 +117,13 @@ namespace Astmara6Con.Controls
             try
             {
 
-                CollegeContext cd = new CollegeContext();
                 Branch BranchRow = DGMajorsView.SelectedItem as Branch;
 
-                Branch branchs = (from p in cd.Branches
+                Branch branchs = (from p in context.Branches
                                   where p.Id == BranchRow.Id
                                   select p).Single();
-                cd.Branches.Remove(branchs);
-                cd.SaveChanges();
+                context.Branches.Remove(branchs);
+                context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("تم مسح العنصر بنجاح");
@@ -139,11 +135,9 @@ namespace Astmara6Con.Controls
         {
             try
             {
-                CollegeContext cd = new CollegeContext();
+                context.Branches.RemoveRange(context.Branches);
 
-                cd.Branches.RemoveRange(cd.Branches);
-
-                cd.SaveChanges();
+                context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("تم مسح كل البيانات");

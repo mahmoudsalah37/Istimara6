@@ -12,17 +12,19 @@ namespace Astmara6Con.Controls
     /// </summary>
     public partial class UCDepartment : UserControl
     {
+        private string STRNamePage;
+        private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
+        private readonly CollegeContext context = new CollegeContext();
+
         public void loadData()
         {
-            CollegeContext cd = new CollegeContext();
 
-            var sections = (from p in cd.Sections
+            var sections = (from p in context.Sections
                           select p).ToList();
 
             DGDepartmentView.ItemsSource = sections;
         }
-        string STRNamePage;
-        readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
+        
 
         public UCDepartment()
         {
@@ -52,14 +54,13 @@ namespace Astmara6Con.Controls
 
             try
             {
-                CollegeContext dataContext = new CollegeContext();
                 Section DepartmentRow = DGDepartmentView.SelectedItem as Section;
 
-                Section departments = (from p in dataContext.Sections
+                Section departments = (from p in context.Sections
                                 where p.Id == DepartmentRow.Id
                                 select p).Single();
                 departments.TypeOfSection = DepartmentRow.TypeOfSection;
-                dataContext.SaveChanges();
+                context.SaveChanges();
                 loadData();
 
 
@@ -79,15 +80,14 @@ namespace Astmara6Con.Controls
         {
             try
             {
-           
-                CollegeContext cd = new CollegeContext();
+
                 Section DepartmentRow = DGDepartmentView.SelectedItem as Section;
 
-                Section sections = (from p in cd.Sections
+                Section sections = (from p in context.Sections
                                 where p.Id == DepartmentRow.Id
                                 select p).Single();
-                cd.Sections.Remove(sections);
-                cd.SaveChanges();
+                context.Sections.Remove(sections);
+                context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("تم مسح العنصر بنجاح");
@@ -100,11 +100,9 @@ namespace Astmara6Con.Controls
         {
             try
             {
-                CollegeContext cd = new CollegeContext();
+                context.Sections.RemoveRange(context.Sections);
 
-                cd.Sections.RemoveRange(cd.Sections);
-
-                cd.SaveChanges();
+                context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("تم مسح كل البيانات");
@@ -114,12 +112,11 @@ namespace Astmara6Con.Controls
 
         private void BTNAdd_Click(object sender, RoutedEventArgs e)
         {
-            CollegeContext db = new CollegeContext();
-            db.Sections.Add(new Section()
+            context.Sections.Add(new Section()
             {
                 TypeOfSection = TBNameDepartment.Text
             });
-            db.SaveChanges();
+            context.SaveChanges();
             loadData();
             MessageBox.Show("تم حفظ العملية بنجاح");
             TBNameDepartment.Text = "";

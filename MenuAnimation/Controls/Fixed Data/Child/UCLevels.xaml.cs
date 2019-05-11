@@ -19,20 +19,19 @@ namespace Astmara6Con
     /// </summary>
     public partial class UCLevels : UserControl
     {
-        CollegeContext cd = new CollegeContext();
+        private string STRNamePage;
+        readonly FRMMainWindow form = Application.Current.Windows[0] as FRMMainWindow;
+        readonly CollegeContext context = new CollegeContext();
 
         public void loadData()
         {
 
-            var levels = (from p in cd.Levels
+            var levels = (from p in context.Levels
                           select p).ToList();
 
             DGLevelsView.ItemsSource = levels;
         }
 
-
-        string STRNamePage;
-        readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
         public UCLevels()
         {
             InitializeComponent();
@@ -42,18 +41,18 @@ namespace Astmara6Con
 
         private void BTNBack_Click(object sender, RoutedEventArgs e)
         {
-            Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCFixedData());
+            form.gridShow.Children.Clear();
+            form.gridShow.Children.Add(new UCFixedData());
             STRNamePage = "البيانات الثابتة";
-            Form.ChFormName(STRNamePage);
+            form.ChFormName(STRNamePage);
         }
 
         private void BTNNext_Click(object sender, RoutedEventArgs e)
         {
-            Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCDepartment());
+            form.gridShow.Children.Clear();
+            form.gridShow.Children.Add(new UCDepartment());
             STRNamePage = "الاقسام";
-            Form.ChFormName(STRNamePage);
+            form.ChFormName(STRNamePage);
         }
 
         private void TBNameLevels_TextChanged(object sender, TextChangedEventArgs e)
@@ -73,12 +72,12 @@ namespace Astmara6Con
             }
             else
             {
-                cd.Levels.Add(new Level()
+                context.Levels.Add(new Level()
                 {
                     Name = TBNameLevels.Text,
                     
                 });
-                cd.SaveChanges();
+                context.SaveChanges();
                 loadData();
                 MessageBox.Show("تم حفظ العملية بنجاح");
                 TBNameLevels.Text = "";
@@ -90,19 +89,14 @@ namespace Astmara6Con
             
             try
             {
-                CollegeContext dataContext = new CollegeContext();
                 Level LevelRow = DGLevelsView.SelectedItem as Level;
 
-                Level levels = (from p in dataContext.Levels
+                Level levels = (from p in context.Levels
                                 where p.Id == LevelRow.Id
                                 select p).Single();
                 levels.Name = LevelRow.Name;
-                dataContext.SaveChanges();
+                context.SaveChanges();
                 loadData();
-
-
-                MessageBox.Show("تم تعديل الصف بنجاح");
-
             }
             catch (Exception Ex)
             {
@@ -128,14 +122,13 @@ namespace Astmara6Con
         {
             try
             {
-                CollegeContext cd = new CollegeContext();
                 Level LevelRow = DGLevelsView.SelectedItem as Level;
 
-                Level levels = (from p in cd.Levels
+                Level levels = (from p in context.Levels
                                 where p.Id == LevelRow.Id
                                 select p).Single();
-                cd.Levels.Remove(levels);
-                cd.SaveChanges();
+                context.Levels.Remove(levels);
+                context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("تم حذف الصف بنجاح");
@@ -149,11 +142,9 @@ namespace Astmara6Con
 
             try
             {
-                CollegeContext cd = new CollegeContext();
+                context.Levels.RemoveRange(context.Levels);
 
-                cd.Levels.RemoveRange(cd.Levels);
-
-                cd.SaveChanges();
+                context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("كل البيانات حذفت بنجاح");

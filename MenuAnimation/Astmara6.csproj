@@ -144,11 +144,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Astmara6DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Astmara6DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Astmara6DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,17 +247,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Astmara6DataSet.xsc">
-      <DependentUpon>Astmara6DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Astmara6DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Astmara6DataSet.xss">
-      <DependentUpon>Astmara6DataSet.xsd</DependentUpon>
-    </None>
     <None Include="Astmara6DataSet1.xsc">
       <DependentUpon>Astmara6DataSet1.xsd</DependentUpon>
     </None>
