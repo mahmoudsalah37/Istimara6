@@ -30,21 +30,14 @@
             <TextBlock.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
             </TextBlock.Foreground><Run FlowDirection="RightToLeft" Text="عدد الساعات"/></TextBlock>
-        <TextBox x:Name="TBPaper" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد الساعات" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox2"  Height="28" Margin="536,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBPaper_TextChanged">
-            <TextBox.BorderBrush>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </TextBox.BorderBrush>
-        </TextBox>
-        <TextBox x:Name="TBVirtual" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox1" Height="28" Margin="385,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBVirtual_TextChanged">
-            <TextBox.BorderBrush>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </TextBox.BorderBrush>
-        </TextBox>
-        <TextBox x:Name="TBExprement" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="28"  Margin="242,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBExprement_TextChanged">
-            <TextBox.BorderBrush>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </TextBox.BorderBrush>
-        </TextBox>
+        <TextBox x:Name="TBPaper" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد الساعات"   HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox2"  Height="28" Margin="536,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBPaper_TextChanged"/>
+
+     
+        <TextBox x:Name="TBVirtual" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left"  PreviewTextInput="NumberValidationTextBox" Height="28" Margin="385,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBVirtual_TextChanged"/>
+
+        <TextBox x:Name="TBExprement" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="28"  Margin="242,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBExprement_TextChanged"/>
+
+       
         <Label Content="كود المقرر" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="689,141,0,0">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
@@ -85,7 +78,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="DGCoursesView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="205,284,2,0" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="SubjectsDataGrid_SelectionChanged">
+        <DataGrid x:Name="DGCoursesView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="205,284,2,0" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn  Binding="{Binding Id}" Header="Id" Visibility="Hidden" IsReadOnly="True" Width="SizeToHeader"/>
                 <DataGridTextColumn  Binding="{Binding Code}" Header="كود المقرر" Width="auto"/>

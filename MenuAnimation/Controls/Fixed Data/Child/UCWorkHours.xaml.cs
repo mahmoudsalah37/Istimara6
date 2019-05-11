@@ -1,10 +1,12 @@
 ﻿using System.Windows;
 using System.Linq;
-
+using Astmara6.Classes;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System;
 using Astmara6.Data;
+using System.Text.RegularExpressions;
+using System.Windows.Input;
 
 namespace Astmara6Con.Controls
 {
@@ -17,6 +19,10 @@ namespace Astmara6Con.Controls
         private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
         private readonly CollegeContext context = new CollegeContext();
 
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+           CheckInput.numberOnly(e);
+        }
         private void loadData()
         {
             List<WorkHour> workHours = (from p in context.WorkHours
