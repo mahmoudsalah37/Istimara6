@@ -55,24 +55,25 @@ namespace Astmara6Con
         }
 
 
-        public void cheak()
+        public void cheak(int length)
         {
            
             List<Level> prelevelname = (from p in context.Levels
                               where p.Name == TBNameLevels.Text
                               select p).ToList();
 
-                if (prelevelname.Count > 0)
-                {
-                 lerror.Content = "لقد ادخلت هذا من قبل ";
-                 
-                }
+            if (prelevelname.Count > 0)
+            {
+                lerror.Content = "لقد ادخلت هذا من قبل ";
+                BTNAdd.IsEnabled = false;
+            }
             else
             {
                 BTNAdd.IsEnabled = true;
             }
+            if (length < 1)
+                BTNAdd.IsEnabled = false;
 
-          
         }
 
 
@@ -178,7 +179,11 @@ namespace Astmara6Con
         private void TBNameLevels_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             lerror.Content = "";
-            cheak();
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            cheak(length);
+            
+            
         }
     }
 }
