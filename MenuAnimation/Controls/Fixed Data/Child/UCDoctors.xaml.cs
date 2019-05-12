@@ -182,5 +182,87 @@ namespace Astmara6Con.Controls
             context.SaveChanges();
             loadData();
         }
+        public Boolean checkName(int length)
+        {
+            Boolean result1 = true;
+            List<Teacher> precoucode = (from p in context.Teachers
+                                                    where p.Name == TBName.Text
+                                                    select p).ToList();
+            if (length < 1)
+            {
+                lerrorcou_code.Content = "لم تكتب شئ ";
+               result1 = false;
+            }
+            if (precoucode.Count > 0)
+            {
+                lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
+                result1 = false;
+            }
+            else
+            {
+                result1= true;
+            }
+
+            return result1;
+        }
+        public Boolean checkNickName(int length)
+        {
+            Boolean result2 = true;
+            List<Teacher> precoucode = (from p in context.Teachers
+                                        where p.NickName == TBNickName.Text
+                                        select p).ToList();
+
+            if (precoucode.Count > 0)
+            {
+                lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
+                result2= false;
+            }
+            else
+            {
+                result2= true;
+            }
+            if (length < 1)
+            {
+                lerrorcou_name.Content = "لم تكتب شئ ";
+                result2 = false;
+            }
+
+            return result2;
+        }
+        private void TBName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lerrorcou_code.Content = "";
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            Boolean r1= checkName(length);
+            int r = TBNickName.Text.Length;
+            Boolean r2 = checkNickName(r);
+            if (r1 & r2)
+            {
+                BTNAdd.IsEnabled = true;
+            }
+            else
+                BTNAdd.IsEnabled = false;
+        }
+       
+
+
+        public void TBNickName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lerrorcou_code.Content = "";
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            checkNickName(length);
+            
+            int r = TBName.Text.Length;
+            Boolean r2 = checkNickName(length);
+            Boolean r1 = checkName(r);
+            if (r1 & r2)
+            {
+                BTNAdd.IsEnabled = true;
+            }
+            else
+                BTNAdd.IsEnabled = false;
+        }
     }
 }

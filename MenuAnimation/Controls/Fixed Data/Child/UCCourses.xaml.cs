@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using Astmara6.Data;
 using System.Windows.Input;
 using Astmara6.Classes;
+using System.Collections.Generic;
 
 namespace Astmara6Con.Controls
 {
@@ -148,6 +149,95 @@ namespace Astmara6Con.Controls
             catch (Exception) {
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                         "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
+        }
+        public void checkcode(int length)
+        {
+
+            List<Subject> precoucode = (from p in context.Subjects
+                                        where p.Code == TBCode.Text
+                                        select p).ToList();
+
+            if (precoucode.Count > 0)
+            {
+                lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
+                BTNAdd.IsEnabled = false;
+            }
+            else
+            {
+                BTNAdd.IsEnabled = true;
+            }
+            if (length < 1)
+                BTNAdd.IsEnabled = false;
+
+        }
+
+        private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lerrorcou_code.Content = "";
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            checkcode(length);
+        }
+        public void checkName(int length)
+        {
+
+            List<Subject> precoucode = (from p in context.Subjects
+                                        where p.Name == TBNameCourse.Text
+                                        select p).ToList();
+
+            if (precoucode.Count > 0)
+            {
+                lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
+                BTNAdd.IsEnabled = false;
+            }
+            else
+            {
+                BTNAdd.IsEnabled = true;
+            }
+            if (length < 1)
+            {
+                lerrorcou_name.Content = "لم تكتب شئ ";
+                BTNAdd.IsEnabled = false;
+            }
+
+        }
+        private void TBNameCourse_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lerrorcou_name.Content = "";
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            checkName(length);
+        }
+
+        private void TBPaper_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            if (length < 1)
+            {
+                BTNAdd.IsEnabled = false;
+            }
+
+        }
+
+        private void TBVirtual_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            if (length < 1)
+            {
+                BTNAdd.IsEnabled = false;
+            }
+        }
+
+        private void TBExprement_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            if (length < 1)
+            {
+                BTNAdd.IsEnabled = false;
             }
         }
     }

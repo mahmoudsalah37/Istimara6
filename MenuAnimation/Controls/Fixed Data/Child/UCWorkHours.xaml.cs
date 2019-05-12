@@ -118,5 +118,54 @@ namespace Astmara6Con.Controls
                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
         }
+        public Boolean checkName(int length)
+        {
+            Boolean result1 = true;
+            List<WorkHour> precoucode = (from p in context.WorkHours
+                                        where p.Rank== TBRank.Text
+                                        select p).ToList();
+            if (length < 1)
+            {
+                lerrorcou_code.Content = "لم تكتب شئ ";
+                result1 = false;
+            }
+            if (precoucode.Count > 0)
+            {
+                lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
+                result1 = false;
+            }
+            else
+            {
+                result1 = true;
+            }
+
+            return result1;
+        }
+   
+        private void TBRank_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lerrorcou_code.Content = "";
+            lerrorcou_name.Content = "";
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            Boolean r1 = checkName(length);
+         
+            if (r1)
+            {
+                BTNAdd.IsEnabled = true;
+            }
+            else
+                BTNAdd.IsEnabled = false;
+        }
+
+        private void TBLegalMonument_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            if (length < 1)
+            {
+                BTNAdd.IsEnabled = false;
+            }
+        }
     }
 }

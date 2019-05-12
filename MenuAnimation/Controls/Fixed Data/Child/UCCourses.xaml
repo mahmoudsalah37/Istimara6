@@ -16,12 +16,12 @@
         <CollectionViewSource x:Key="subjectsViewSource" Source="{Binding Subjects, Source={StaticResource astmara6DataSet4}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource subjectsViewSource}">
-        <TextBox x:Name="TBCode" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:105ر" HorizontalAlignment="Left" Height="28" Margin="584,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="78" Background="#FFECE3E3" >
+        <TextBox x:Name="TBCode" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:105ر" HorizontalAlignment="Left" Height="28" Margin="584,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="78" Background="#FFECE3E3" TextChanged="TBCode_TextChanged" >
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <TextBox x:Name="TBNameCourse" HorizontalAlignment="Left" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:رياضة" Height="28" Margin="362,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Background="#FFECE3E3">
+        <TextBox x:Name="TBNameCourse" HorizontalAlignment="Left" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:رياضة" Height="28" Margin="362,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Background="#FFECE3E3" TextChanged="TBNameCourse_TextChanged">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>
@@ -30,12 +30,12 @@
             <TextBlock.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
             </TextBlock.Foreground><Run FlowDirection="RightToLeft" Text="عدد الساعات"/></TextBlock>
-        <TextBox x:Name="TBPaper" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد الساعات"   HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"  Height="28" Margin="536,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Background="#FFECE3E3" />
+        <TextBox x:Name="TBPaper" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد الساعات"   HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"  Height="28" Margin="536,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBPaper_TextChanged" />
 
 
-        <TextBox x:Name="TBVirtual" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left"  PreviewTextInput="NumberValidationTextBox" Height="28" Margin="385,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" />
+        <TextBox x:Name="TBVirtual" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left"  PreviewTextInput="NumberValidationTextBox" Height="28" Margin="385,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBVirtual_TextChanged" />
 
-        <TextBox x:Name="TBExprement" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="28"  Margin="242,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" />
+        <TextBox x:Name="TBExprement" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="28"  Margin="242,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="79" Background="#FFECE3E3" TextChanged="TBExprement_TextChanged" />
 
 
         <Label Content="كود المقرر" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="689,141,0,0">
@@ -63,7 +63,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Left" Margin="100,284,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BTNAdd_Click">
+        <Button x:Name="BTNAdd" Content="اضافة" IsEnabled="False" HorizontalAlignment="Left" Margin="100,284,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BTNAdd_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
@@ -92,7 +92,8 @@
         <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="102,317,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="73,383,0,0" VerticalAlignment="Top" Width="93" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
-        <Label x:Name="lerrorcou_name" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="564,164,0,0" VerticalAlignment="Top" Width="95" Foreground="#DDFF0101"/>
+        <Label x:Name="lerrorcou_code" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="532,164,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
+        <Label x:Name="lerrorcou_name" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="281,159,0,0" VerticalAlignment="Top" Width="189" Foreground="#DDFF0101"/>
 
     </Grid>
 </UserControl>

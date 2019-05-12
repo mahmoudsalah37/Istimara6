@@ -12,7 +12,7 @@
         <Color x:Key="1">#FF3580BF</Color>
     </UserControl.Resources>
     <Grid >
-        <TextBox x:Name="TBRank" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:استاذ مساعد" HorizontalAlignment="Left" Height="31" Margin="553,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="91" Background="#FFECE3E3" >
+        <TextBox x:Name="TBRank" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:استاذ مساعد" HorizontalAlignment="Left" Height="31" Margin="553,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="91" Background="#FFECE3E3" TextChanged="TBRank_TextChanged" >
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </TextBox.BorderBrush>
@@ -22,7 +22,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <TextBox x:Name="TBLegalMonument" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات العمل " HorizontalAlignment="Left" Height="31" Margin="300,212,0,0"  PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" Background="#FFECE3E3" />
+        <TextBox x:Name="TBLegalMonument" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات العمل " HorizontalAlignment="Left" Height="31" Margin="300,212,0,0"  PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" Background="#FFECE3E3" TextChanged="TBLegalMonument_TextChanged" />
         <Label Content="عدد ساعات العمل" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="417,214,0,0" Height="29" Width="102">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
@@ -56,5 +56,7 @@
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="389,305,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="326,305,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="229,305,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
+        <Label x:Name="lerrorcou_code" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="483,248,0,0" VerticalAlignment="Top" Width="168" Foreground="#DDFF0101"/>
+        <Label x:Name="lerrorcou_name" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="253,248,0,0" VerticalAlignment="Top" Width="139" Foreground="#DDFF0101"/>
     </Grid>
 </UserControl>
