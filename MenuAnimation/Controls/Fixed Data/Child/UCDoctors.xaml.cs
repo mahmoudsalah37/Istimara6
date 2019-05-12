@@ -120,18 +120,18 @@ namespace Astmara6Con.Controls
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
         {
 
-            Teacher teacherrow = DGTeachersView.SelectedItem as Teacher;
+            TeacherAndWorkHours teacherrow = DGTeachersView.SelectedItem as TeacherAndWorkHours ;
             Teacher Teachers = (from p in context.Teachers
                             where p.Id == teacherrow.Id
                             select p).Single();
             Teachers.Name = teacherrow.Name;
             Teachers.NickName = teacherrow.NickName;
-            Teachers.WorkHour = teacherrow.WorkHour;
+            //Teachers.WorkHour = teacherrow.WorkHour;
             context.SaveChanges();
             loadData();
 
 
-            MessageBox.Show("تم تعديل الصف بنجاح");
+           // MessageBox.Show("تم تعديل الصف بنجاح");
 
             
         }
