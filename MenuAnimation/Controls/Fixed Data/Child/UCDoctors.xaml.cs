@@ -1,5 +1,4 @@
-﻿
-using MenuAnimado1.Controls;
+﻿using MenuAnimado1.Controls;
 using System.Data;
 using System.Linq;
 ﻿using Astmara6;
@@ -10,6 +9,7 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using Astmara6.Model;
 using Astmara6.Data;
+using System;
 
 namespace Astmara6Con.Controls
 {
@@ -19,6 +19,7 @@ namespace Astmara6Con.Controls
     public partial class UCDoctors : UserControl
     {
         string STRNamePage;
+
         readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
         readonly CollegeContext context = new CollegeContext();
 
@@ -114,6 +115,49 @@ namespace Astmara6Con.Controls
             context.Teachers.Add(new Teacher(name,nickname,rank,department));
             context.SaveChanges();
             loadData();
+        }
+
+        private void BTNEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+            Teacher teacherrow = DGTeachersView.SelectedItem as Teacher;
+            Teacher Teachers = (from p in context.Teachers
+                            where p.Id == teacherrow.Id
+                            select p).Single();
+            Teachers.Name = teacherrow.Name;
+            Teachers.NickName = teacherrow.NickName;
+            Teachers.WorkHour = teacherrow.WorkHour;
+            context.SaveChanges();
+            loadData();
+
+
+            MessageBox.Show("تم تعديل الصف بنجاح");
+
+            
+        }
+
+        private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                Teacher teacherrow = DGTeachersView.SelectedItem as Teacher;
+
+                Teacher Teachers = (from p in context.Teachers
+                                    where p.Id == teacherrow.Id
+                                    select p).Single();
+                context.Teachers.Remove(Teachers);
+                context.SaveChanges();
+                loadData();
+
+                MessageBox.Show("تم مسح العنصر بنجاح");
+            }
+            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+        }
+
+        private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

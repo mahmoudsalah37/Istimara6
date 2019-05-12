@@ -61,7 +61,7 @@
         <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="451,294,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="522,294,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="348,294,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
-        <ComboBox x:Name="CBNameDepartment"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="الرتبة"  Style="{StaticResource MaterialDesignFloatingHintComboBox}"  IsEditable="True" IsTextSearchCaseSensitive="True"    DisplayMemberPath="TypeOfSection" ItemsSource="{Binding TypeOfSection}" Margin="536,216,93,228" SelectedValuePath="Id" RenderTransformOrigin="1.105,0.5"  >
+        <ComboBox x:Name="CBNameDepartment"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم"  Style="{StaticResource MaterialDesignFloatingHintComboBox}"  IsEditable="True" IsTextSearchCaseSensitive="True"    DisplayMemberPath="TypeOfSection" ItemsSource="{Binding TypeOfSection}" Margin="536,216,93,228" SelectedValuePath="Id" RenderTransformOrigin="1.105,0.5"  >
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
