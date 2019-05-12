@@ -182,8 +182,6 @@ namespace Astmara6Con
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
             check(length);
-            
-            
         }
     }
 }

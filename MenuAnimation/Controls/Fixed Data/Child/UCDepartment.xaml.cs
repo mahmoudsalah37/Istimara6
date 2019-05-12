@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Linq;
 using System;
 using Astmara6.Data;
+using System.Collections.Generic;
 
 namespace Astmara6Con.Controls
 {
@@ -23,7 +24,26 @@ namespace Astmara6Con.Controls
 
             DGDepartmentView.ItemsSource = sections;
         }
-        
+        public void check(int length)
+        {
+
+            List<Section> listLevel = (from p in context.Sections
+                                        where p.TypeOfSection == TBNameDepartment.Text
+                                        select p).ToList();
+
+            if (listLevel.Count > 0)
+            {
+                lerror.Content = "لقد ادخلت هذا من قبل ";
+                BTNAdd.IsEnabled = false;
+            }
+            else
+            {
+                BTNAdd.IsEnabled = true;
+            }
+            if (length < 1)
+                BTNAdd.IsEnabled = false;
+
+        }
 
         public UCDepartment()
         {
@@ -130,6 +150,14 @@ namespace Astmara6Con.Controls
         private void DGDepartmentView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void TBNameDepartment_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lerror.Content = "";
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            check(length);
         }
     }
 }
