@@ -19,8 +19,8 @@ namespace Astmara6Con
     public partial class UCLevels : UserControl
     {
         private string STRNamePage;
-        readonly FRMMainWindow form = Application.Current.Windows[0] as FRMMainWindow;
-        readonly CollegeContext context = new CollegeContext();
+        private readonly FRMMainWindow form = Application.Current.Windows[0] as FRMMainWindow;
+        private readonly CollegeContext context = new CollegeContext();
 
         public void loadData()
         {

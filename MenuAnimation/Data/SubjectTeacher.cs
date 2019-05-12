@@ -16,7 +16,11 @@ namespace Astmara6.Data
 
         public int? IdTeacher { get; set; }
 
+        public int? IdLevel { get; set; }
+
         public virtual Branch Branch { get; set; }
+
+        public virtual Level Level { get; set; }
 
         public virtual Subject Subject { get; set; }
 

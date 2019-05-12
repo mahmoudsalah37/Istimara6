@@ -12,6 +12,7 @@ namespace Astmara6.Data
         public Level()
         {
             StudentStatments = new HashSet<StudentStatment>();
+            SubjectTeachers = new HashSet<SubjectTeacher>();
         }
 
         public int Id { get; set; }
@@ -21,5 +22,8 @@ namespace Astmara6.Data
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentStatment> StudentStatments { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
     }
 }

@@ -9,7 +9,6 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using Astmara6.Model;
-using System.Linq;
 using Astmara6.Data;
 
 namespace Astmara6Con.Controls

@@ -18,6 +18,7 @@ namespace Astmara6.Data
         public virtual DbSet<StudentStatment> StudentStatments { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<SubjectTeacher> SubjectTeachers { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WorkHour> WorkHours { get; set; }
@@ -36,6 +37,11 @@ namespace Astmara6.Data
 
             modelBuilder.Entity<Level>()
                 .HasMany(e => e.StudentStatments)
+                .WithOptional(e => e.Level)
+                .HasForeignKey(e => e.IdLevel);
+
+            modelBuilder.Entity<Level>()
+                .HasMany(e => e.SubjectTeachers)
                 .WithOptional(e => e.Level)
                 .HasForeignKey(e => e.IdLevel);
 

@@ -223,6 +223,7 @@
     <Compile Include="Data\StudentStatment.cs" />
     <Compile Include="Data\Subject.cs" />
     <Compile Include="Data\SubjectTeacher.cs" />
+    <Compile Include="Data\sysdiagram.cs" />
     <Compile Include="Data\Teacher.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\WorkHour.cs" />

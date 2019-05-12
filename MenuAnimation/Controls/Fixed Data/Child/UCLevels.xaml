@@ -31,7 +31,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Left" Margin="418,286,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BTNAdd_Click_1" RenderTransformOrigin="0.934,0.321">
+        <Button x:Name="BTNAdd" Content="اضافة" HorizontalAlignment="Left" Margin="422,251,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BTNAdd_Click_1" RenderTransformOrigin="0.934,0.321">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
@@ -58,5 +58,6 @@
         <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="525,331,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="596,331,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="422,331,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
+        <Label HorizontalAlignment="Left" Margin="591,286,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
