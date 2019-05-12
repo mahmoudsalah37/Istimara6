@@ -234,11 +234,13 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                 </Grid>
+
                 <Rectangle Margin="0,461,0,-32">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="{DynamicResource Color1}"/>
                     </Rectangle.Fill>
                 </Rectangle>
+                <Label Content="All rights reserved for faculty of science banha university copyright © 2019" HorizontalAlignment="Left" Margin="73,466,0,-5" VerticalAlignment="Top" Height="43" Width="641" FontSize="18"/>
 
             </Grid>
         </Grid>
