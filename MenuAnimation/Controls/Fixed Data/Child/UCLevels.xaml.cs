@@ -64,7 +64,7 @@ namespace Astmara6Con
 
         private void BTNAdd_Click_1(object sender, RoutedEventArgs e)
         {
-            if (TBNameLevels.Text == null)
+            if (TBNameLevels.Text =="")
             {
                 MessageBox.Show("انت لم تدخل شيئا!!");
 
