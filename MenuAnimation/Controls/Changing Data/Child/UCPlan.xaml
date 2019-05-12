@@ -34,7 +34,7 @@
             </ComboBox.BorderBrush>
 
         </ComboBox>
-        <ComboBox Margin="85,204,0,0" x:Name="CBLevels" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" RenderTransformOrigin="0.246,0.438">
+        <ComboBox Margin="92,204,326,0" x:Name="CBLevels" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" RenderTransformOrigin="0.246,0.438" Grid.Column="1">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Color2}"/>
             </ComboBox.BorderBrush>
@@ -67,7 +67,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <Label Content="المستوي" HorizontalAlignment="Left" Margin="191,217,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Label Content="المستوي" HorizontalAlignment="Left" Margin="198,217,0,0" VerticalAlignment="Top" Grid.Column="1">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>

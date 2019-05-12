@@ -323,18 +323,6 @@
     <Resource Include="Assets\cs.png" />
     <Resource Include="Assets\science.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="121.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="122.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="123.png" />
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
