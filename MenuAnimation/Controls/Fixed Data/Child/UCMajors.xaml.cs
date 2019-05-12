@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Linq;
 using System;
 using Astmara6.Data;
+using System.Collections.Generic;
 
 namespace Astmara6Con.Controls
 {
@@ -150,7 +151,74 @@ namespace Astmara6Con.Controls
                                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
         }
+        public bool check(int length, string name)
+        {
 
+            List<Section> listLevel = (from p in context.Sections
+                                       where p.TypeOfSection == name
+                                       select p).ToList();
+            if (length < 1)
+            {
+                lerror1.Content = "أخنر من البيانات";
+                return false;
+            }
+            else if (listLevel.Count < 1)
+            {
+                lerror.Content = "أختر من البيانات";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
+
+        }
+
+        public bool checkMajors(int length)
+        {
+
+            List<Branch> listBranches = (from p in context.Branches
+                                       where p.Name == TBNameMajors.Text
+                                       select p).ToList();
+            if (length < 1)
+            {
+                lerror1.Content = "أدخل بيانات";
+                return false;
+            }
+            else if (listBranches.Count > 0)
+            {
+                lerror1.Content = "لقد ادخلت هذا من قبل";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
+
+        }
+
+
+        private void TBNameMajors_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lerror.Content = "";
+            TextBox objTextBox = (TextBox)sender;
+            int length = objTextBox.Text.Length;
+            if (check(CBNameDepartment.Text.Length, CBNameDepartment.Text) && checkMajors(length))
+                BTNAdd.IsEnabled = true;
+            else
+                BTNAdd.IsEnabled = false;
+        }
+
+        private void CBNameDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lerror1.Content = "";
+            if (checkMajors(TBNameMajors.Text.Length))
+                BTNAdd.IsEnabled = true;
+            else
+                BTNAdd.IsEnabled = false;
+        }
     } 
 
      

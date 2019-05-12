@@ -55,7 +55,7 @@ namespace Astmara6Con
         }
 
 
-        public void cheak(int length)
+        public void check(int length)
         {
            
             List<Level> prelevelname = (from p in context.Levels
@@ -181,9 +181,7 @@ namespace Astmara6Con
             lerror.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
-            cheak(length);
-            
-            
+            check(length);
         }
     }
 }
