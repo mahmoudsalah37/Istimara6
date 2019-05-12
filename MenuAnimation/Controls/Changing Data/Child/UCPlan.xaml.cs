@@ -148,5 +148,34 @@ namespace Astmara6Con.Controls
             context.SaveChanges();
             loadData();
         }
+
+        private void BTNEdit_Click(object sender, RoutedEventArgs e)
+        {
+            SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+            SubjectTeacher subject = (from p in context.SubjectTeachers
+                                      where p.Id == subjectTeacher.Id
+                                       select p).Single();
+            //subject.NumberOfStudent = subjectTeacher.NumberOfStudent;
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDelete_Click(object sender, RoutedEventArgs e)
+        {
+            SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+            SubjectTeacher subject = (from p in context.SubjectTeachers
+                                      where p.Id == subjectTeacher.Id
+                                       select p).Single();
+            context.SubjectTeachers.Remove(subject);
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
+        {
+            context.SubjectTeachers.RemoveRange(context.SubjectTeachers);
+            context.SaveChanges();
+            loadData();
+        }
     }
 }

@@ -125,5 +125,34 @@ namespace Astmara6Con.Controls
             context.SaveChanges();
             loadData();
         }
+
+        private void BTNEdit_Click(object sender, RoutedEventArgs e)
+        {
+            StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
+            StudentStatment student = (from p in context.StudentStatments
+                                where p.Id == studentStatment.Id
+                                select p).Single();
+            student.NumberOfStudent = studentStatment.NumberOfStudent;
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDelete_Click(object sender, RoutedEventArgs e)
+        {
+            StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
+            StudentStatment student = (from p in context.StudentStatments
+                                       where p.Id == studentStatment.Id
+                                       select p).Single();
+            context.StudentStatments.Remove(student);
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
+        {
+            context.StudentStatments.RemoveRange(context.StudentStatments);
+            context.SaveChanges();
+            loadData();
+        }
     }
 }

@@ -83,14 +83,14 @@
                 </TextBox.Background>
             </TextBox>
         </Grid>
-        <DataGrid Name="DGStudentStatments" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="181,295,-0.4,-2" VerticalAlignment="Top" Width="565">
+        <DataGrid Name="DGStudentStatments" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="79,295,-0.4,-2" VerticalAlignment="Top" Width="667">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}" Header="" Visibility="Hidden"/>
-                <DataGridTextColumn Binding="{Binding Subject.Name}" Header="المادة"/>
-                <DataGridTextColumn Binding="{Binding Section.TypeOfSection}" Header="القسم"/>
-                <DataGridTextColumn Binding="{Binding Subject.Code}" Header="كود المادة"/>
-                <DataGridTextColumn Binding="{Binding Branch.Name}" Header="الشعبة"/>
-                <DataGridTextColumn Binding="{Binding Level.Name}" Header="المستوي"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="" Visibility="Hidden" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Subject.Code}" Header="كود المادة" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Subject.Name}" Header="المادة" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Section.TypeOfSection}" Header="القسم" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Branch.Name}" Header="الشعبة" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Level.Name}" Header="المستوي" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding NumberOfStudent}" Header="عدد الطلاب"/>
 
 
@@ -100,5 +100,8 @@
 
 
         </DataGrid>
+        <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="252,304,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
+        <Button x:Name="BTNDelete" Content="حذف" HorizontalAlignment="Left" Margin="186,304,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNDelete_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
+        <Button x:Name="BTNDeleteAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="79,304,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="BTNDeleteAll_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
     </Grid>
 </UserControl>

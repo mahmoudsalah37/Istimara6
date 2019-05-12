@@ -157,7 +157,9 @@ namespace Astmara6Con.Controls
 
         private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
         {
-
+            context.Teachers.RemoveRange(context.Teachers);
+            context.SaveChanges();
+            loadData();
         }
     }
 }
