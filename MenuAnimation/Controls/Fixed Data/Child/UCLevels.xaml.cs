@@ -54,10 +54,6 @@ namespace Astmara6Con
             form.ChFormName(STRNamePage);
         }
 
-        private void TBNameLevels_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
 
 
@@ -155,7 +151,8 @@ namespace Astmara6Con
 
         private void TBNameLevels_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-
+            int added = e.Changes.ElementAt(0).AddedLength;
+            
         }
     }
 }

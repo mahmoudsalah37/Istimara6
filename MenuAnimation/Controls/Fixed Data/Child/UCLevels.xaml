@@ -59,5 +59,6 @@
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="596,331,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="422,331,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Label HorizontalAlignment="Left" Margin="591,286,0,0" VerticalAlignment="Top"/>
+        <Label Name="LLevel" Content="" HorizontalAlignment="Left" Margin="576,283,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft"  />
     </Grid>
 </UserControl>
