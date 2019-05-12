@@ -87,11 +87,14 @@ namespace Astmara6Con.Controls
         }
         public void loadData()
         {
-
             var subjectTeachers = (from p in context.SubjectTeachers
                           select p).ToList();
-
             DGPlanShow.ItemsSource = subjectTeachers;
+            foreach(var subjectTeacher in subjectTeachers)
+            {
+                
+            }
+            
         }
         public UCPlan()
         {

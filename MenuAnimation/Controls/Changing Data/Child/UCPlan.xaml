@@ -89,11 +89,12 @@
         </Button>
         <DataGrid Name="DGPlanShow" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191"  Margin="93,297,0,-4" VerticalAlignment="Top" Width="653" Grid.ColumnSpan="2" FlowDirection="RightToLeft">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="              الاسم الدكتور             "/>
-                <DataGridTextColumn Header="        الاسم المعيد             "/>
-                <DataGridTextColumn Header="كود المادة "/>
-                <DataGridTextColumn Header="     الشعبة       "/>
-                <DataGridTextColumn Header="المستوي"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Teacher.Name}" Header="الاسم الدكتور"/>
+                <DataGridTextColumn Binding="{Binding Subject.Code}" Header="كود المادة "/>
+                <DataGridTextColumn Binding="{Binding Subject.Name}" Header="ألمادة"/>
+                <DataGridTextColumn Binding="{Binding Branch.Name}" Header="الشعبة"/>
+                <DataGridTextColumn Binding="{Binding Level.Name}" Header="المستوي"/>
 
 
 

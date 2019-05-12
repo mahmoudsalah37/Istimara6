@@ -83,14 +83,15 @@
                 </TextBox.Background>
             </TextBox>
         </Grid>
-        <DataGrid HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="123,295,0,-2" VerticalAlignment="Top" Width="623">
+        <DataGrid Name="DGStudentStatments" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="181,295,-0.4,-2" VerticalAlignment="Top" Width="565">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="           الاسم المادة         "/>
-                <DataGridTextColumn Header="     الاسم القسم     "/>
-                <DataGridTextColumn Header="كود المادة "/>
-                <DataGridTextColumn Header="    الشعبة   "/>
-                <DataGridTextColumn Header="المستوي"/>
-                <DataGridTextColumn Header="عدد الطلاب"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Subject.Name}" Header="المادة"/>
+                <DataGridTextColumn Binding="{Binding Section.TypeOfSection}" Header="القسم"/>
+                <DataGridTextColumn Binding="{Binding Subject.Code}" Header="كود المادة"/>
+                <DataGridTextColumn Binding="{Binding Branch.Name}" Header="الشعبة"/>
+                <DataGridTextColumn Binding="{Binding Level.Name}" Header="المستوي"/>
+                <DataGridTextColumn Binding="{Binding NumberOfStudent}" Header="عدد الطلاب"/>
 
 
 
