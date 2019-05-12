@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Height="600" Width="1024" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <WindowChrome.WindowChrome>
-        <WindowChrome />
+
+        <WindowChrome CaptionHeight="0" />
+
         <!--CaptionHeight="0"بيتحط في ال windowchrome لو عايز اخليه ثابت -->
 
     </WindowChrome.WindowChrome>
@@ -224,13 +226,19 @@
 
             </Grid>
             <Grid Margin=" 0 88 0 0">
-                <Grid x:Name="gridShow" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,10" Width="764" Height="484">
+
+
+                <Grid x:Name="gridShow" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,-37,0,43" Width="764" Height="484">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="492*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                 </Grid>
-
+                <Rectangle Margin="0,461,0,-32">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{DynamicResource Color1}"/>
+                    </Rectangle.Fill>
+                </Rectangle>
 
             </Grid>
         </Grid>

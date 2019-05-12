@@ -55,11 +55,31 @@ namespace Astmara6Con
         }
 
 
+        public void cheak()
+        {
+           
+            List<Level> prelevelname = (from p in context.Levels
+                              where p.Name == TBNameLevels.Text
+                              select p).ToList();
 
+                if (prelevelname.Count > 0)
+                {
+                 lerror.Content = "لقد ادخلت هذا من قبل ";
+                 
+                }
+            else
+            {
+                BTNAdd.IsEnabled = true;
+            }
+
+          
+        }
 
 
         private void BTNAdd_Click_1(object sender, RoutedEventArgs e)
         {
+            lerror.Content="";
+            
             if (TBNameLevels.Text =="")
             {
                 MessageBox.Show("انت لم تدخل شيئا!!");
@@ -128,7 +148,10 @@ namespace Astmara6Con
 
                 MessageBox.Show("تم حذف الصف بنجاح");
             }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                         "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
 
         }
 
@@ -144,15 +167,18 @@ namespace Astmara6Con
 
                 MessageBox.Show("كل البيانات حذفت بنجاح");
             }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                        "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
 
 
         }
 
         private void TBNameLevels_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            int added = e.Changes.ElementAt(0).AddedLength;
-            
+            lerror.Content = "";
+            cheak();
         }
     }
 }

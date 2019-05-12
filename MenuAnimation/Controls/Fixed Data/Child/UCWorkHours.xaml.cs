@@ -98,7 +98,10 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
             }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                        "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
 
         }
 
@@ -110,7 +113,10 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
             }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                        "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
         }
     }
 }

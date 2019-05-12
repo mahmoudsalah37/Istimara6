@@ -111,8 +111,8 @@ namespace Astmara6Con.Controls
             }
             catch (Exception Ex)
             {
-                MessageBox.Show(Ex.Message);
-                return;
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
         }
 
@@ -145,7 +145,10 @@ namespace Astmara6Con.Controls
                 loadData();
                 MessageBox.Show("تم مسح كل البيانات");
             }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                        "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
         }
     }
 }

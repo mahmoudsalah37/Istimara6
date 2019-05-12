@@ -91,7 +91,10 @@ namespace Astmara6Con.Controls
 
                 MessageBox.Show("تم مسح العنصر بنجاح");
             }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                        "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
 
         }
 
@@ -106,7 +109,10 @@ namespace Astmara6Con.Controls
 
                 MessageBox.Show("تم مسح كل البيانات");
             }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                        "تـأكد من ارتباط البيانات بمعومات اخري");
+            }
         }
 
         private void BTNAdd_Click(object sender, RoutedEventArgs e)

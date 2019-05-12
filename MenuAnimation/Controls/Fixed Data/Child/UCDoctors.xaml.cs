@@ -119,21 +119,25 @@ namespace Astmara6Con.Controls
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                TeacherAndWorkHours teacherrow = DGTeachersView.SelectedItem as TeacherAndWorkHours;
+                Teacher Teachers = (from p in context.Teachers
+                                    where p.Id == teacherrow.Id
+                                    select p).Single();
+                Teachers.Name = teacherrow.Name;
+                Teachers.NickName = teacherrow.NickName;
+                context.SaveChanges();
+                loadData();
+                MessageBox.Show("تم تعديل الصف بنجاح");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأما الرجاء مراجعة البيانات ثم اعادة المحاولة ");
 
-            TeacherAndWorkHours teacherrow = DGTeachersView.SelectedItem as TeacherAndWorkHours ;
-            Teacher Teachers = (from p in context.Teachers
-                            where p.Id == teacherrow.Id
-                            select p).Single();
-            Teachers.Name = teacherrow.Name;
-            Teachers.NickName = teacherrow.NickName;
-            //Teachers.WorkHour = teacherrow.WorkHour;
-            context.SaveChanges();
-            loadData();
+            }
 
 
-           // MessageBox.Show("تم تعديل الصف بنجاح");
-
-            
         }
 
         private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
@@ -141,22 +145,37 @@ namespace Astmara6Con.Controls
             try
             {
 
-                Teacher teacherrow = DGTeachersView.SelectedItem as Teacher;
+                TeacherAndWorkHours teacherrow = DGTeachersView.SelectedItem as TeacherAndWorkHours;
 
                 Teacher Teachers = (from p in context.Teachers
                                     where p.Id == teacherrow.Id
                                     select p).Single();
+
                 context.Teachers.Remove(Teachers);
                 context.SaveChanges();
                 loadData();
 
                 MessageBox.Show("تم مسح العنصر بنجاح");
-            }
-            catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
         }
+                catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                    "تـأكد من انه غير مرتبط باي مادة  اولاً"); }
+}
 
         private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                context.Teachers.RemoveRange(context.Teachers);
+
+                context.SaveChanges();
+                loadData();
+
+                MessageBox.Show("تم مسح كل البيانات");
+            }
+            catch (Exception) {
+                MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
+                                      "تـأكد من انه لأ يوجد اي احد مرتبط باي مادة  اولاً");
+            }
 
         }
     }
