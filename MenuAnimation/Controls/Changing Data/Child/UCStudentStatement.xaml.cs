@@ -4,6 +4,7 @@ using System.Windows;
 using System.Linq;
 using System.Windows.Controls;
 using Astmara6.Model;
+using System;
 
 namespace Astmara6Con.Controls
 {
@@ -74,6 +75,14 @@ namespace Astmara6Con.Controls
             getBranches();
             getLevels();
             getSubjects();
+            loadData();
+        }
+
+        private void loadData()
+        {
+            var studentStatement = (from p in context.StudentStatments
+                                    select p).ToList();
+            DGStudentStatments.ItemsSource = studentStatement;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -113,7 +122,37 @@ namespace Astmara6Con.Controls
                 IdSubject = subject,
                 NumberOfStudent = numberStudents
             });
+            context.SaveChanges();
+            loadData();
+        }
 
+        private void BTNEdit_Click(object sender, RoutedEventArgs e)
+        {
+            StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
+            StudentStatment student = (from p in context.StudentStatments
+                                where p.Id == studentStatment.Id
+                                select p).Single();
+            student.NumberOfStudent = studentStatment.NumberOfStudent;
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDelete_Click(object sender, RoutedEventArgs e)
+        {
+            StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
+            StudentStatment student = (from p in context.StudentStatments
+                                       where p.Id == studentStatment.Id
+                                       select p).Single();
+            context.StudentStatments.Remove(student);
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
+        {
+            context.StudentStatments.RemoveRange(context.StudentStatments);
+            context.SaveChanges();
+            loadData();
         }
     }
 }

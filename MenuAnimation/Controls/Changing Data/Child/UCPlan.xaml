@@ -89,11 +89,12 @@
         </Button>
         <DataGrid Name="DGPlanShow" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191"  Margin="93,297,0,-4" VerticalAlignment="Top" Width="653" Grid.ColumnSpan="2" FlowDirection="RightToLeft">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="              الاسم الدكتور             "/>
-                <DataGridTextColumn Header="        الاسم المعيد             "/>
-                <DataGridTextColumn Header="كود المادة "/>
-                <DataGridTextColumn Header="     الشعبة       "/>
-                <DataGridTextColumn Header="المستوي"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Teacher.Name}" Header="الاسم الدكتور" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Subject.Code}" Header="كود المادة " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Subject.Name}" Header="ألمادة" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Branch.Name}" Header="الشعبة" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Level.Name}" Header="المستوي" IsReadOnly="True"/>
 
 
 
@@ -111,5 +112,8 @@
             </ComboBox.BorderBrush>
 
         </ComboBox>
+        <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="60.6,306,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.Column="1" Visibility="Hidden"/>
+        <Button x:Name="BTNDelete" Content="حذف" HorizontalAlignment="Left" Margin="221,306,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNDelete_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.ColumnSpan="2"/>
+        <Button x:Name="BTNDeleteAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="114,306,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="BTNDeleteAll_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
     </Grid>
 </UserControl>

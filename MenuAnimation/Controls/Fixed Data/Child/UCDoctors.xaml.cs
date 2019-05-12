@@ -177,6 +177,10 @@ namespace Astmara6Con.Controls
                                       "تـأكد من انه لأ يوجد اي احد مرتبط باي مادة  اولاً");
             }
 
+
+            context.Teachers.RemoveRange(context.Teachers);
+            context.SaveChanges();
+            loadData();
         }
     }
 }

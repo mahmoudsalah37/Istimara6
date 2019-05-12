@@ -87,11 +87,14 @@ namespace Astmara6Con.Controls
         }
         public void loadData()
         {
-
             var subjectTeachers = (from p in context.SubjectTeachers
                           select p).ToList();
-
             DGPlanShow.ItemsSource = subjectTeachers;
+            foreach(var subjectTeacher in subjectTeachers)
+            {
+                
+            }
+            
         }
         public UCPlan()
         {
@@ -142,6 +145,35 @@ namespace Astmara6Con.Controls
                 IdSubject = subject
             }
             );
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNEdit_Click(object sender, RoutedEventArgs e)
+        {
+            SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+            SubjectTeacher subject = (from p in context.SubjectTeachers
+                                      where p.Id == subjectTeacher.Id
+                                       select p).Single();
+            //subject.NumberOfStudent = subjectTeacher.NumberOfStudent;
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDelete_Click(object sender, RoutedEventArgs e)
+        {
+            SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+            SubjectTeacher subject = (from p in context.SubjectTeachers
+                                      where p.Id == subjectTeacher.Id
+                                       select p).Single();
+            context.SubjectTeachers.Remove(subject);
+            context.SaveChanges();
+            loadData();
+        }
+
+        private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
+        {
+            context.SubjectTeachers.RemoveRange(context.SubjectTeachers);
             context.SaveChanges();
             loadData();
         }
