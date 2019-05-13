@@ -106,15 +106,26 @@ namespace Astmara6Con.Controls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string name = TBName.Text;
-            string nickname = TBNickName.Text;
-            ComboboxItem CBIRank = CBRank.SelectedItem as ComboboxItem;
-            int rank = (int)CBIRank.Value;
-            ComboboxItem CBIDepartment = CBDepartment.SelectedItem as ComboboxItem;
-            int department = (int)CBIDepartment.Value;
-            context.Teachers.Add(new Teacher(name,nickname,rank,department));
-            context.SaveChanges();
-            loadData();
+            try
+            {
+                string name = TBName.Text;
+                string nickname = TBNickName.Text;
+                ComboboxItem CBIRank = CBRank.SelectedItem as ComboboxItem;
+                int rank = (int)CBIRank.Value;
+                ComboboxItem CBIDepartment = CBDepartment.SelectedItem as ComboboxItem;
+                int department = (int)CBIDepartment.Value;
+                context.Teachers.Add(new Teacher(name, nickname, rank, department));
+                context.SaveChanges();
+                loadData();
+                TBName.Text = "";
+                TBNickName.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
+
         }
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
@@ -232,6 +243,7 @@ namespace Astmara6Con.Controls
         private void TBName_TextChanged(object sender, TextChangedEventArgs e)
         {
             lerrorcou_code.Content = "";
+            lerrorcou_name.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
             Boolean r1= checkName(length);
@@ -250,12 +262,11 @@ namespace Astmara6Con.Controls
         public void TBNickName_TextChanged(object sender, TextChangedEventArgs e)
         {
             lerrorcou_code.Content = "";
+            lerrorcou_name.Content = "";
             TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            checkNickName(length);
-            
-            int r = TBName.Text.Length;
+            int length = objTextBox.Text.Length;           
             Boolean r2 = checkNickName(length);
+            int r = TBName.Text.Length;
             Boolean r1 = checkName(r);
             if (r1 & r2)
             {

@@ -48,21 +48,31 @@ namespace Astmara6Con.Controls
         {
             Form.gridShow.Children.Clear();
             Form.gridShow.Children.Add(new UCDoctors());
-            STRNamePage = "الدكاترة";
+            STRNamePage = "هيئة التدريس";
             Form.ChFormName(STRNamePage);
         }
 
         private void BTNAdd_Click(object sender, RoutedEventArgs e)
         {
-            context.WorkHours.Add(new WorkHour()
+            try
+            {
+                context.WorkHours.Add(new WorkHour()
                 {
                     Rank = TBRank.Text,
                     Quorum = int.Parse(TBLegalMonument.Text),
                     AcademicOrVirtual = RBPaper.IsChecked,
                 }
-            );
-            context.SaveChanges();
-            loadData();
+                );
+                context.SaveChanges();
+                loadData();
+                TBRank.Text = "";
+                TBLegalMonument.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
         }
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
@@ -144,7 +154,7 @@ namespace Astmara6Con.Controls
    
         private void TBRank_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lerrorcou_code.Content = "";
+            lerrorcou_code.Content = "ادخل البيانات";
             lerrorcou_name.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;

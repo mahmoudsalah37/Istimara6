@@ -82,24 +82,32 @@ namespace Astmara6Con
 
         private void BTNAdd_Click_1(object sender, RoutedEventArgs e)
         {
-            lerror.Content="";
-            
-            if (TBNameLevels.Text =="")
+            try
             {
-                MessageBox.Show("انت لم تدخل شيئا!!");
+                lerror.Content = "";
 
-            }
-            else
-            {
-                context.Levels.Add(new Level()
+                if (TBNameLevels.Text == "")
                 {
-                    Name = TBNameLevels.Text,
-                    
-                });
-                context.SaveChanges();
-                loadData();
-                MessageBox.Show("تم حفظ العملية بنجاح");
-                TBNameLevels.Text = "";
+                    MessageBox.Show("انت لم تدخل شيئا!!");
+
+                }
+                else
+                {
+                    context.Levels.Add(new Level()
+                    {
+                        Name = TBNameLevels.Text,
+
+                    });
+                    context.SaveChanges();
+                    loadData();
+                    MessageBox.Show("تم حفظ العملية بنجاح");
+                    TBNameLevels.Text = "";
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
             }
         }
 

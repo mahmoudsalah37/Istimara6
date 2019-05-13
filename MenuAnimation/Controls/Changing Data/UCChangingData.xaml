@@ -44,22 +44,22 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>-->
-        <TextBlock HorizontalAlignment="Left" Margin="466,218,0,0" TextWrapping="Wrap" Text="توزيع المواد" VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="388,275,0,0" TextWrapping="Wrap" Text="خطة الترم" VerticalAlignment="Top">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </TextBlock.Foreground>
         </TextBlock>
 
-        <Button x:Name="BTNSubjectsChoice" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="451,124,0,0" Height="112" Width="94" Click="BTNSubjectsChoice_Click">
+        <Button x:Name="BTNSubjectsChoice" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="373,181,0,0" Height="112" Width="94" Click="BTNSubjectsChoice_Click">
             <materialDesign:PackIcon Kind="LeadPencil" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="273,218,0,0" TextWrapping="Wrap" Text="بيان الطلاب" VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="233,275,0,0" TextWrapping="Wrap" Text="بيان الطلاب" VerticalAlignment="Top">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </TextBlock.Foreground>
         </TextBlock>
 
-        <Button x:Name="BTNStudentStatement" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="242,124,0,0" Height="114" Width="111" Click="BTNStudentStatement_Click">
+        <Button x:Name="BTNStudentStatement" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="202,181,0,0" Height="114" Width="111" Click="BTNStudentStatement_Click">
 
             <materialDesign:PackIcon Kind="HumanChild" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
         </Button>
