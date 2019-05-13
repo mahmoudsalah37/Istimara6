@@ -48,7 +48,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="DGMajorsView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource branchesViewSource}}" Margin="336,284,10,0" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="BranchesDataGrid_SelectionChanged" BindingGroup="{Binding Id, Mode=OneWay}">
+        <DataGrid x:Name="DGMajorsView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource branchesViewSource}}" Margin="523,284,10,0" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="BranchesDataGrid_SelectionChanged" BindingGroup="{Binding Id, Mode=OneWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Visibility="Hidden" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="idSectionColumn" Binding="{Binding IdSection}" Header="Id Section" Visibility="Hidden" Width="SizeToHeader"/>
@@ -58,9 +58,9 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="451,294,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
-        <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="522,294,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
-        <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="348,294,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
+        <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="451,317,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
+        <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="451,284,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
+        <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="419,350,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <ComboBox x:Name="CBNameDepartment"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم"  Style="{StaticResource MaterialDesignFloatingHintComboBox}"  IsTextSearchCaseSensitive="True"    DisplayMemberPath="TypeOfSection" ItemsSource="{Binding TypeOfSection}" Margin="536,216,93,228" SelectedValuePath="Id" RenderTransformOrigin="1.105,0.5" SelectionChanged="CBNameDepartment_SelectionChanged_1"  >
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>

@@ -128,48 +128,72 @@ namespace Astmara6Con.Controls
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            ComboboxItem CBIDepartment = CBBRanches.SelectedItem as ComboboxItem;
-            int department = (int)CBIDepartment.Value;
-            ComboboxItem CBIDoctor = CBDoctorsName.SelectedItem as ComboboxItem;
-            int doctor = (int)CBIDoctor.Value;
-            //ComboboxItem CBIAssistant = CBAssistantsName.SelectedItem as ComboboxItem;
-            //int assistant = (int)CBIAssistant.Value;
-            ComboboxItem CBISubject = CBSubjects.SelectedItem as ComboboxItem;
-            ComboboxItem CBILevel = CBLevels.SelectedItem as ComboboxItem;
-            int subject = (int)CBISubject.Value;
-            int level = (int)CBILevel.Value;
-            context.SubjectTeachers.Add(new SubjectTeacher()
+            try
             {
-                IdBranch = department,
-                IdTeacher = doctor,
-                IdLevel = level,
-                IdSubject = subject
+                ComboboxItem CBIDepartment = CBBRanches.SelectedItem as ComboboxItem;
+                int department = (int)CBIDepartment.Value;
+                ComboboxItem CBIDoctor = CBDoctorsName.SelectedItem as ComboboxItem;
+                int doctor = (int)CBIDoctor.Value;
+                //ComboboxItem CBIAssistant = CBAssistantsName.SelectedItem as ComboboxItem;
+                //int assistant = (int)CBIAssistant.Value;
+                ComboboxItem CBISubject = CBSubjects.SelectedItem as ComboboxItem;
+                ComboboxItem CBILevel = CBLevels.SelectedItem as ComboboxItem;
+                int subject = (int)CBISubject.Value;
+                int level = (int)CBILevel.Value;
+                context.SubjectTeachers.Add(new SubjectTeacher()
+                {
+                    IdBranch = department,
+                    IdTeacher = doctor,
+                    IdLevel = level,
+                    IdSubject = subject
+                }
+                );
+                context.SaveChanges();
+                loadData();
             }
-            );
-            context.SaveChanges();
-            loadData();
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
         }
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
         {
-            SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
-            SubjectTeacher subject = (from p in context.SubjectTeachers
-                                      where p.Id == subjectTeacher.Id
-                                       select p).Single();
-            //subject.NumberOfStudent = subjectTeacher.NumberOfStudent;
-            context.SaveChanges();
-            loadData();
+            try
+            {
+                SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+                SubjectTeacher subject = (from p in context.SubjectTeachers
+                                          where p.Id == subjectTeacher.Id
+                                          select p).Single();
+                //subject.NumberOfStudent = subjectTeacher.NumberOfStudent;
+                context.SaveChanges();
+                loadData();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            };
         }
 
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
         {
-            SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
-            SubjectTeacher subject = (from p in context.SubjectTeachers
-                                      where p.Id == subjectTeacher.Id
-                                       select p).Single();
-            context.SubjectTeachers.Remove(subject);
-            context.SaveChanges();
-            loadData();
+            try
+            {
+                SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+                SubjectTeacher subject = (from p in context.SubjectTeachers
+                                          where p.Id == subjectTeacher.Id
+                                          select p).Single();
+                context.SubjectTeachers.Remove(subject);
+                context.SaveChanges();
+                loadData();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
         }
 
         private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)

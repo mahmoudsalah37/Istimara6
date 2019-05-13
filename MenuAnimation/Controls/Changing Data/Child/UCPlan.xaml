@@ -23,18 +23,18 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <ComboBox Margin="295.6,204,0,0" x:Name="CBSubjects" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" Grid.Column="1" RenderTransformOrigin="0.524,0.528" SelectionChanged="CBSubjects_SelectionChanged">
+        <ComboBox Margin="295.6,204,0,0" x:Name="CBSubjects" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" Grid.Column="1" RenderTransformOrigin="0.524,0.528" SelectionChanged="CBSubjects_SelectionChanged">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <ComboBox Margin="339,134,0,0" x:Name="CBBRanches" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Width="116"  SelectedIndex="0" Grid.Column="1" SelectionChanged="CBDepartment_SelectionChanged">
+        <ComboBox Margin="339,134,0,0" x:Name="CBBRanches" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Width="116"  SelectedIndex="-1" Grid.Column="1" SelectionChanged="CBDepartment_SelectionChanged">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
 
         </ComboBox>
-        <ComboBox Margin="92,204,326,0" x:Name="CBLevels" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" RenderTransformOrigin="0.246,0.438" Grid.Column="1" SelectionChanged="CBLevels_SelectionChanged">
+        <ComboBox Margin="92,204,326,0" x:Name="CBLevels" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" RenderTransformOrigin="0.246,0.438" Grid.Column="1" SelectionChanged="CBLevels_SelectionChanged">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Color2}"/>
             </ComboBox.BorderBrush>
@@ -72,7 +72,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>
         </Label>
-        <Button x:Name="btnAdd" Content="اضافة" IsEnabled="False" HorizontalAlignment="Left" Margin="0,297,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BtnAdd_Click">
+        <Button x:Name="btnAdd" Content="اضافة" IsEnabled="False" HorizontalAlignment="Left" Margin="216,249,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BtnAdd_Click" Grid.ColumnSpan="2">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
@@ -87,7 +87,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <DataGrid Name="DGPlanShow" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191"  Margin="93,297,0,-4" VerticalAlignment="Top" Width="653" Grid.ColumnSpan="2" FlowDirection="RightToLeft">
+        <DataGrid Name="DGPlanShow" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191"  Margin="62,297,0,-4" VerticalAlignment="Top" Width="457" FlowDirection="RightToLeft" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Teacher.Name}" Header="الاسم الدكتور" IsReadOnly="True"/>
@@ -113,8 +113,8 @@
 
         </ComboBox>
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="60.6,306,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.Column="1" Visibility="Hidden"/>
-        <Button x:Name="BTNDelete" Content="حذف" HorizontalAlignment="Left" Margin="221,306,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNDelete_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.ColumnSpan="2"/>
-        <Button x:Name="BTNDeleteAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="114,306,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="BTNDeleteAll_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
+        <Button x:Name="BTNDelete" Content="حذف" HorizontalAlignment="Left" Margin="216,297,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNDelete_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.ColumnSpan="2"/>
+        <Button x:Name="BTNDeleteAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="180,330,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="BTNDeleteAll_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.ColumnSpan="2"/>
         <Label Name="LErrorBranch" Content=""  Grid.Column="1" HorizontalAlignment="Left" Margin="338.6,173,0,0" VerticalAlignment="Top" Width="116" Height="26" Foreground="#DDFF0B0B"/>
         <Label x:Name="LErrorDoctor" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="80.6,172,0,0" VerticalAlignment="Top" Width="162" Height="32" Foreground="#DDFF0B0B"/>
         <Label x:Name="LErrorLevel" Grid.Column="1" HorizontalAlignment="Left" Margin="34.6,242,0,0" VerticalAlignment="Top" Width="159" Height="35" Foreground="#DDFF0B0B"/>
