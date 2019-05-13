@@ -64,15 +64,18 @@ namespace Astmara6Con
 
             if (prelevelname.Count > 0)
             {
-                lerror.Content = "لقد ادخلت هذا من قبل ";
                 BTNAdd.IsEnabled = false;
+                lerror.Content = "لقد ادخلت هذا من قبل ";
             }
             else
             {
                 BTNAdd.IsEnabled = true;
             }
             if (length < 1)
+            {
                 BTNAdd.IsEnabled = false;
+                lerror.Content = "ادخل بيانات";
+            }
 
         }
 

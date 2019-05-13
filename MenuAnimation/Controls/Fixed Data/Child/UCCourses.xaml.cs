@@ -74,8 +74,8 @@ namespace Astmara6Con.Controls
 
                 Exprement = Expremente,
                 Virtual = Virtuale,
-                TotalHours = TotalHour
-                
+                TotalHours = Academee + Expremente + Virtuale
+
             });
             context.SaveChanges();
             loadData();
@@ -160,7 +160,7 @@ namespace Astmara6Con.Controls
 
             if (precoucode.Count > 0)
             {
-                lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
+                //lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
                 BTNAdd.IsEnabled = false;
             }
             else
@@ -174,7 +174,7 @@ namespace Astmara6Con.Controls
 
         private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lerrorcou_code.Content = "";
+            //lerrorcou_code.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
             checkcode(length);
@@ -188,7 +188,7 @@ namespace Astmara6Con.Controls
 
             if (precoucode.Count > 0)
             {
-                lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
+                //lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
                 BTNAdd.IsEnabled = false;
             }
             else
@@ -197,14 +197,14 @@ namespace Astmara6Con.Controls
             }
             if (length < 1)
             {
-                lerrorcou_name.Content = "لم تكتب شئ ";
+                //lerrorcou_name.Content = "لم تكتب شئ ";
                 BTNAdd.IsEnabled = false;
             }
 
         }
         private void TBNameCourse_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lerrorcou_name.Content = "";
+           // lerrorcou_name.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
             checkName(length);
