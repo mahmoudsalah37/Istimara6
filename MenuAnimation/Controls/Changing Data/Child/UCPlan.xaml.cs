@@ -22,12 +22,12 @@ namespace Astmara6Con.Controls
 
         private void getDepartmwents()
         {
-            var listBranches = (from p in context.Branches
+            var listBranches = (from p in context.Sections
                                  select p).ToList();
             foreach (var branch in listBranches)
             {
                 item = new ComboboxItem();
-                item.Text = branch.Name;
+                item.Text = branch.TypeOfSection;
                 item.Value = branch.Id;
                 CBBRanches.Items.Add(item);
             }
