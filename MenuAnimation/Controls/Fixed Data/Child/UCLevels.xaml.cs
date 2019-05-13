@@ -165,10 +165,8 @@ namespace Astmara6Con
             try
             {
                 context.Levels.RemoveRange(context.Levels);
-
                 context.SaveChanges();
                 loadData();
-
                 MessageBox.Show("كل البيانات حذفت بنجاح");
             }
             catch (Exception) {
