@@ -203,6 +203,7 @@ namespace Astmara6Con.Controls
         private void TBNameMajors_TextChanged(object sender, TextChangedEventArgs e)
         {
             lerror.Content = "";
+            lerror1.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
             if (check(CBNameDepartment.Text.Length, CBNameDepartment.Text) && checkMajors(length))
@@ -211,8 +212,9 @@ namespace Astmara6Con.Controls
                 BTNAdd.IsEnabled = false;
         }
 
-        private void CBNameDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CBNameDepartment_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+            lerror.Content = "";
             lerror1.Content = "";
             if (checkMajors(TBNameMajors.Text.Length))
                 BTNAdd.IsEnabled = true;

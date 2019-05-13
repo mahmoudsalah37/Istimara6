@@ -28,7 +28,7 @@ namespace Astmara6Con.Controls
         private void BTNDepartment_Click(object sender, RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCMajors());
+            Form.gridShow.Children.Add(new UCDepartment());
             STRNamePage = "الأقسام";
             Form.ChFormName(STRNamePage);
         }

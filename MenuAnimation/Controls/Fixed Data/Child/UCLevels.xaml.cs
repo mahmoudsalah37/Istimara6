@@ -64,15 +64,18 @@ namespace Astmara6Con
 
             if (prelevelname.Count > 0)
             {
-                lerror.Content = "لقد ادخلت هذا من قبل ";
                 BTNAdd.IsEnabled = false;
+                lerror.Content = "لقد ادخلت هذا من قبل ";
             }
             else
             {
                 BTNAdd.IsEnabled = true;
             }
             if (length < 1)
+            {
                 BTNAdd.IsEnabled = false;
+                lerror.Content = "ادخل بيانات";
+            }
 
         }
 
@@ -162,10 +165,8 @@ namespace Astmara6Con
             try
             {
                 context.Levels.RemoveRange(context.Levels);
-
                 context.SaveChanges();
                 loadData();
-
                 MessageBox.Show("كل البيانات حذفت بنجاح");
             }
             catch (Exception) {
