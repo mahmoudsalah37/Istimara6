@@ -32,7 +32,7 @@ namespace MenuAnimado1.Controls
         {
             Form.gridShow.Children.Clear();
             Form.gridShow.Children.Add(new UCPlan());
-            STRNamePage = "نوزيع البيانات";
+            STRNamePage = "خطة الترم ";
             Form.ChFormName(STRNamePage);
         }
     }

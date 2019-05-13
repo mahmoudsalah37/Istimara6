@@ -91,7 +91,7 @@ namespace Astmara6Con.Controls
 
             Form.gridShow.Children.Clear();
             Form.gridShow.Children.Add(new UCPlan());
-            STRNamePage = "الخطة";
+            STRNamePage = "الخطة الترم";
             Form.ChFormName(STRNamePage);
 
         }

@@ -61,16 +61,8 @@ namespace Astmara6Con.Controls
         {
             Form.gridShow.Children.Clear();
             Form.gridShow.Children.Add(new UCDoctors());
-            STRNamePage = "الدكاترة";
+            STRNamePage = "هيئةالتدريس";
             Form.ChFormName(STRNamePage);
-        }
-
-        private void BTNAssistant_Click(object sender, RoutedEventArgs e)
-        {
-            //Form.gridShow.Children.Clear();
-            //Form.gridShow.Children.Add(new UCAssistant());
-            //STRNamePage = "السماعدين";
-            //Form.ChFormName(STRNamePage);
         }
     }
 }

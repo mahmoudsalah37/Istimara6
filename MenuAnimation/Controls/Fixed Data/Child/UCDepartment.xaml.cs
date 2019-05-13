@@ -137,14 +137,22 @@ namespace Astmara6Con.Controls
 
         private void BTNAdd_Click(object sender, RoutedEventArgs e)
         {
-            context.Sections.Add(new Section()
+            try
             {
-                TypeOfSection = TBNameDepartment.Text
-            });
-            context.SaveChanges();
-            loadData();
-            MessageBox.Show("تم حفظ العملية بنجاح");
-            TBNameDepartment.Text = "";
+                context.Sections.Add(new Section()
+                {
+                    TypeOfSection = TBNameDepartment.Text
+                });
+                context.SaveChanges();
+                loadData();
+                MessageBox.Show("تم حفظ العملية بنجاح");
+                TBNameDepartment.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
         }
 
         private void DGDepartmentView_SelectionChanged(object sender, SelectionChangedEventArgs e)

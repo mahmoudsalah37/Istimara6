@@ -62,16 +62,16 @@
         </TextBlock>
 
         <Button x:Name="BTNDepartment" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="275,124,0,0" Click="BTNDepartment_Click" Height="112" Width="94">
-            <materialDesign:PackIcon Kind="Class" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+            <materialDesign:PackIcon Kind="Square" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="308,340,0,0" TextWrapping="Wrap" Text="الدكاترة" VerticalAlignment="Top" OpacityMask="Black">
+        <TextBlock HorizontalAlignment="Left" Margin="288,340,0,0" TextWrapping="Wrap" Text="هيئة التدريس" VerticalAlignment="Top" OpacityMask="Black">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </TextBlock.Foreground>
         </TextBlock>
 
         <Button x:Name="BTNDoctors" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="275,244,0,0" Click="BTNDoctors_Click" Height="112" Width="94">
-            <materialDesign:PackIcon Kind="Doctor" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+            <materialDesign:PackIcon Kind="Teacher" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="186,220,0,0" TextWrapping="Wrap" Text="المستويات" VerticalAlignment="Top">
             <TextBlock.Foreground>
@@ -90,7 +90,7 @@
         </TextBlock>
 
         <Button x:Name="BTNMajors" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="374,124,0,0" Click="BTNMajors_Click" Height="112" Width="102">
-            <materialDesign:PackIcon Kind="People" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+            <materialDesign:PackIcon Kind="SquareInc" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="522,220,0,0" TextWrapping="Wrap" Text="المواد" VerticalAlignment="Top">
             <TextBlock.Foreground>

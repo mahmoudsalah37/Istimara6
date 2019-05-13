@@ -18,8 +18,8 @@ namespace Astmara6Con.Controls
     public partial class UCCourses : UserControl
     {
         private int? TotalHour;
-        private int? Expremente =null;
-        private int? Virtuale=null;
+        private int? Expremente;
+        private int? Virtuale;
         private string codee;
         private int? Academee;
         private string STRNamePage;
@@ -63,24 +63,55 @@ namespace Astmara6Con.Controls
         
         private void BTNAdd_Click(object sender, RoutedEventArgs e)
         {
-             codee = TBCode.Text;
-              Academee = int.Parse(TBPaper.Text);
-            
-            context.Subjects.Add(new Subject()
+            try
             {
-                Code = codee,
-                Name = TBNameCourse.Text,
-                Academic = Academee,
+                codee = TBCode.Text;
+                Academee = int.Parse(TBPaper.Text);
+                int explenght = TBExprement.Text.Length;
+                if (explenght < 1)
+                {
+                    Expremente = 0;
 
-                Exprement = Expremente,
-                Virtual = Virtuale,
-                TotalHours = Academee + Expremente + Virtuale
+                }
+                else
+                {
+                    Expremente = int.Parse(TBExprement.Text);
+                }
+                int virlength = TBVirtual.Text.Length;
+                if (virlength < 1)
+                {
+                    Virtuale = 0;
+                }
+                else
+                {
+                    Virtuale = int.Parse(TBVirtual.Text);
+                }
+                context.Subjects.Add(new Subject()
+                {
+                    Code = codee,
+                    Name = TBNameCourse.Text,
+                    Academic = Academee,
 
-            });
-            context.SaveChanges();
-            loadData();
-            MessageBox.Show("تم حفظ العملية بنجاح");
-            
+                    Exprement = Expremente,
+                    Virtual = Virtuale,
+                    TotalHours = Academee + Expremente + Virtuale
+
+                });
+                context.SaveChanges();
+                loadData();
+                MessageBox.Show("تم حفظ العملية بنجاح");
+                TBCode.Text = "";
+                TBNameCourse.Text = "";
+                TBPaper.Text = "";
+                TBVirtual.Text = "";
+                TBExprement.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
+
         }
 
 
@@ -151,94 +182,155 @@ namespace Astmara6Con.Controls
                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
         }
-        public void checkcode(int length)
+        public Boolean checkcode(int length)
         {
-
+            Boolean result = true;
             List<Subject> precoucode = (from p in context.Subjects
                                         where p.Code == TBCode.Text
                                         select p).ToList();
 
             if (precoucode.Count > 0)
             {
-                //lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
-                BTNAdd.IsEnabled = false;
+                LErrorCode.Content = "لقد ادخلت هذا من قبل ";
+                result = false;
             }
             else
             {
-                BTNAdd.IsEnabled = true;
+                result = true;
             }
-            if (length < 1)
-                BTNAdd.IsEnabled = false;
-
+            if (length < 1) {
+                LErrorCode.Content = "لم تدخل شئ";
+                result= false;
+            }
+            return result;
         }
-
-        private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
+        public Boolean checkName(int length)
         {
-            //lerrorcou_code.Content = "";
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            checkcode(length);
-        }
-        public void checkName(int length)
-        {
-
+            Boolean result = true;
             List<Subject> precoucode = (from p in context.Subjects
                                         where p.Name == TBNameCourse.Text
                                         select p).ToList();
 
             if (precoucode.Count > 0)
             {
-                //lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
-                BTNAdd.IsEnabled = false;
+                LErrorCOurse.Content = "لقد ادخلت هذا من قبل ";
+                result = false;
             }
             else
             {
-                BTNAdd.IsEnabled = true;
+               result= true;
             }
             if (length < 1)
             {
-                //lerrorcou_name.Content = "لم تكتب شئ ";
-                BTNAdd.IsEnabled = false;
+                LErrorCOurse.Content = "لم تكتب شئ ";
+                result = false;
             }
-
+            return result;
         }
+        private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            LErrorCode.Content = "";
+            LErrorCOurse.Content = "";
+            cheakover();
+        
+        }
+    
         private void TBNameCourse_TextChanged(object sender, TextChangedEventArgs e)
         {
-           // lerrorcou_name.Content = "";
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            checkName(length);
+            LErrorCode.Content = "";
+            LErrorCOurse.Content = "";
+            cheakover();
+       
         }
-
-        private void TBPaper_TextChanged(object sender, TextChangedEventArgs e)
+        public void cheakover ( )
         {
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            if (length < 1)
+            int codelength = TBCode.Text.Length;
+            int namelenght = TBNameCourse.Text.Length;
+            int paperlength = TBPaper.Text.Length;
+            int virlength = TBVirtual.Text.Length;
+            int explength = TBExprement.Text.Length;
+            Boolean checkCode = checkcode(codelength);
+            Boolean checkname = checkName(namelenght);
+            Boolean cheakpaper = true;
+            Boolean checkVirtual = true;
+            Boolean checkExp = true;
+            if (paperlength < 1)
+            {
+                cheakpaper = false;
+
+            }
+            else
+            {
+                cheakpaper = true;
+            }
+            if (virlength < 1)
+            {
+                checkVirtual = true;
+
+            }
+            else
+            {
+                checkVirtual = false;
+            }
+            if (explength < 1)
+            {
+                checkExp = true;
+            }
+            else
+            {
+                checkExp = false;
+            }
+            if (cheakpaper == false)
+            {
+                LErrorPaper.Content = "لم تدخل شئ";
+
+            }
+            else
+            {
+                LErrorPaper.Content = "";
+            }
+            if (checkVirtual & checkExp )
             {
                 BTNAdd.IsEnabled = false;
+                LErrorVirtual.Content = "لم تدخل شئ";
+                LErrorExprement.Content = "لم تدخل شئ";
             }
+            else if (((checkVirtual || checkExp)&cheakpaper)&(checkname&checkCode))
+            {
+                LErrorPaper.Content = "";
+                LErrorVirtual.Content = "";
+                LErrorExprement.Content = "";
+                BTNAdd.IsEnabled = true;
+
+
+            }
+            else if (checkVirtual==false & checkExp==false)
+            {
+                BTNAdd.IsEnabled = false;
+                LErrorVirtual.Content = "افرغ احدهما";
+                LErrorExprement.Content = "افرغ احدهما";
+            }
+
+        }
+        private void TBPaper_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            cheakover();
+          
 
         }
 
         private void TBVirtual_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            if (length < 1)
-            {
-                BTNAdd.IsEnabled = false;
-            }
+            cheakover();
+            
+            
+
         }
 
         private void TBExprement_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            if (length < 1)
-            {
-                BTNAdd.IsEnabled = false;
-            }
+            cheakover();
+           
         }
     }
 }

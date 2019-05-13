@@ -78,7 +78,16 @@ namespace Astmara6Con.Controls
 
         private void BTNAdd_Click(object sender, RoutedEventArgs e)
         {
-            TakeDataFromCombo();
+            try
+            {
+                TakeDataFromCombo();
+                TBNameMajors.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
 
         }
 
