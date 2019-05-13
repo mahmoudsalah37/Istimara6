@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Controls;
 using Astmara6.Model;
 using System;
+using System.Collections.Generic;
 
 namespace Astmara6Con.Controls
 {
@@ -27,7 +28,7 @@ namespace Astmara6Con.Controls
                 item = new ComboboxItem();
                 item.Text = branch.Name;
                 item.Value = branch.Id;
-                CBDepartment.Items.Add(item);
+                CBDepartments.Items.Add(item);
             }
         }
         private void getSubjects()
@@ -39,7 +40,7 @@ namespace Astmara6Con.Controls
                 item = new ComboboxItem();
                 item.Text = subject.Name;
                 item.Value = subject.Id;
-                CBSubject.Items.Add(item);
+                CBSubjects.Items.Add(item);
             }
         }
         private void getLevels()
@@ -51,7 +52,7 @@ namespace Astmara6Con.Controls
                 item = new ComboboxItem();
                 item.Text = level.Name;
                 item.Value = level.Id;
-                CBLevel.Items.Add(item);
+                CBLevels.Items.Add(item);
             }
         }
 
@@ -64,7 +65,7 @@ namespace Astmara6Con.Controls
                 item = new ComboboxItem();
                 item.Text = branch.Name;
                 item.Value = branch.Id;
-                CBBranch.Items.Add(item);
+                CBBranches.Items.Add(item);
             }
         }
 
@@ -107,15 +108,15 @@ namespace Astmara6Con.Controls
 
         private void BTNAdd_Click(object sender, RoutedEventArgs e)
         {
-            ComboboxItem CBIDepartment = CBDepartment.SelectedItem as ComboboxItem;
+            ComboboxItem CBIDepartment = CBDepartments.SelectedItem as ComboboxItem;
             int department = (int)CBIDepartment.Value;
-            ComboboxItem CBIBranch = CBDepartment.SelectedItem as ComboboxItem;
+            ComboboxItem CBIBranch = CBBranches.SelectedItem as ComboboxItem;
             int branch = (int)CBIBranch.Value;
-            ComboboxItem CBILevel = CBDepartment.SelectedItem as ComboboxItem;
+            ComboboxItem CBILevel = CBLevels.SelectedItem as ComboboxItem;
             int level = (int)CBILevel.Value;
-            ComboboxItem CBISubject = CBDepartment.SelectedItem as ComboboxItem;
+            ComboboxItem CBISubject = CBSubjects.SelectedItem as ComboboxItem;
             int subject = (int)CBISubject.Value;
-            int numberStudents = int.Parse(CBNumberStudents.Text);
+            int numberStudents = int.Parse(TBNumberStudents.Text);
             context.StudentStatments.Add(new StudentStatment() {
                 IdBranch = branch,
                 IdLevel = level,
@@ -153,6 +154,219 @@ namespace Astmara6Con.Controls
             context.StudentStatments.RemoveRange(context.StudentStatments);
             context.SaveChanges();
             loadData();
+        }
+
+        private bool checkBranch()
+        {
+            ComboboxItem item = CBDepartments.SelectedItem as ComboboxItem;
+            int id;
+            if (item != null)
+                id = (int)item.Value;
+            else
+            {
+                LErrorBranch.Content = "برجاء الاختيار من القائمه";
+                return false;
+            }
+            List<Branch> listBranches = (from p in context.Branches
+                                         where p.Id == id
+                                         select p).ToList();
+            if (listBranches.Count > 0)
+            {
+                LErrorBranch.Content = "";
+                return true;
+            }
+            else
+            {
+                LErrorBranch.Content = "برجاء الاختيارمن القائمه";
+                return false;
+            }
+        }
+
+        private bool checkSection()
+        {
+            ComboboxItem item = CBDepartments.SelectedItem as ComboboxItem;
+            int id;
+            if (item != null)
+                id = (int)item.Value;
+            else
+            {
+                LErrorSection.Content = "برجاء الاختيار من القائمه";
+                return false;
+            }
+            List<Section> listSections = (from p in context.Sections
+                                         where p.Id == id
+                                         select p).ToList();
+            if (listSections.Count > 0)
+            {
+                LErrorSection.Content = "";
+                return true;
+            }
+            else
+            {
+                LErrorSection.Content = "برجاء الاختيارمن القائمه";
+                return false;
+            }
+        }
+        private bool checkSubject()
+        {
+            ComboboxItem item = CBSubjects.SelectedItem as ComboboxItem;
+            int id;
+            if (item != null)
+                id = (int)item.Value;
+            else
+            {
+                LErrorSubject.Content = "برجاء الاختيار من القائمه";
+                return false;
+            }
+            List<Subject> listSubjects = (from p in context.Subjects
+                                          where p.Id == id
+                                          select p).ToList();
+            if (listSubjects.Count > 0)
+            {
+                LErrorSubject.Content = "";
+                return true;
+            }
+            else
+            {
+                LErrorSubject.Content = "برجاء الاختيارمن القائمه";
+                return false;
+            }
+        }
+
+        private bool checkLevel()
+        {
+            ComboboxItem item = CBLevels.SelectedItem as ComboboxItem;
+            int id;
+            if (item != null)
+                id = (int)item.Value;
+            else
+            {
+                LErrorLevel.Content = "برجاء الاختيار من القائمه";
+                return false;
+            }
+            List<Level> ListLevels = (from p in context.Levels
+                                      where p.Id == id
+                                      select p).ToList();
+            if (ListLevels.Count > 0)
+            {
+                LErrorLevel.Content = "";
+                return true;
+            }
+            else
+            {
+                LErrorLevel.Content = "برجاء الاختيارمن القائمه";
+                return false;
+            }
+        }
+
+        private bool checkNumberOfStudents()
+        {
+            if (TBNumberStudents.Text.Length > 0)
+            {
+                LErrorNumberStudent.Content = "";
+                return true;
+            }
+            else
+            {
+                LErrorNumberStudent.Content = "ادخل بيانات";
+                return false;
+            }
+        }
+
+        private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LErrorLevel.Content = "";
+            LErrorBranch.Content = "";
+            LErrorNumberStudent.Content = "";
+            LErrorSection.Content = "";
+            LErrorSubject.Content = "";
+            if (checkLevel() && checkBranch() && checkSubject()&& checkNumberOfStudents())
+                BTNAdd.IsEnabled = true;
+            else
+            {
+                BTNAdd.IsEnabled = false;
+                checkBranch();
+                checkNumberOfStudents();
+                checkSubject();
+                checkLevel();
+            }
+        }
+
+        private void CBBranches_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LErrorLevel.Content = "";
+            LErrorBranch.Content = "";
+            LErrorNumberStudent.Content = "";
+            LErrorSection.Content = "";
+            LErrorSubject.Content = "";
+            if (checkLevel() && checkSection() && checkSubject() && checkNumberOfStudents())
+                BTNAdd.IsEnabled = true;
+            else
+            {
+                BTNAdd.IsEnabled = false;
+                checkSection();
+                checkSubject();
+                checkNumberOfStudents();
+                checkLevel();
+            }
+        }
+
+        private void CBLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LErrorLevel.Content = "";
+            LErrorBranch.Content = "";
+            LErrorNumberStudent.Content = "";
+            LErrorSection.Content = "";
+            LErrorSubject.Content = "";
+            if (checkBranch() && checkSection() && checkSubject()&& checkNumberOfStudents())
+                BTNAdd.IsEnabled = true;
+            else
+            {
+                BTNAdd.IsEnabled = false;
+                checkSection();
+                checkSubject();
+                checkNumberOfStudents();
+                checkBranch();
+            }
+        }
+
+        private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LErrorLevel.Content = "";
+            LErrorBranch.Content = "";
+            LErrorNumberStudent.Content = "";
+            LErrorSection.Content = "";
+            LErrorSubject.Content = "";
+            if (checkBranch() && checkSection() && checkLevel()&& checkNumberOfStudents())
+                BTNAdd.IsEnabled = true;
+            else
+            {
+                BTNAdd.IsEnabled = false;
+                checkSection();
+                checkNumberOfStudents();
+                checkLevel();
+                checkBranch();
+            }
+        }
+
+        private void TBNumberStudents_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            LErrorLevel.Content = "";
+            LErrorBranch.Content = "";
+            LErrorNumberStudent.Content = "";
+            LErrorSection.Content = "";
+            LErrorSubject.Content = "";
+            if (checkBranch() && checkSection() && checkLevel()&&checkSubject() && checkNumberOfStudents())
+                BTNAdd.IsEnabled = true;
+            else
+            {
+                BTNAdd.IsEnabled = false;
+                checkSection();
+                checkSubject();
+                checkNumberOfStudents();
+                checkLevel();
+                checkBranch();
+            }
         }
     }
 }

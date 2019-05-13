@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using Astmara6.Model;
 using Astmara6.Data;
 using System;
-
+using System.Linq;
 namespace Astmara6Con.Controls
 {
     /// <summary>
@@ -51,29 +51,34 @@ namespace Astmara6Con.Controls
         private void loadData()
         {
 
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["CollegeContext"].ConnectionString))
-            {
-                List<TeacherAndWorkHours> listData = new List<TeacherAndWorkHours>();
-                string oString = "Select * from Teachers t LEFT JOIN WorkHours w ON t.IdWorkHours = w.Id";
-                SqlCommand oCmd = new SqlCommand(oString, connection);
-                connection.Open();
-                using (SqlDataReader oReader = oCmd.ExecuteReader())
-                {
-                    while (oReader.Read())
-                    {
-                        TeacherAndWorkHours teacherAndWork = new TeacherAndWorkHours();
-                        teacherAndWork.Id = (int)oReader["Id"];
-                        teacherAndWork.NickName = oReader["NickName"].ToString(); 
-                        teacherAndWork.Name = oReader["Name"].ToString();
-                        teacherAndWork.Rank = oReader["Rank"].ToString();
-                        teacherAndWork.Quorum = (int)oReader["Quorum"];
-                        teacherAndWork.AcademicOrVirtual = (bool)oReader["AcademicOrVirtual"];
-                        listData.Add(teacherAndWork);
-                    }
-                    connection.Close();
-                    DGTeachersView.ItemsSource = listData;
-                }
-            }
+            //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["CollegeContext"].ConnectionString))
+            //{
+            //    List<TeacherAndWorkHours> listData = new List<TeacherAndWorkHours>();
+            //    string oString = "Select * from Teachers t LEFT JOIN WorkHours w ON t.IdWorkHours = w.Id";
+            //    SqlCommand oCmd = new SqlCommand(oString, connection);
+            //    connection.Open();
+            //    using (SqlDataReader oReader = oCmd.ExecuteReader())
+            //    {
+            //        while (oReader.Read())
+            //        {
+            //            TeacherAndWorkHours teacherAndWork = new TeacherAndWorkHours();
+            //            teacherAndWork.Id = (int)oReader["Id"];
+            //            teacherAndWork.NickName = oReader["NickName"].ToString(); 
+            //            teacherAndWork.Name = oReader["Name"].ToString();
+            //            teacherAndWork.Rank = oReader["Rank"].ToString();
+            //            teacherAndWork.Quorum = (int)oReader["Quorum"];
+            //            teacherAndWork.AcademicOrVirtual = (bool)oReader["AcademicOrVirtual"];
+            //            listData.Add(teacherAndWork);
+            //        }
+            //        connection.Close();
+                   
+            //        //DGTeachersView.ItemsSource = listData;
+            //    }
+            //}
+            var listSections = (from p in context.Teachers
+
+                                select p).ToList();
+            DGTeachersView.ItemsSource = listSections;
         }
 
         public UCDoctors()
@@ -101,7 +106,6 @@ namespace Astmara6Con.Controls
             Form.gridShow.Children.Add(new UCChangingData());
             STRNamePage = "البيانات المتغيرة";
             Form.ChFormName(STRNamePage);
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -121,7 +125,7 @@ namespace Astmara6Con.Controls
         {
             try
             {
-                TeacherAndWorkHours teacherrow = DGTeachersView.SelectedItem as TeacherAndWorkHours;
+                Teacher teacherrow = DGTeachersView.SelectedItem as Teacher;
                 Teacher Teachers = (from p in context.Teachers
                                     where p.Id == teacherrow.Id
                                     select p).Single();
@@ -145,7 +149,7 @@ namespace Astmara6Con.Controls
             try
             {
 
-                TeacherAndWorkHours teacherrow = DGTeachersView.SelectedItem as TeacherAndWorkHours;
+                Teacher teacherrow = DGTeachersView.SelectedItem as Teacher;
 
                 Teacher Teachers = (from p in context.Teachers
                                     where p.Id == teacherrow.Id
@@ -190,12 +194,12 @@ namespace Astmara6Con.Controls
                                                     select p).ToList();
             if (length < 1)
             {
-                lerrorcou_code.Content = "لم تكتب شئ ";
+               // lerrorcou_code.Content = "لم تكتب شئ ";
                result1 = false;
             }
             if (precoucode.Count > 0)
             {
-                lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
+               // lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
                 result1 = false;
             }
             else
@@ -214,7 +218,7 @@ namespace Astmara6Con.Controls
 
             if (precoucode.Count > 0)
             {
-                lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
+                //lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
                 result2= false;
             }
             else
@@ -223,7 +227,7 @@ namespace Astmara6Con.Controls
             }
             if (length < 1)
             {
-                lerrorcou_name.Content = "لم تكتب شئ ";
+               // lerrorcou_name.Content = "لم تكتب شئ ";
                 result2 = false;
             }
 
@@ -231,7 +235,7 @@ namespace Astmara6Con.Controls
         }
         private void TBName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lerrorcou_code.Content = "";
+            //lerrorcou_code.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
             Boolean r1= checkName(length);
@@ -239,7 +243,7 @@ namespace Astmara6Con.Controls
             Boolean r2 = checkNickName(r);
             if (r1 & r2)
             {
-                BTNAdd.IsEnabled = true;
+                 BTNAdd.IsEnabled = true;
             }
             else
                 BTNAdd.IsEnabled = false;
@@ -249,7 +253,7 @@ namespace Astmara6Con.Controls
 
         public void TBNickName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lerrorcou_code.Content = "";
+           // lerrorcou_code.Content = "";
             TextBox objTextBox = (TextBox)sender;
             int length = objTextBox.Text.Length;
             checkNickName(length);
@@ -262,7 +266,7 @@ namespace Astmara6Con.Controls
                 BTNAdd.IsEnabled = true;
             }
             else
-                BTNAdd.IsEnabled = false;
+               BTNAdd.IsEnabled = false;
         }
     }
 }

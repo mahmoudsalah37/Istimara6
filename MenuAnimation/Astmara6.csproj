@@ -234,7 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ComboboxItem.cs" />
-    <Compile Include="Model\TeacherAndWorkHours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
