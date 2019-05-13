@@ -140,20 +140,36 @@ namespace Astmara6Con.Controls
 
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
         {
-            StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
-            StudentStatment student = (from p in context.StudentStatments
-                                       where p.Id == studentStatment.Id
-                                       select p).Single();
-            context.StudentStatments.Remove(student);
-            context.SaveChanges();
-            loadData();
+            try
+            {
+                StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
+                StudentStatment student = (from p in context.StudentStatments
+                                           where p.Id == studentStatment.Id
+                                           select p).Single();
+                context.StudentStatments.Remove(student);
+                context.SaveChanges();
+                loadData();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
         }
 
         private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
         {
-            context.StudentStatments.RemoveRange(context.StudentStatments);
-            context.SaveChanges();
-            loadData();
+            try
+            {
+                context.StudentStatments.RemoveRange(context.StudentStatments);
+                context.SaveChanges();
+                loadData();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+            }
         }
 
         private bool checkBranch()

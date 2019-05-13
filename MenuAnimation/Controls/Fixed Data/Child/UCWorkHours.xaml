@@ -44,7 +44,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <DataGrid Name="DGWorkHours" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft"  Margin="223,293,-0.4,0" ItemsSource="{Binding WorkHours}" VerticalAlignment="Top" Width="523">
+        <DataGrid Name="DGWorkHours" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft"  Margin="451,293,0,0" ItemsSource="{Binding WorkHours}" VerticalAlignment="Top" Width="295">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Rank}" Header="الرتبة"/>
@@ -54,9 +54,9 @@
         </DataGrid>
         <RadioButton Name="RBPaper" Content="نظري" HorizontalAlignment="Left" Margin="229,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" IsChecked="True"/>
         <RadioButton Name="RBVirtual" Content="عملي" HorizontalAlignment="Left" Margin="133,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF"/>
-        <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="389,305,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
-        <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="326,305,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
-        <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="229,305,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
+        <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="380,293,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
+        <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="380,326,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
+        <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="348,359,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Label x:Name="lerrorcou_code" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="483,248,0,0" VerticalAlignment="Top" Width="168" Foreground="#DDFF0101"/>
         <Label x:Name="lerrorcou_name" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="253,248,0,0" VerticalAlignment="Top" Width="139" Foreground="#DDFF0101"/>
     </Grid>
