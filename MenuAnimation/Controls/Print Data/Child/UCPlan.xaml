@@ -7,6 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="484" d:DesignWidth="800">
     <Grid>
-            
+        <DataGrid HorizontalAlignment="Left" Height="344"  Margin="100,130,0,0" VerticalAlignment="Top" Width="640" FlowDirection="RightToLeft">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="              الاسم الدكتور             "/>
+                <DataGridTextColumn Header="        الاسم المعيد             "/>
+                <DataGridTextColumn Header="كود المادة "/>
+                <DataGridTextColumn Header="     الشعبة       "/>
+                <DataGridTextColumn Header="المستوي"/>
+
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnExportData" Content="استخراح" HorizontalAlignment="Left" Margin="10,442,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </UserControl>
