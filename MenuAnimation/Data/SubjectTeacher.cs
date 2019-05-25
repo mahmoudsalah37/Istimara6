@@ -18,6 +18,20 @@ namespace Astmara6.Data
 
         public int? IdLevel { get; set; }
 
+        public int? NumberOfSections { get; set; }
+
+        public int? TotalVirtual { get; set; }
+
+        public int? TotalExperment { get; set; }
+
+        public int? TotalSuperVision { get; set; }
+
+        public int? NumberOfVirtual { get; set; }
+
+        public int? NumberOfExprement { get; set; }
+
+        public int? NumberOfSuperVision { get; set; }
+
         public virtual Branch Branch { get; set; }
 
         public virtual Level Level { get; set; }

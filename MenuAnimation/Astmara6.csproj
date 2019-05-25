@@ -119,7 +119,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Print Data\Child\UCPlan.xaml">
+    <Page Include="Controls\Print Data\Child\UCPlanPrint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,8 +198,8 @@
     <Compile Include="Controls\Print Data\Child\UCIstimaraBDoctors.xaml.cs">
       <DependentUpon>UCIstimaraBDoctors.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Print Data\Child\UCPlan.xaml.cs">
-      <DependentUpon>UCPlan.xaml</DependentUpon>
+    <Compile Include="Controls\Print Data\Child\UCPlanPrint.xaml.cs">
+      <DependentUpon>UCPlanPrint.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Changing Data\UCChangingData.xaml.cs">
       <DependentUpon>UCChangingData.xaml</DependentUpon>

@@ -46,7 +46,7 @@ namespace MenuAnimado1.Controls
         private void BTNPlan_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCPlan());
+            Form.gridShow.Children.Add(new UCPlanPrint());
             STRNamePage = "الخطة";
             Form.ChFormName(STRNamePage);
         }

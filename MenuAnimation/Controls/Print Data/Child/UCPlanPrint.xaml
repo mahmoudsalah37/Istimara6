@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Astmara6.Controls.Print_Data.Child.UCPlanPrint"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Astmara6.Controls.Print_Data.Child"
+             mc:Ignorable="d" 
+             d:DesignHeight="484" d:DesignWidth="800">
+    <Grid>
+        <Button x:Name="btnExportData" Content="استخراح" HorizontalAlignment="Left" Margin="10,442,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid x:Name="DGPlanShow" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="346"  Margin="159,128,0,0" VerticalAlignment="Top" Width="532" FlowDirection="RightToLeft">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Teacher.Name}" Header="الاسم الدكتور               " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Subject.Code}" Header="كود المادة " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Subject.Name}" Header="ألمادة        " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Branch.Name}" Header="الشعبة" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Level.Name}" Header="المستوي" IsReadOnly="True"/>
+
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

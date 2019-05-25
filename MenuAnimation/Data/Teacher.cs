@@ -26,19 +26,18 @@ namespace Astmara6.Data
 
         public int? idSection { get; set; }
 
-        public Teacher(string name, string nickName, int? idWorkHours, int? idSection)
-        {
-            Name = name;
-            NickName = nickName;
-            IdWorkHours = idWorkHours;
-            this.idSection = idSection;
-        }
-
         public virtual Section Section { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
 
         public virtual WorkHour WorkHour { get; set; }
+        public Teacher(string name,string nickname,int idWorkHours,int idSection)
+        {
+            this.Name = name;
+            this.NickName = nickname;
+            this.IdWorkHours = idWorkHours;
+            this.idSection = idSection;
+        }
     }
 }

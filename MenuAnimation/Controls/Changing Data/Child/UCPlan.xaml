@@ -18,7 +18,7 @@
             <ColumnDefinition Width="557*"/>
         </Grid.ColumnDefinitions>
 
-        <ComboBox Margin="84,133,0,0" x:Name="CBDoctorsName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم الدكــــــتور  " Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Grid.Column="1" SelectionChanged="CBDoctorsName_SelectionChanged">
+        <ComboBox Margin="84,133,0,0" x:Name="CBDoctorsName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="هيئة التدريس" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Grid.Column="1" SelectionChanged="CBDoctorsName_SelectionChanged">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
@@ -28,7 +28,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <ComboBox Margin="339,134,0,0" x:Name="CBBRanches" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Width="116"  SelectedIndex="-1" Grid.Column="1" SelectionChanged="CBDepartment_SelectionChanged">
+        <ComboBox Margin="339,134,0,0" x:Name="CBBRanches" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم الشعبة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Width="116"  SelectedIndex="-1" Grid.Column="1" SelectionChanged="CBDepartment_SelectionChanged">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
@@ -47,7 +47,7 @@
 
         </ComboBox>
         <Label HorizontalAlignment="Left" Margin="468,69,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="اسم الدكتور" HorizontalAlignment="Left" Margin="265,147,0,0" VerticalAlignment="Top" Grid.Column="1">
+        <Label Content="هيئة التدريس" HorizontalAlignment="Left" Margin="248,146,0,0" VerticalAlignment="Top" Grid.Column="1">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Label.Foreground>

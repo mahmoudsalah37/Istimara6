@@ -20,14 +20,14 @@ namespace Astmara6Con.Controls
         private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
         private readonly CollegeContext context = new CollegeContext();
 
-        private void getDepartmwents()
+        private void getBranches()
         {
-            var listBranches = (from p in context.Sections
+            var listBranches = (from p in context.Branches
                                  select p).ToList();
             foreach (var branch in listBranches)
             {
                 item = new ComboboxItem();
-                item.Text = branch.TypeOfSection;
+                item.Text = branch.Name;
                 item.Value = branch.Id;
                 CBBRanches.Items.Add(item);
             }
@@ -91,16 +91,12 @@ namespace Astmara6Con.Controls
             var subjectTeachers = (from p in context.SubjectTeachers
                           select p).ToList();
             DGPlanShow.ItemsSource = subjectTeachers;
-            foreach(var subjectTeacher in subjectTeachers)
-            {
-                
-            }
             
         }
         public UCPlan()
         {
             InitializeComponent();
-            getDepartmwents();
+            getBranches();
             getDoctors();
             //getAssitants();
             getSubjects();
