@@ -1,10 +1,7 @@
-﻿using MenuAnimado1.Controls;
-using System.Windows;
+﻿using System.Windows;
 using System.Linq;
-
 using System.Windows.Controls;
 using System;
-using System.Text.RegularExpressions;
 using Astmara6.Data;
 using System.Windows.Input;
 using Astmara6.Classes;
@@ -139,7 +136,6 @@ namespace Astmara6Con.Controls
                 subjects.Exprement = CoursesRow.Exprement;
                 context.SaveChanges();
                 loadData();
-                MessageBox.Show("تم تعديل الصف بنجاح");
             }
             catch (Exception Ex)
             {
@@ -162,7 +158,6 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
 
-                MessageBox.Show("تم مسح العنصر بنجاح");
             }
             catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري"); }
         }
@@ -175,7 +170,6 @@ namespace Astmara6Con.Controls
 
                 context.SaveChanges();
                 loadData();
-                MessageBox.Show("تم مسح كل البيانات");
             }
             catch (Exception) {
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +

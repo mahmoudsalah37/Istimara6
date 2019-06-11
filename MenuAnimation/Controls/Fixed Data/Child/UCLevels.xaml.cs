@@ -1,11 +1,8 @@
 using Astmara6.Data;
 using Astmara6Con.Controls;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -100,7 +97,6 @@ namespace Astmara6Con
                     });
                     context.SaveChanges();
                     loadData();
-                    MessageBox.Show("تم حفظ العملية بنجاح");
                     TBNameLevels.Text = "";
                 }
             }
@@ -158,7 +154,6 @@ namespace Astmara6Con
                 context.SaveChanges();
                 loadData();
 
-                MessageBox.Show("تم حذف الصف بنجاح");
             }
             catch (Exception) {
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
@@ -175,7 +170,6 @@ namespace Astmara6Con
                 context.Levels.RemoveRange(context.Levels);
                 context.SaveChanges();
                 loadData();
-                MessageBox.Show("كل البيانات حذفت بنجاح");
             }
             catch (Exception) {
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +

@@ -1,12 +1,9 @@
 ﻿using System.Windows.Controls;
 using Astmara6.Data;
-using Astmara6.Model;
-using MenuAnimado1.Controls;
-using System;
-using System.Windows;
-using System.Windows.Controls;
 using System.Linq;
-using System.Collections.Generic;
+using System.Data;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -15,11 +12,12 @@ namespace Astmara6.Controls.Print_Data.Child
     /// </summary>
     public partial class UCIstimaraA : UserControl
     {
+        
         private readonly CollegeContext context = new CollegeContext();
 
         public void loadData()
         {
-            var subjectTeachers = (from p in context.SubjectTeachers
+           var subjectTeachers = (from p in context.SubjectTeachers
                                    select p).ToList();
             DGAstmaraA.ItemsSource = subjectTeachers;
 
@@ -48,10 +46,9 @@ namespace Astmara6.Controls.Print_Data.Child
                                 select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
                 int countAss = (from p in context.SubjectTeachers
                                 select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == false && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
-                var updates = (from p in context.SubjectTeachers
-                               select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Subject.Id == levelAndSubject.Subject.Id).ToList();
-                Boolean checkDivtionDoc = false;
-                Boolean checkDivtionAss = false;
+                
+                bool checkDivtionDoc = false;
+                bool checkDivtionAss = false;
                 int? DivtionDoc = 0;
                 int? DivtionASS = 0;
                 if (countDoc > 0)
@@ -74,9 +71,10 @@ namespace Astmara6.Controls.Print_Data.Child
                     }
 
                 }
-               
 
-                
+                var updates = (from p in context.SubjectTeachers
+                               select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Subject.Id == levelAndSubject.Subject.Id).ToList();
+
                 foreach (SubjectTeacher update in updates)
                 {
                     if(update.Teacher.WorkHour.AcademicOrVirtual == true)
@@ -123,6 +121,36 @@ namespace Astmara6.Controls.Print_Data.Child
                     }
                 }
                 context.SaveChanges();
+            }
+        }
+
+        private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            data2Exel(DGAstmaraA);
+        }
+
+        private void data2Exel(DataGrid dataGrid)
+        {
+            Excel.Application excel = new Excel.Application();
+            excel.Visible = true; //www.yazilimkodlama.com
+            Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+            Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
+
+            for (int j = 0; j < dataGrid.Columns.Count; j++) //Başlıklar için
+            {
+                Range myRange = (Range)sheet1.Cells[1, j + 1];
+                sheet1.Cells[1, j + 1].Font.Bold = true; //Başlığın Kalın olması için
+                sheet1.Columns[j + 1].ColumnWidth = 15; //Sütun genişliği ayarı
+                myRange.Value2 = dataGrid.Columns[j].Header;
+            }
+            for (int i = 0; i < dataGrid.Columns.Count; i++)
+            { //www.yazilimkodlama.com
+                for (int j = 0; j < dataGrid.Items.Count; j++)
+                {
+                    TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
+                    Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
+                    myRange.Value2 = b.Text;
+                }
             }
         }
     }

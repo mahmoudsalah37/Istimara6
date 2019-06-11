@@ -3,6 +3,8 @@ using Astmara6Con.Controls;
 using System.Windows;
 using System.Data.Entity;
 using Astmara6.Data;
+using System.Linq;
+using System;
 
 namespace Astmara6Con
 {
@@ -11,6 +13,8 @@ namespace Astmara6Con
     /// </summary>
     public partial class FRMMainWindow : Window
     {
+        private readonly CollegeContext context = new CollegeContext();
+
         public FRMMainWindow()
         {
             InitializeComponent();
@@ -21,6 +25,15 @@ namespace Astmara6Con
             {
                 model.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction,
                             "ALTER DATABASE Astmara6 COLLATE Arabic_CI_AI_KS_WS");
+            }
+            try
+            {
+                var levels = (from p in context.Subjects
+                              select p).First();
+            }
+            catch (Exception)
+            {
+                
             }
         }
 
