@@ -118,7 +118,8 @@ namespace Astmara6Con.Controls
                 int rank = (int)CBIRank.Value;
                 ComboboxItem CBIDepartment = CBDepartment.SelectedItem as ComboboxItem;
                 int department = (int)CBIDepartment.Value;
-                context.Teachers.Add(new Teacher(name, nickname, rank, department));
+                context.Teachers.Add(new Teacher{
+                   Name = name,NickName = nickname,IdWorkHours = rank,idSection = department });
                 context.SaveChanges();
                 loadData();
                 TBName.Text = "";

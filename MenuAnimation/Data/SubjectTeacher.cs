@@ -20,17 +20,23 @@ namespace Astmara6.Data
 
         public int? NumberOfSections { get; set; }
 
+        public int? TotalPaper { get; set; }
+
         public int? TotalVirtual { get; set; }
 
         public int? TotalExperment { get; set; }
 
         public int? TotalSuperVision { get; set; }
 
+        public int? NumOfPaper { get; set; }
+
         public int? NumberOfVirtual { get; set; }
 
         public int? NumberOfExprement { get; set; }
 
         public int? NumberOfSuperVision { get; set; }
+
+        public int? NumOfStudent { get; set; }
 
         public virtual Branch Branch { get; set; }
 

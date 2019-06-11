@@ -38,39 +38,39 @@ namespace Astmara6Con.Controls
                                 select p).ToList();
             foreach (var teacher in listTeachers)
             {
-                if (teacher.WorkHour.AcademicOrVirtual == true)
-                {
+                //if (teacher.WorkHour.AcademicOrVirtual == true)
+                //{
                     item = new ComboboxItem();
                     item.Text = teacher.Name;
                     item.Value = teacher.Id;
                     CBDoctorsName.Items.Add(item);
-                }
+                //}
             }
         }
-        private void getAssitants()
-        {
-            var listTeachers = (from p in context.Teachers
-                                select p).ToList();
-            foreach (var teacher in listTeachers)
-            {
-                if (teacher.WorkHour.AcademicOrVirtual == false)
-                {
-                    item = new ComboboxItem();
-                    item.Text = teacher.Name;
-                    item.Value = teacher.Id;
-                    CBAssistantsName.Items.Add(item);
-                }
-            }
-        }
+        //private void getAssitants()
+        //{
+        //    var listTeachers = (from p in context.Teachers
+        //                        select p).ToList();
+        //    foreach (var teacher in listTeachers)
+        //    {
+        //        if (teacher.WorkHour.AcademicOrVirtual == false)
+        //        {
+        //            item = new ComboboxItem();
+        //            item.Text = teacher.Name;
+        //            item.Value = teacher.Id;
+        //            CBAssistantsName.Items.Add(item);
+        //        }
+        //    }
+        //}
         private void getSubjects()
         {
-            var listSubjects = (from p in context.Subjects
-                                select p).ToList();
-            foreach (var subject in listSubjects)
+            var studentStatments = (from p in context.StudentStatments
+                                 select  p.Subject ).Distinct().ToList();
+            foreach (var subjectTeacher in studentStatments)
             {
                     item = new ComboboxItem();
-                    item.Text = subject.Name;
-                    item.Value = subject.Id;
+                    item.Text = subjectTeacher.Name;
+                    item.Value = subjectTeacher.Id;
                     CBSubjects.Items.Add(item);
             }
         }
@@ -85,6 +85,10 @@ namespace Astmara6Con.Controls
                 item.Value = level.Id;
                 CBLevels.Items.Add(item);
             }
+        }
+        public void getNumOFstudent()
+        {
+
         }
         public void loadData()
         {
@@ -124,8 +128,8 @@ namespace Astmara6Con.Controls
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 ComboboxItem CBIDepartment = CBBRanches.SelectedItem as ComboboxItem;
                 int department = (int)CBIDepartment.Value;
                 ComboboxItem CBIDoctor = CBDoctorsName.SelectedItem as ComboboxItem;
@@ -136,22 +140,44 @@ namespace Astmara6Con.Controls
                 ComboboxItem CBILevel = CBLevels.SelectedItem as ComboboxItem;
                 int subject = (int)CBISubject.Value;
                 int level = (int)CBILevel.Value;
+                int ?numberOfStudent = context.StudentStatments.Where(t => t.IdSubject == subject && t.IdLevel == level).Single().NumberOfStudent;
+                int ?numSection = numberOfStudent / 25;
+                if (numberOfStudent % 25 != 0)
+                {
+                    numSection = numSection++;
+                }
+                int? totalp= context.Subjects.Where(t => t.Id == subject).Single().Academic;
+                int? totalv = context.Subjects.Where(t => t.Id == subject).Single().Virtual;
+                int? totalE = context.Subjects.Where(t => t.Id == subject).Single().Exprement;
+                int? supervision = totalE + totalv;
+                bool? isTeacher = context.Teachers.Where(t => t.Id == doctor).Single().WorkHour.AcademicOrVirtual;
+                int? totalPdoc = 0;
+                if (isTeacher == true)
+                    totalPdoc = totalp;
                 context.SubjectTeachers.Add(new SubjectTeacher()
                 {
                     IdBranch = department,
                     IdTeacher = doctor,
                     IdLevel = level,
-                    IdSubject = subject
+                    IdSubject = subject,
+                    NumberOfSections = numSection,
+                    TotalPaper=totalp,
+                    TotalVirtual=totalv*numSection,
+                    TotalExperment=totalE*numSection,
+                    TotalSuperVision=numSection*supervision,
+                     NumOfPaper = totalPdoc,
+                     NumOfStudent=numberOfStudent,
                 }
+
                 );
                 context.SaveChanges();
                 loadData();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
-            }
+            //}
         }
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)

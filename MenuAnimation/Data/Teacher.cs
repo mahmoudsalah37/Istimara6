@@ -32,12 +32,5 @@ namespace Astmara6.Data
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
 
         public virtual WorkHour WorkHour { get; set; }
-        public Teacher(string name,string nickname,int idWorkHours,int idSection)
-        {
-            this.Name = name;
-            this.NickName = nickname;
-            this.IdWorkHours = idWorkHours;
-            this.idSection = idSection;
-        }
     }
 }

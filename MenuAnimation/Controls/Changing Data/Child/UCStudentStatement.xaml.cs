@@ -21,13 +21,13 @@ namespace Astmara6Con.Controls
 
         private void getDepartments()
         {
-            var listBranches = (from p in context.Branches
+            var listSection = (from p in context.Sections
                                 select p).ToList();
-            foreach (var branch in listBranches)
+            foreach (var section in listSection)
             {
                 item = new ComboboxItem();
-                item.Text = branch.Name;
-                item.Value = branch.Id;
+                item.Text = section.TypeOfSection;
+                item.Value = section.Id;
                 CBDepartments.Items.Add(item);
             }
         }
@@ -125,6 +125,8 @@ namespace Astmara6Con.Controls
             });
             context.SaveChanges();
             loadData();
+            TBNumberStudents.Text = "";
+            
         }
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)

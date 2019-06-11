@@ -7,30 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="484" d:DesignWidth="800">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="356" FlowDirection="RightToLeft" Margin="86,118,0,0" VerticalAlignment="Top" Width="669">
+        <DataGrid x:Name="DGAstmaraA" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="356" FlowDirection="RightToLeft" Margin="86,118,0,0" VerticalAlignment="Top" Width="669">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="المستوي"/>
-                <DataGridTextColumn Header="المادة"/>
-                <DataGridTextColumn Header="نظري"/>
-                <DataGridTextColumn Header="عملي"/>
-                <DataGridTextColumn Header="تمارين"/>
-                <DataGridTextColumn Header="عدد الطلبة"/>
-                <DataGridTextColumn Header="الاقسام"/>
-                <DataGridTextColumn Header="العملي"/>
-                <DataGridTextColumn Header="التمارين"/>
-                <DataGridTextColumn Header="الاشراف"/>
-                <DataGridTextColumn Header="هيئة التدريس"/>
-                <DataGridTextColumn Header="الدرجة"/>
-                <DataGridTextColumn Header="نظري"/>
-                <DataGridTextColumn Header="العملي"/>
-                <DataGridTextColumn Header="التمارين"/>
-                <DataGridTextColumn Header="الاشراف"/>
-
-
-
-
-
-
+                <DataGridTextColumn Binding="{Binding Level.Name}" IsReadOnly="True" Header="المستوي"/>
+                <DataGridTextColumn Binding="{Binding Subject.Name }" IsReadOnly="True" Header="المادة"/>
+                <DataGridTextColumn Binding="{Binding Subject.Academic }" IsReadOnly="True" Header="نظري"/>
+                <DataGridTextColumn Binding="{Binding Subject.Virtual}" IsReadOnly="True" Header="عملي"/>
+                <DataGridTextColumn Binding="{Binding Subject.Exprement}" IsReadOnly="True" Header="تمارين"/>
+                <DataGridTextColumn Binding="{Binding NumOfStudent}" IsReadOnly="True" Header="عدد الطلبة"/>
+                <DataGridTextColumn Binding="{Binding NumberOfSections}" IsReadOnly="True" Header="الاقسام"/>
+                <DataGridTextColumn Binding="{Binding TotalPaper}" IsReadOnly="True"  Header="النظري"/>
+                <DataGridTextColumn Binding="{Binding TotalVirtual}" IsReadOnly="True"  Header="العملي"/>
+                <DataGridTextColumn Binding="{Binding TotalExperment}" IsReadOnly="True"  Header="التمارين"/>
+                <DataGridTextColumn Binding="{Binding TotalSuperVision}" IsReadOnly="True"  Header="الاشراف"/>
+                <DataGridTextColumn Binding="{Binding Teacher.Name}" IsReadOnly="True" Header="هيئة التدريس"/>
+                <DataGridTextColumn Binding="{Binding Teacher.WorkHour.Rank}" IsReadOnly="True" Header="الدرجة"/>
+                <DataGridTextColumn Binding="{Binding NumOfPaper}" IsReadOnly="True" Header="نظري"/>
+                <DataGridTextColumn Binding="{Binding NumberOfVirtual}" IsReadOnly="True" Header="العملي"/>
+                <DataGridTextColumn Binding="{Binding NumberOfExprement}" IsReadOnly="True" Header="التمارين"/>
+                <DataGridTextColumn Binding="{Binding NumberOfSuperVision}" IsReadOnly="True" Header="الاشراف"/>
 
             </DataGrid.Columns>
         </DataGrid>
