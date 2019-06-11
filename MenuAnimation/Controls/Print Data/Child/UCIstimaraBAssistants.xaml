@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="484" d:DesignWidth="800">
     <Grid>
-        <Button x:Name="btnExportData" Content="استخراح" HorizontalAlignment="Left" Margin="10,442,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnExportData" Content="استخراح" HorizontalAlignment="Left" Margin="10,442,0,0" VerticalAlignment="Top" Width="75" Click="BtnExportData_Click"/>
         <DataGrid HorizontalAlignment="Left" x:Name="DGAstmraBDoc" AutoGenerateColumns="False" Height="327" FlowDirection="RightToLeft" Margin="101,147,0,0" VerticalAlignment="Top" Width="651">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Teacher.Name}" IsReadOnly="True" Header="الاسم"/>

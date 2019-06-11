@@ -189,6 +189,7 @@
       <DependentUpon>Astmara6DataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\CheckInput.cs" />
+    <Compile Include="Classes\Print.cs" />
     <Compile Include="Controls\Fixed Data\Child\UCCourses.xaml.cs">
       <DependentUpon>UCCourses.xaml</DependentUpon>
     </Compile>

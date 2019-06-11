@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
 using System.Collections.Generic;
+using Astmara6.Classes;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -26,6 +27,11 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             InitializeComponent();
             loadData();
+        }
+
+        private void BtnExportData_Click(object sender, RoutedEventArgs e)
+        {
+            Print.data2Exel(DGPlanShow);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using Astmara6.Data;
 using System.Linq;
-
+using Astmara6.Classes;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -127,6 +127,11 @@ namespace Astmara6.Controls.Print_Data.Child
                 }
             }
             context.SaveChanges();
+        }
+
+        private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Print.data2Exel(DGAstmraBDoc);
         }
     }
 }

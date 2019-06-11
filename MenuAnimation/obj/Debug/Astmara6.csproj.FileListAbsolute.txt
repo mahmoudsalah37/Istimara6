@@ -529,3 +529,4 @@ E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe
 E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
 E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
 E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csprojAssemblyReference.cache

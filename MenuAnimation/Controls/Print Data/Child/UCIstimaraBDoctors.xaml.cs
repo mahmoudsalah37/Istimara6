@@ -1,6 +1,7 @@
 ﻿using System.Windows.Controls;
 using Astmara6.Data;
 using System.Linq;
+using Astmara6.Classes;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -34,13 +35,14 @@ namespace Astmara6.Controls.Print_Data.Child
             }
 
             var teachers = (from p in context.SubjectTeachers
-                            select p).Where(t=>t.Teacher.WorkHour.AcademicOrVirtual==true).Select(t => new { t.Teacher.Name,t.TotalOfHour}).Distinct().ToList();
+                            select p).Where(t=>t.Teacher.WorkHour.AcademicOrVirtual==true).Select(t => new {t.Teacher.Id, t.Teacher.Name,t.TotalOfHour}).Distinct().ToList();
             foreach(var teacher in teachers)
             {
+               
                 int? totalHour= (from p in context.SubjectTeachers
-                                        select p).Where(t=>t.Teacher.Name== teacher.Name.ToString()).Sum(t => t.SumOfSubject);
+                                        select p).Where(t=>t.Teacher.Id== teacher.Id).Sum(t => t.SumOfSubject);
                 var subjectsofTeashers = (from p in context.SubjectTeachers
-                                         select p).Where(t => t.Teacher.Name == teacher.Name.ToString()).ToList();
+                                         select p).Where(t => t.Teacher.Id == teacher.Id).ToList();
                 foreach(var subjectsofTeasher in subjectsofTeashers)
                 {
                     subjectsofTeasher.TotalOfHour = totalHour;
@@ -49,6 +51,9 @@ namespace Astmara6.Controls.Print_Data.Child
             context.SaveChanges();
         }
 
-        
+        private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Print.data2Exel(DGAstmraBDoc);
+        }
     }
 }
