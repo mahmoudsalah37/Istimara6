@@ -38,6 +38,10 @@ namespace Astmara6.Data
 
         public int? NumOfStudent { get; set; }
 
+        public int? TotalOfHour { get; set; }
+
+        public int? SumOfSubject { get; set; }
+
         public virtual Branch Branch { get; set; }
 
         public virtual Level Level { get; set; }
