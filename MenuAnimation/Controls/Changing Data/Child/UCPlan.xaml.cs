@@ -327,8 +327,7 @@ namespace Astmara6Con.Controls
                 return false;
             }
         }
-
-        private void CBDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void checkover()
         {
             LErrorLevel.Content = "";
             LErrorBranch.Content = "";
@@ -344,56 +343,24 @@ namespace Astmara6Con.Controls
                 checkLevel();
             }
         }
+        private void CBDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            checkover();
+        }
 
         private void CBDoctorsName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LErrorLevel.Content = "";
-            LErrorBranch.Content = "";
-            LErrorDoctor.Content = "";
-            LErrorSubject.Content = "";
-            if (checkBranch() && checkDoctor() && checkSubject())
-                btnAdd.IsEnabled = true;
-            else
-            {
-                btnAdd.IsEnabled = false;
-                checkBranch();
-                checkSubject();
-                checkLevel();
-            }
+            checkover();
         }
 
         private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LErrorLevel.Content = "";
-            LErrorBranch.Content = "";
-            LErrorDoctor.Content = "";
-            LErrorSubject.Content = "";
-            if (checkBranch() && checkDoctor() && checkLevel())
-                btnAdd.IsEnabled = true;
-            else
-            {
-                btnAdd.IsEnabled = false;
-                checkBranch();
-                checkDoctor();
-                checkLevel();
-            }
+            checkover();
         }
 
         private void CBLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LErrorLevel.Content = "";
-            LErrorBranch.Content = "";
-            LErrorDoctor.Content = "";
-            LErrorSubject.Content = "";
-            if (checkBranch() && checkDoctor() && checkSubject())
-                btnAdd.IsEnabled = true;
-            else
-            {
-                btnAdd.IsEnabled = false;
-                checkBranch();
-                checkDoctor();
-                checkSubject();
-            }
+            checkover();
         }
     }
 }

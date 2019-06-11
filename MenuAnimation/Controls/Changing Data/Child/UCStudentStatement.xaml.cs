@@ -290,15 +290,14 @@ namespace Astmara6Con.Controls
                 return false;
             }
         }
-
-        private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void checkover()
         {
             LErrorLevel.Content = "";
             LErrorBranch.Content = "";
             LErrorNumberStudent.Content = "";
             LErrorSection.Content = "";
             LErrorSubject.Content = "";
-            if (checkLevel() && checkBranch() && checkSubject()&& checkNumberOfStudents())
+            if (checkLevel() && checkBranch() && checkSubject() && checkNumberOfStudents())
                 BTNAdd.IsEnabled = true;
             else
             {
@@ -308,83 +307,30 @@ namespace Astmara6Con.Controls
                 checkSubject();
                 checkLevel();
             }
+        }
+        private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            checkover();
         }
 
         private void CBBranches_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LErrorLevel.Content = "";
-            LErrorBranch.Content = "";
-            LErrorNumberStudent.Content = "";
-            LErrorSection.Content = "";
-            LErrorSubject.Content = "";
-            if (checkLevel() && checkSection() && checkSubject() && checkNumberOfStudents())
-                BTNAdd.IsEnabled = true;
-            else
-            {
-                BTNAdd.IsEnabled = false;
-                checkSection();
-                checkSubject();
-                checkNumberOfStudents();
-                checkLevel();
-            }
+            checkover();
         }
 
         private void CBLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LErrorLevel.Content = "";
-            LErrorBranch.Content = "";
-            LErrorNumberStudent.Content = "";
-            LErrorSection.Content = "";
-            LErrorSubject.Content = "";
-            if (checkBranch() && checkSection() && checkSubject()&& checkNumberOfStudents())
-                BTNAdd.IsEnabled = true;
-            else
-            {
-                BTNAdd.IsEnabled = false;
-                checkSection();
-                checkSubject();
-                checkNumberOfStudents();
-                checkBranch();
-            }
+            checkover();
         }
 
         private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LErrorLevel.Content = "";
-            LErrorBranch.Content = "";
-            LErrorNumberStudent.Content = "";
-            LErrorSection.Content = "";
-            LErrorSubject.Content = "";
-            if (checkBranch() && checkSection() && checkLevel()&& checkNumberOfStudents())
-                BTNAdd.IsEnabled = true;
-            else
-            {
-                BTNAdd.IsEnabled = false;
-                checkSection();
-                checkNumberOfStudents();
-                checkLevel();
-                checkBranch();
-            }
+            checkover();
         }
 
         private void TBNumberStudents_TextChanged(object sender, TextChangedEventArgs e)
         {
-            LErrorLevel.Content = "";
-            LErrorBranch.Content = "";
-            LErrorNumberStudent.Content = "";
-            LErrorSection.Content = "";
-            LErrorSubject.Content = "";
-            if (checkBranch() && checkSection() && checkLevel()&&checkSubject() && checkNumberOfStudents())
-                BTNAdd.IsEnabled = true;
-            else
-            {
-                BTNAdd.IsEnabled = false;
-                checkSection();
-                checkSubject();
-                checkNumberOfStudents();
-                checkLevel();
-                checkBranch();
-            }
+            checkover();
         }
     }
 }

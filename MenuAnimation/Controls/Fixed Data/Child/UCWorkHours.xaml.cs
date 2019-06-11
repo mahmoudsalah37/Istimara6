@@ -130,16 +130,17 @@ namespace Astmara6Con.Controls
         }
         public Boolean checkName(int length)
         {
-            Boolean result1 = true;
+            Boolean result1 = false;
             List<WorkHour> precoucode = (from p in context.WorkHours
                                         where p.Rank== TBRank.Text
                                         select p).ToList();
             if (length < 1)
             {
                 lerrorcou_code.Content = "لم تكتب شئ ";
+                
                 result1 = false;
             }
-            if (precoucode.Count > 0)
+            else if (precoucode.Count > 0)
             {
                 lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
                 result1 = false;
@@ -151,31 +152,34 @@ namespace Astmara6Con.Controls
 
             return result1;
         }
-   
-        private void TBRank_TextChanged(object sender, TextChangedEventArgs e)
+        public void check()
         {
-            lerrorcou_code.Content = "ادخل البيانات";
-            lerrorcou_name.Content = "";
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
+            
+            int length = TBRank.Text.Length;
             Boolean r1 = checkName(length);
-         
-            if (r1)
+            int lellength = TBLegalMonument.Text.Length;
+            if (r1 && lellength >= 1)
             {
                 BTNAdd.IsEnabled = true;
             }
             else
-                BTNAdd.IsEnabled = false;
-        }
-
-        private void TBLegalMonument_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            if (length < 1)
             {
+
                 BTNAdd.IsEnabled = false;
             }
+        }
+        private void TBRank_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            check();
+            
+        
+        }
+
+        private void TBLegalMonument_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            check();
+           
         }
     }
 }

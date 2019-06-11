@@ -82,11 +82,11 @@
                     <SolidColorBrush Color="{DynamicResource Color1}"/>
                 </TextBox.Background>
             </TextBox>
-            <Label Name="LErrorSection" Content="" HorizontalAlignment="Left" Margin="518,193,0,0" VerticalAlignment="Top" Height="30" Width="166" Foreground="#DDF60707"/>
-            <Label Name="LErrorBranch" Content="" HorizontalAlignment="Left" Margin="348,198,0,0" VerticalAlignment="Top" Height="25" Width="134" Foreground="#DDF60707"/>
-            <Label Name="LErrorLevel" Content="" HorizontalAlignment="Left" Margin="122,198,0,0" VerticalAlignment="Top" Height="25" Width="134" Foreground="#DDF60707"/>
-            <Label Name="LErrorNumberStudent" Content="" HorizontalAlignment="Left" Margin="133,261,0,0" VerticalAlignment="Top" Height="25" Width="123" Foreground="#DDF60707"/>
-            <Label Name="LErrorSubject" Content="" HorizontalAlignment="Left" Margin="518,267,0,0" VerticalAlignment="Top" Height="37" Width="151" Foreground="#DDF60707"/>
+            <Label Name="LErrorSection" Content="" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="518,193,0,0" VerticalAlignment="Top" Height="30" Width="166" Foreground="#DDF60707"/>
+            <Label Name="LErrorBranch" Content="" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="348,198,0,0" VerticalAlignment="Top" Height="25" Width="134" Foreground="#DDF60707"/>
+            <Label Name="LErrorLevel" Content="" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="122,198,0,0" VerticalAlignment="Top" Height="25" Width="134" Foreground="#DDF60707"/>
+            <Label Name="LErrorNumberStudent" FlowDirection="RightToLeft" Content="" HorizontalAlignment="Left" Margin="133,261,0,0" VerticalAlignment="Top" Height="25" Width="123" Foreground="#DDF60707"/>
+            <Label Name="LErrorSubject" Content="" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="518,267,0,0" VerticalAlignment="Top" Height="37" Width="151" Foreground="#DDF60707"/>
         </Grid>
         <DataGrid Name="DGStudentStatments" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="191" FlowDirection="RightToLeft" Margin="265,295,0,-2" VerticalAlignment="Top" Width="481">
             <DataGrid.Columns>

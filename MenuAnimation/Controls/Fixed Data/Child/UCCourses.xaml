@@ -94,9 +94,9 @@
         <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="149,350,0,0" VerticalAlignment="Top" Width="93" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Label x:Name="LErrorCode" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="431,162,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
         <Label x:Name="LErrorCOurse" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="176,162,0,0" VerticalAlignment="Top" Width="189" Foreground="#DDFF0101"/>
-        <Label x:Name="LErrorPaper" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="532,249,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
-        <Label x:Name="LErrorVirtual" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="342,243,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
-        <Label x:Name="LErrorExprement" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="194,243,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
+        <Label x:Name="LErrorPaper" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="495,248,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
+        <Label x:Name="LErrorVirtual" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="342,248,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
+        <Label x:Name="LErrorExprement" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="194,248,0,0" VerticalAlignment="Top" Width="127" Foreground="#DDFF0101"/>
 
     </Grid>
 </UserControl>

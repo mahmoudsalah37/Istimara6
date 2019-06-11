@@ -89,9 +89,33 @@ namespace Astmara6Con
         {
               gridShow.Children.Clear();
             gridShow.Children.Add(new UCHome());
-            string STRNamePage = "الصفحة الرئيسية";
+            string STRNamePage = " ";
             ChFormName(STRNamePage);
         }
 
+        private void btnfixed_Click(object sender, RoutedEventArgs e)
+        {
+            gridShow.Children.Clear();
+            gridShow.Children.Add(new UCFixedData());
+            string STRNamePage = "البيانات الثابتة";
+            ChFormName(STRNamePage);
+
+        }
+
+        private void btnchindeing_Click(object sender, RoutedEventArgs e)
+        {
+            gridShow.Children.Clear();
+            gridShow.Children.Add(new UCChangingData());
+            string STRNamePage = "البيانات المتغيرة";
+            ChFormName(STRNamePage);
+        }
+
+        private void printing_Click(object sender, RoutedEventArgs e)
+        {
+            gridShow.Children.Clear();
+            gridShow.Children.Add(new UCDataPrint());
+            string STRNamePage = "طباعة البيانات";
+            ChFormName(STRNamePage);
+        }
     }
 }

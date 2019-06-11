@@ -206,12 +206,12 @@ namespace Astmara6Con.Controls
                                                     select p).ToList();
             if (length < 1)
             {
-               // lerrorcou_code.Content = "لم تكتب شئ ";
-               result1 = false;
+                lerrorcou_code.Content = "لم تكتب شئ ";
+                result1 = false;
             }
             if (precoucode.Count > 0)
             {
-               // lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
+                lerrorcou_code.Content = "لقد ادخلت هذا من قبل ";
                 result1 = false;
             }
             else
@@ -230,8 +230,8 @@ namespace Astmara6Con.Controls
 
             if (precoucode.Count > 0)
             {
-                //lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
-                result2= false;
+                lerrorcou_name.Content = "لقد ادخلت هذا من قبل ";
+                result2 = false;
             }
             else
             {
@@ -239,50 +239,104 @@ namespace Astmara6Con.Controls
             }
             if (length < 1)
             {
-               // lerrorcou_name.Content = "لم تكتب شئ ";
+                lerrorcou_name.Content = "لم تكتب شئ ";
                 result2 = false;
             }
 
             return result2;
         }
-        private void TBName_TextChanged(object sender, TextChangedEventArgs e)
+        private bool checkRank()
         {
+            ComboboxItem item = CBRank.SelectedItem as ComboboxItem;
+            int id;
+            if (item != null)
+                id = (int)item.Value;
+            else
+            {
+                LErrorRank.Content = "برجاء الاختيار من القائمه";
+                return false;
+            }
+            List<WorkHour> listSubjects = (from p in context.WorkHours
+                                          where p.Id == id
+                                          select p).ToList();
+            if (listSubjects.Count > 0)
+            {
+                LErrorRank.Content = "";
+                return true;
+            }
+            else
+            {
+                LErrorRank.Content = "برجاء الاختيارمن القائمه";
+                return false;
+            }
+        }
 
+        private bool checkDepart()
+        {
+            ComboboxItem item = CBDepartment.SelectedItem as ComboboxItem;
+            int id;
+            if (item != null)
+                id = (int)item.Value;
+            else
+            {
+                LErrorDepart.Content = "برجاء الاختيار من القائمه";
+                return false;
+            }
+            List<Section> ListLevels = (from p in context.Sections
+                                      where p.Id == id
+                                      select p).ToList();
+            if (ListLevels.Count > 0)
+            {
+                LErrorDepart.Content = "";
+                return true;
+            }
+            else
+            {
+                LErrorDepart.Content = "برجاء الاختيارمن القائمه";
+                return false;
+            }
+        }
+        public void check()
+        {
             lerrorcou_code.Content = "";
             lerrorcou_name.Content = "";
-
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;
-            Boolean r1= checkName(length);
+            LErrorDepart.Content = "";
+            LErrorRank.Content = "";
+            int length = TBName.Text.Length;
+            Boolean r1 = checkName(length);
             int r = TBNickName.Text.Length;
             Boolean r2 = checkNickName(r);
-            if (r1 & r2)
+            Boolean r3 = checkDepart();
+            Boolean r4 = checkRank();
+            if (r1 & r2 & r3 & r4)
             {
-                 BTNAdd.IsEnabled = true;
+                BTNAdd.IsEnabled = true;
             }
             else
                 BTNAdd.IsEnabled = false;
+        }
+        private void TBName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            check();
+
+           
         }
        
 
 
         public void TBNickName_TextChanged(object sender, TextChangedEventArgs e)
         {
+            check();
+        }
 
-            lerrorcou_code.Content = "";
-            lerrorcou_name.Content = "";
+        private void CBRank_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            check();
+        }
 
-            TextBox objTextBox = (TextBox)sender;
-            int length = objTextBox.Text.Length;           
-            Boolean r2 = checkNickName(length);
-            int r = TBName.Text.Length;
-            Boolean r1 = checkName(r);
-            if (r1 & r2)
-            {
-                BTNAdd.IsEnabled = true;
-            }
-            else
-               BTNAdd.IsEnabled = false;
+        private void CBDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            check();
         }
     }
 }

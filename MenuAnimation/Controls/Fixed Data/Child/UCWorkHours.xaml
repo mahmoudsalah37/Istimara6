@@ -23,7 +23,7 @@
             </Label.Foreground>
         </Label>
 
-        <TextBox x:Name="TBLegalMonument" Text="0" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات العمل " HorizontalAlignment="Left" Height="31" Margin="300,212,0,0"  PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" Background="#FFECE3E3" />
+        <TextBox x:Name="TBLegalMonument"  FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="عدد ساعات العمل " HorizontalAlignment="Left" Height="31" Margin="300,212,0,0"  PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" Background="#FFECE3E3" TextChanged="TBLegalMonument_TextChanged_1" />
         <Label Content="عدد ساعات العمل" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="417,214,0,0" Height="29" Width="102">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource 1}"/>

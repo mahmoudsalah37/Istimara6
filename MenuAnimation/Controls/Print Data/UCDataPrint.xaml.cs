@@ -30,17 +30,18 @@ namespace MenuAnimado1.Controls
         private void BTNIstimaraBAssistants_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCIstimaraBAssistants());
-            STRNamePage = "إستمارة ب مساعدين";
+            Form.gridShow.Children.Add(new UCIstimaraBDoctors());
+            STRNamePage = "إستمارة ب دكاترة";
             Form.ChFormName(STRNamePage);
         }
 
         private void BTNIstimaraBDoctors_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCIstimaraBDoctors());
-            STRNamePage = "إستمارة ب دكاترة";
+            Form.gridShow.Children.Add(new UCIstimaraBAssistants());
+            STRNamePage = "إستمارة ب مساعدين";
             Form.ChFormName(STRNamePage);
+           
         }
 
         private void BTNPlan_Click(object sender, System.Windows.RoutedEventArgs e)

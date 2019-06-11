@@ -36,7 +36,7 @@
             </TextBox.BorderBrush>
         </TextBox>
 
-        <ComboBox x:Name="CBRank"   HorizontalAlignment="Left" Margin="537,215,0,0" VerticalAlignment="Top" Width="129" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="الرتبة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" >
+        <ComboBox x:Name="CBRank"   HorizontalAlignment="Left" Margin="537,215,0,0" VerticalAlignment="Top" Width="129" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="الرتبة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectionChanged="CBRank_SelectionChanged" >
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </ComboBox.BorderBrush>
@@ -94,7 +94,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <ComboBox Name="CBDepartment" Margin="280,215,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="106"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="القسم" IsEditable="True" IsTextSearchCaseSensitive="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"   BorderBrush="#FF3580BF">
+        <ComboBox Name="CBDepartment" Margin="280,215,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="106"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="القسم" IsEditable="True" IsTextSearchCaseSensitive="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"   BorderBrush="#FF3580BF" SelectionChanged="CBDepartment_SelectionChanged">
 
         </ComboBox>
         <Label Content="االقسم" HorizontalAlignment="Left" Margin="391,231,0,0" VerticalAlignment="Top" Background="{x:Null}">
@@ -109,6 +109,8 @@
 
         <Label x:Name="lerrorcou_code" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="498,184,0,0" VerticalAlignment="Top" Width="168" Foreground="#DDFF0101"/>
         <Label x:Name="lerrorcou_name" Content="" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="238,184,0,0" VerticalAlignment="Top" Width="139" Foreground="#DDFF0101"/>
+        <Label x:Name="LErrorDepart" HorizontalAlignment="Left" Margin="264,253,0,0" VerticalAlignment="Top" Width="122" Height="35" Foreground="#DDFF0B0B"/>
+        <Label x:Name="LErrorRank" HorizontalAlignment="Left" Margin="512,255,0,0" VerticalAlignment="Top" Width="154" Height="35" Foreground="#DDFF0B0B"/>
 
         <!--<Frame x:Name="main"  />-->
 

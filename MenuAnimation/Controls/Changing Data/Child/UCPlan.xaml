@@ -115,9 +115,9 @@
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="60.6,306,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.Column="1" Visibility="Hidden"/>
         <Button x:Name="BTNDelete" Content="حذف" HorizontalAlignment="Left" Margin="216,297,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNDelete_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.ColumnSpan="2"/>
         <Button x:Name="BTNDeleteAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="180,330,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="BTNDeleteAll_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.ColumnSpan="2"/>
-        <Label Name="LErrorBranch" Content=""  Grid.Column="1" HorizontalAlignment="Left" Margin="338.6,173,0,0" VerticalAlignment="Top" Width="116" Height="26" Foreground="#DDFF0B0B"/>
-        <Label x:Name="LErrorDoctor" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="80.6,172,0,0" VerticalAlignment="Top" Width="162" Height="32" Foreground="#DDFF0B0B"/>
-        <Label x:Name="LErrorLevel" Grid.Column="1" HorizontalAlignment="Left" Margin="34.6,242,0,0" VerticalAlignment="Top" Width="159" Height="35" Foreground="#DDFF0B0B"/>
-        <Label x:Name="LErrorSubject" Grid.Column="1" HorizontalAlignment="Left" Margin="258.6,242,0,0" VerticalAlignment="Top" Width="154" Height="35" Foreground="#DDFF0B0B"/>
+        <Label Name="LErrorBranch" Content="" FlowDirection="RightToLeft" Grid.Column="1" HorizontalAlignment="Left" Margin="338.6,173,0,0" VerticalAlignment="Top" Width="116" Height="26" Foreground="#DDFF0B0B"/>
+        <Label x:Name="LErrorDoctor" Content="" FlowDirection="RightToLeft" Grid.Column="1" HorizontalAlignment="Left" Margin="80.6,172,0,0" VerticalAlignment="Top" Width="162" Height="32" Foreground="#DDFF0B0B"/>
+        <Label x:Name="LErrorLevel" Grid.Column="1" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="34.6,242,0,0" VerticalAlignment="Top" Width="159" Height="35" Foreground="#DDFF0B0B"/>
+        <Label x:Name="LErrorSubject" Grid.Column="1" HorizontalAlignment="Left" Margin="258.6,242,0,0" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="154" Height="35" Foreground="#DDFF0B0B"/>
     </Grid>
 </UserControl>

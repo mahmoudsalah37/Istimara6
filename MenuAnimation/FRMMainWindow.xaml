@@ -83,6 +83,7 @@
             <ColumnDefinition Width="117*"/>
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="StackPanelMenu" Width="250" HorizontalAlignment="Left" Margin="-250,14,0,-14" RenderTransformOrigin="0.5,0.5">
+
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -95,7 +96,7 @@
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
                     <materialDesign:PackIcon Kind="Settings" Width="40" Height="40"/>
                 </Button>
-                <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10" RenderTransformOrigin="0.5,0.5" Click="button_Click_2">
+                <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="94" Height="Auto" Margin="10,0,10,10" RenderTransformOrigin="0.5,0.5" Click="button_Click_2">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -107,9 +108,6 @@
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/science.jpg" Stretch="UniformToFill"/>
                     </Button.Background>
-                </Button>
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
-                    <materialDesign:PackIcon Kind="InformationOutline" Width="40" Height="40"/>
                 </Button>
             </StackPanel>
             <ListView>
@@ -123,8 +121,10 @@
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
                     <StackPanel Orientation="Horizontal" Margin="10 0">
+
                         <materialDesign:PackIcon Kind="BorderAll" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="البيانات الثابتة" Margin="10" VerticalAlignment="Center"/>
+                        <Button x:Name="btnfixed" Content="البيانات الثابتة" VerticalAlignment="Center" Margin="10" Height="43" Width="152" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Click="btnfixed_Click" />
+
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem x:Name="listViewItem1" Height="60" RenderTransformOrigin="0.5,0.5" Selected="listViewItem1_Selected">
@@ -142,7 +142,7 @@
                                 <ImageBrush/>
                             </materialDesign:PackIcon.Background>
                         </materialDesign:PackIcon>
-                        <TextBlock Text="البيانات المتغيرة" Margin="10" VerticalAlignment="Center"/>
+                        <Button x:Name="btnchindeing" Content="البيانات المتغيرة" VerticalAlignment="Center" Margin="10" Height="40" Width="151" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Click="btnchindeing_Click"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem x:Name="listViewItem2" Height="60" RenderTransformOrigin="0.5,0.5" Selected="ListViewItem2_Selected">
@@ -156,7 +156,7 @@
                     </ListViewItem.RenderTransform>
                     <StackPanel Orientation="Horizontal" Margin="10 0">
                         <materialDesign:PackIcon Kind="Printer" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="العرض و الطباعة" Margin="10" VerticalAlignment="Center"/>
+                        <Button x:Name="printing" Content="العرض و الطباعة " VerticalAlignment="Center" Margin="10" Height="40" Width="151" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Click="printing_Click"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
@@ -175,11 +175,14 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="formname" Content="الصفحة الرئيسية" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="59" Width="364" FontSize="36" Margin="207,29,0,0">
-                <Label.Foreground>
-                    <SolidColorBrush Color="{DynamicResource Color1}"/>
-                </Label.Foreground>
-            </Label>
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
+
+                <Label x:Name="formname" Content="الصفحة الرئيسية" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="59" Width="364" FontSize="36" Margin="207,29,0,0">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="{DynamicResource Color1}"/>
+                    </Label.Foreground>
+                </Label>
+            </materialDesign:TransitioningContent>
             <Grid Grid.Column="1" Background="#FF3580BF">
                 <Image Height="150" VerticalAlignment="Top" Source="Assets/back.jpg" Stretch="UniformToFill"/>
                 <Ellipse Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20 100" Stroke="White">

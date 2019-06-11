@@ -11,58 +11,36 @@
         <Color x:Key="Color1">#FF3580BF</Color>
     </UserControl.Resources>
     <Grid  FlowDirection="RightToLeft">
+        
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
 
+            <TextBlock HorizontalAlignment="Left" Margin="388,275,0,0" TextWrapping="Wrap" Text="خطة الترم" VerticalAlignment="Top">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Color1}"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.8}">
 
+            <Button x:Name="BTNSubjectsChoice" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="373,181,0,0" Height="112" Width="94" Click="BTNSubjectsChoice_Click">
+                <materialDesign:PackIcon Kind="LeadPencil" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+            </Button>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
 
-        <!--<Image Margin="269,49,266,48" Source="/MenuAnimado1;component/12.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform AngleY="0.006"/>
-                    <RotateTransform Angle="0.122"/>
-                    <TranslateTransform Y="-0.002"/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>-->
-        <!--<Image Margin="374,49,161,48" Source="/MenuAnimado1;component/121.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform AngleY="0.006"/>
-                    <RotateTransform Angle="0.122"/>
-                    <TranslateTransform Y="0.203"/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>-->
-        <!--<Image Margin="269,-152,266,-153" Source="/MenuAnimado1;component/123.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1.085" ScaleY="0.921"/>
-                    <SkewTransform AngleY="0.589"/>
-                    <RotateTransform Angle="-89.63"/>
-                    <TranslateTransform Y="-1.7" X="0.004"/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>-->
-        <TextBlock HorizontalAlignment="Left" Margin="388,275,0,0" TextWrapping="Wrap" Text="خطة الترم" VerticalAlignment="Top">
-            <TextBlock.Foreground>
-                <SolidColorBrush Color="{DynamicResource Color1}"/>
-            </TextBlock.Foreground>
-        </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="233,275,0,0" TextWrapping="Wrap" Text="بيان الطلاب" VerticalAlignment="Top">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Color1}"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.8}">
 
-        <Button x:Name="BTNSubjectsChoice" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="373,181,0,0" Height="112" Width="94" Click="BTNSubjectsChoice_Click">
-            <materialDesign:PackIcon Kind="LeadPencil" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="233,275,0,0" TextWrapping="Wrap" Text="بيان الطلاب" VerticalAlignment="Top">
-            <TextBlock.Foreground>
-                <SolidColorBrush Color="{DynamicResource Color1}"/>
-            </TextBlock.Foreground>
-        </TextBlock>
+            <Button x:Name="BTNStudentStatement" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="202,181,0,0" Height="114" Width="111" Click="BTNStudentStatement_Click">
 
-        <Button x:Name="BTNStudentStatement" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="202,181,0,0" Height="114" Width="111" Click="BTNStudentStatement_Click">
-
-            <materialDesign:PackIcon Kind="HumanChild" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
-        </Button>
+                <materialDesign:PackIcon Kind="HumanChild" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
+            </Button>
+        </materialDesign:TransitioningContent>
         <!--<Image Margin="163,49,372,48" Source="/Astmara6;component/12.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
