@@ -132,19 +132,19 @@ namespace Astmara6.Controls.Print_Data.Child
         private void data2Exel(DataGrid dataGrid)
         {
             Excel.Application excel = new Excel.Application();
-            excel.Visible = true; //www.yazilimkodlama.com
+            excel.Visible = true; 
             Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
 
-            for (int j = 0; j < dataGrid.Columns.Count; j++) //Başlıklar için
+            for (int j = 0; j < dataGrid.Columns.Count; j++) 
             {
                 Range myRange = (Range)sheet1.Cells[1, j + 1];
-                sheet1.Cells[1, j + 1].Font.Bold = true; //Başlığın Kalın olması için
-                sheet1.Columns[j + 1].ColumnWidth = 15; //Sütun genişliği ayarı
+                sheet1.Cells[1, j + 1].Font.Bold = true; 
+                sheet1.Columns[j + 1].ColumnWidth = 15; 
                 myRange.Value2 = dataGrid.Columns[j].Header;
             }
             for (int i = 0; i < dataGrid.Columns.Count; i++)
-            { //www.yazilimkodlama.com
+            { 
                 for (int j = 0; j < dataGrid.Items.Count; j++)
                 {
                     TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
