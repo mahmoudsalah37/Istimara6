@@ -54,5 +54,7 @@ namespace Astmara6.Controls.Print_Data.Child
             }
             context.SaveChanges();
         }
+
+        
     }
 }

@@ -7,7 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="484" d:DesignWidth="746">
     <Grid>
-        <Button Content="start" HorizontalAlignment="Left" Margin="340,227,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="364" Margin="157,-89,0,0" VerticalAlignment="Top" Width="412" Source="E:\ah\استمارات  (2017-2018)الترم الثانى/1.png" Stretch="UniformToFill"/>
+        <Label Content="تم التصميم و التنفيذ بواسطة طلاب قسم حاسب الي في كلية علوم جامعة بنها " HorizontalAlignment="Left" Margin="47,238,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
+        <Label Content="تحت اشراف دكتورنا العظيم د. جمال " HorizontalAlignment="Left" Margin="210,280,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
+        <Label Content="الجميع الحقوق محفوظة لصالح لكلية العلوم جامعة بنها ©  2019" HorizontalAlignment="Left" Margin="210,448,0,0" VerticalAlignment="Top" Foreground="#FF3580BF"/>
 
 
     </Grid>

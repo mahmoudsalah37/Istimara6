@@ -18,11 +18,14 @@
         <CollectionViewSource x:Key="branchesViewSource" Source="{Binding Branches, Source={StaticResource astmara6DataSet2}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource sectionsViewSource}">
-        <Label Content="اسم القسم" HorizontalAlignment="Left" Margin="658,226,0,0" VerticalAlignment="Top" Background="{x:Null}">
-            <Label.Foreground>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </Label.Foreground>
-        </Label>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+
+            <Label Content="اسم القسم" HorizontalAlignment="Left" Margin="658,226,0,0" VerticalAlignment="Top" Background="{x:Null}">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource 1}"/>
+                </Label.Foreground>
+            </Label>
+        </materialDesign:TransitioningContent>
         <Button x:Name="BTNBack" Content="عودة" HorizontalAlignment="Left" Margin="0,421,0,0" VerticalAlignment="Top" Width="77" Height="29" Click="BTNBack_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
@@ -33,16 +36,22 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <Label Content="اسم الشعبة" HorizontalAlignment="Left" Margin="451,226,0,0" VerticalAlignment="Top" Background="{x:Null}">
-            <Label.Foreground>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </Label.Foreground>
-        </Label>
-        <TextBox x:Name="TBNameMajors" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:شعبة رياضة " HorizontalAlignment="Left" Height="30" Margin="326,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFECE3E3" TextChanged="TBNameMajors_TextChanged">
-            <TextBox.BorderBrush>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </TextBox.BorderBrush>
-        </TextBox>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+
+            <Label Content="اسم الشعبة" HorizontalAlignment="Left" Margin="451,226,0,0" VerticalAlignment="Top" Background="{x:Null}">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource 1}"/>
+                </Label.Foreground>
+            </Label>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
+
+            <TextBox x:Name="TBNameMajors" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:شعبة رياضة " HorizontalAlignment="Left" Height="30" Margin="326,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFECE3E3" TextChanged="TBNameMajors_TextChanged">
+                <TextBox.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource 1}"/>
+                </TextBox.BorderBrush>
+            </TextBox>
+        </materialDesign:TransitioningContent>
         <Button x:Name="BTNAdd" Content="اضافة" IsEnabled="False" HorizontalAlignment="Right" Margin="0,0,440,230" VerticalAlignment="Bottom" Width="68" Height="28" Click="BTNAdd_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
@@ -61,21 +70,22 @@
         <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="451,317,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="451,284,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemoveAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="419,350,0,0" VerticalAlignment="Top" Width="98" Height="28" Click="BTNRemoveAll_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>
-        <ComboBox x:Name="CBNameDepartment"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم"  Style="{StaticResource MaterialDesignFloatingHintComboBox}"  IsTextSearchCaseSensitive="True"    DisplayMemberPath="TypeOfSection" ItemsSource="{Binding TypeOfSection}" Margin="536,216,93,228" SelectedValuePath="Id" RenderTransformOrigin="1.105,0.5" SelectionChanged="CBNameDepartment_SelectionChanged_1"  >
-            <ComboBox.BorderBrush>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </ComboBox.BorderBrush>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-            <!--<ComboBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel/>
-                </ItemsPanelTemplate>
-            </ComboBox.ItemsPanel>-->
+            <ComboBox x:Name="CBNameDepartment"  Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم"  Style="{StaticResource MaterialDesignFloatingHintComboBox}"  IsTextSearchCaseSensitive="True"    DisplayMemberPath="TypeOfSection" ItemsSource="{Binding TypeOfSection}" Margin="536,216,93,228" SelectedValuePath="Id" RenderTransformOrigin="1.105,0.5" SelectionChanged="CBNameDepartment_SelectionChanged_1"  >
+                <ComboBox.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource 1}"/>
+                </ComboBox.BorderBrush>
+            </ComboBox>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-        </ComboBox>
-        <Label x:Name="lerror" Content="إختار من القائمه" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="536,258,0,0" VerticalAlignment="Top" Width="120" Foreground="#DDFF0101"/>
-        <Label x:Name="lerror1" Content="إدخل بيانات" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="326,256,0,0" VerticalAlignment="Top" Width="120" Foreground="#DDFF0101"/>
+            <Label x:Name="lerror" Content="إختار من القائمه" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="536,258,0,0" VerticalAlignment="Top" Width="120" Foreground="#DDFF0101"/>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
+            <Label x:Name="lerror1" Content="إدخل بيانات" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="326,256,0,0" VerticalAlignment="Top" Width="120" Foreground="#DDFF0101"/>
+        </materialDesign:TransitioningContent>
 
 
     </Grid>
