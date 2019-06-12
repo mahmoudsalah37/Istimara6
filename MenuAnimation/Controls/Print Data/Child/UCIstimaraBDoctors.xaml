@@ -13,12 +13,12 @@
                 <DataGridTextColumn Binding="{Binding Teacher.Name}" IsReadOnly="True" Header="الاسم"/>
                 <DataGridTextColumn Binding="{Binding Teacher.WorkHour.Rank}" Header="الدرجة"/>
                 <DataGridTextColumn Binding="{Binding Teacher.WorkHour.Quorum}" Header="النصب القانوني"/>
-                <DataGridTextColumn Binding="{Binding Subject.Name }" IsReadOnly="True" Header="المواد التي يقوم بتدريسها"/>
-                <DataGridTextColumn Binding="{Binding NumOfPaper}" IsReadOnly="True"  Header="نظري"/>
-                <DataGridTextColumn Binding="{Binding NumberOfSuperVision}" IsReadOnly="True" Header="عملي"/>
-                <DataGridTextColumn Binding="{Binding NumberOfSuperVision}" IsReadOnly="True" Header="تمارين"/>
-                <DataGridTextColumn Binding="{Binding SumOfSubject}" IsReadOnly="True" Header="المجموع "/>
-                <DataGridTextColumn Binding="{Binding TotalOfHour}" IsReadOnly="True" Header="اجمالي المواد "/>
+                <DataGridTextColumn Binding="{Binding Subject}" IsReadOnly="True" Header="المواد التي يقوم بتدريسها"/>
+                <DataGridTextColumn Binding="{Binding Paper}" IsReadOnly="True"  Header="نظري"/>
+                <DataGridTextColumn Binding="{Binding Virtial}" IsReadOnly="True" Header="عملي"/>
+                <DataGridTextColumn Binding="{Binding Experment}" IsReadOnly="True" Header="تمارين"/>
+                <DataGridTextColumn Binding="{Binding Sum}" IsReadOnly="True" Header="المجموع "/>
+                <DataGridTextColumn Binding="{Binding Total}" IsReadOnly="True" Header="اجمالي المواد "/>
 
             </DataGrid.Columns>
         </DataGrid>

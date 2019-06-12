@@ -238,17 +238,18 @@
     <Compile Include="Controls\Changing Data\Child\UCStudentStatement.xaml.cs">
       <DependentUpon>UCStudentStatement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Branch.cs" />
-    <Compile Include="Data\CollegeContext.cs" />
-    <Compile Include="Data\Level.cs" />
-    <Compile Include="Data\Section.cs" />
-    <Compile Include="Data\StudentStatment.cs" />
-    <Compile Include="Data\Subject.cs" />
-    <Compile Include="Data\SubjectTeacher.cs" />
-    <Compile Include="Data\sysdiagram.cs" />
-    <Compile Include="Data\Teacher.cs" />
-    <Compile Include="Data\User.cs" />
-    <Compile Include="Data\WorkHour.cs" />
+    <Compile Include="Controls\Data\AstmaraB.cs" />
+    <Compile Include="Controls\Data\Branch.cs" />
+    <Compile Include="Controls\Data\CollegeContext.cs" />
+    <Compile Include="Controls\Data\Level.cs" />
+    <Compile Include="Controls\Data\Section.cs" />
+    <Compile Include="Controls\Data\StudentStatment.cs" />
+    <Compile Include="Controls\Data\Subject.cs" />
+    <Compile Include="Controls\Data\SubjectTeacher.cs" />
+    <Compile Include="Controls\Data\sysdiagram.cs" />
+    <Compile Include="Controls\Data\Teacher.cs" />
+    <Compile Include="Controls\Data\User.cs" />
+    <Compile Include="Controls\Data\WorkHour.cs" />
     <Compile Include="FRMMainWindow.xaml.cs">
       <DependentUpon>FRMMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -326,7 +327,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\pexels-photo-247885.jpeg" />
