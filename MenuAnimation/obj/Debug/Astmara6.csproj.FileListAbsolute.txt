@@ -312,7 +312,6 @@ E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
-E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
@@ -348,7 +347,6 @@ E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraA.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBAssistants.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
-E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlan.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
@@ -530,4 +528,3 @@ E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
 E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.dll
 E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\MaterialDesignColors.pdb
 E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csprojAssemblyReference.cache
-E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6_Content.g.cs

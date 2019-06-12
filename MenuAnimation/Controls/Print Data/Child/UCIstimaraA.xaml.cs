@@ -123,12 +123,25 @@ namespace Astmara6.Controls.Print_Data.Child
                 }
                 context.SaveChanges();
             }
+            var subjectTeachers = (from p in context.SubjectTeachers
+                                   select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true).ToList();
+            foreach (var subjectTeacher in subjectTeachers)
+            {
+                subjectTeacher.SumOfSubject = (subjectTeacher.NumOfPaper + subjectTeacher.NumberOfSuperVision);
+                context.SaveChanges();
+            }
         }
+        public void totalhoursCalc()
+        {
 
+        }
+        
         private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Print.data2Exel(DGAstmaraA);
         }
+
+
 
     }
     

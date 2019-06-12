@@ -12,6 +12,7 @@ namespace Astmara6.Data
         {
         }
 
+        public virtual DbSet<AstmaraB> AstmaraBs { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
         public virtual DbSet<Level> Levels { get; set; }
         public virtual DbSet<Section> Sections { get; set; }
@@ -34,6 +35,11 @@ namespace Astmara6.Data
                 .HasMany(e => e.SubjectTeachers)
                 .WithOptional(e => e.Branch)
                 .HasForeignKey(e => e.IdBranch);
+
+            modelBuilder.Entity<Level>()
+                .HasMany(e => e.AstmaraBs)
+                .WithOptional(e => e.Level)
+                .HasForeignKey(e => e.IdLevel);
 
             modelBuilder.Entity<Level>()
                 .HasMany(e => e.StudentStatments)
@@ -66,9 +72,19 @@ namespace Astmara6.Data
                 .HasForeignKey(e => e.IdSubject);
 
             modelBuilder.Entity<Teacher>()
+                .HasMany(e => e.AstmaraBs)
+                .WithOptional(e => e.Teacher)
+                .HasForeignKey(e => e.IdDoctor);
+
+            modelBuilder.Entity<Teacher>()
                 .HasMany(e => e.SubjectTeachers)
                 .WithOptional(e => e.Teacher)
                 .HasForeignKey(e => e.IdTeacher);
+
+            modelBuilder.Entity<WorkHour>()
+                .HasMany(e => e.AstmaraBs)
+                .WithOptional(e => e.WorkHour)
+                .HasForeignKey(e => e.IdWorkHours);
 
             modelBuilder.Entity<WorkHour>()
                 .HasMany(e => e.Teachers)

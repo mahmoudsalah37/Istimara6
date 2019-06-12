@@ -11,76 +11,108 @@ namespace Astmara6.Controls.Print_Data.Child
     public partial class UCIstimaraBAssistants : UserControl
     {
         private readonly CollegeContext context = new CollegeContext();
+
         public void loadData()
         {
-            var subjectTeachers = (from p in context.SubjectTeachers
-                                   select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).ToList();
-            DGAstmraBDoc.ItemsSource = subjectTeachers;
+            var astmaraBs = (from p in context.AstmaraBs
+                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).ToList();
+            DGAstmraBDoc.ItemsSource = astmaraBs;
 
         }
         public UCIstimaraBAssistants()
         {
             InitializeComponent();
-            totalHours();
+            context.AstmaraBs.RemoveRange(context.AstmaraBs);
+            context.SaveChanges();
+            insertdata();
             loadData();
         }
-        private void totalHours()
+        public void insertdata()
         {
             var subjectTeachers = (from p in context.SubjectTeachers
                                    select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).ToList();
             foreach (var subjectTeacher in subjectTeachers)
             {
-                subjectTeacher.SumOfSubject = (subjectTeacher.NumberOfVirtual + subjectTeacher.NumberOfExprement);
+                subjectTeacher.SumOfSubject = (subjectTeacher.NumberOfExprement + subjectTeacher.NumberOfVirtual);
             }
-
             var teachers = (from p in context.SubjectTeachers
-                            select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).Select(t => new { t.Teacher.Name, t.TotalOfHour }).Distinct().ToList();
+                            select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).ToList();
             foreach (var teacher in teachers)
             {
-                int? totalHour = (from p in context.SubjectTeachers
-                                  select p).Where(t => t.Teacher.Name == teacher.Name.ToString()).Sum(t => t.SumOfSubject);
-                var subjectsofTeashers = (from p in context.SubjectTeachers
-                                          select p).Where(t => t.Teacher.Name == teacher.Name.ToString()).ToList();
-                foreach (var subjectsofTeasher in subjectsofTeashers)
+                context.AstmaraBs.Add(new AstmaraB
                 {
-                    subjectsofTeasher.TotalOfHour = totalHour;
-                }
+                    IdDoctor = teacher.IdTeacher,
+                    IdWorkHours = teacher.Teacher.IdWorkHours,
+                    Subject = teacher.Subject.Name,
+                    IdLevel = teacher.IdLevel,
+                    Paper = teacher.NumOfPaper,
+                    Virtial = teacher.NumberOfVirtual,
+                    Experment = teacher.NumberOfExprement,
+                    Sum = teacher.SumOfSubject,
+                });
+
+                context.SaveChanges();
             }
+            totalHours();
+            com();
             context.SaveChanges();
         }
-        public void complitehour()
+
+
+        private void totalHours()
         {
-            var teachers = (from p in context.SubjectTeachers
-                            select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true).Select(t => new { t.Teacher.Name, t.Teacher.Id, t.Teacher.WorkHour.Quorum, t.TotalOfHour }).Distinct().ToList();
+            
+
+            var teachers = (from p in context.AstmaraBs
+                            select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).Select(t => new { t.IdDoctor }).Distinct().ToList();
             foreach (var teacher in teachers)
             {
-                int? totalHour = (from p in context.SubjectTeachers
-                                  select p).Where(t => t.Teacher.Name == teacher.Name.ToString()).Sum(t => t.SumOfSubject);
-                int? NumOfQuorum = teacher.Quorum;
+
+                int? totalHour = (from p in context.AstmaraBs
+                                  select p).Where(t => t.IdDoctor == teacher.IdDoctor).Sum(t => t.Sum);
+                var astmara8s = (from p in context.AstmaraBs
+                                 select p).Where(t => t.IdDoctor == teacher.IdDoctor).ToList();
+                foreach (var astmara8 in astmara8s)
+                {
+                    astmara8.Total = totalHour;
+                }
+                context.SaveChanges();
+            }
+
+        }
+        public void com()
+        {
+            var astmara8s = (from p in context.AstmaraBs
+                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).Select(t => new { t.IdDoctor, t.Teacher.WorkHour.Quorum, t.Total }).Distinct().ToList();
+            foreach (var astmaa8 in astmara8s)
+            {
+                int? totalHour = astmaa8.Total;
+                int? NumOfQuorum = astmaa8.Quorum;
                 if (totalHour >= NumOfQuorum)
                 {
-                    var subjectsofTeashers = (from p in context.SubjectTeachers
-                                              select p).Where(t => t.Teacher.Name == teacher.Name.ToString()).ToList();
-                    foreach (var subjectsofTeasher in subjectsofTeashers)
+                    var teachercoms = (from p in context.AstmaraBs
+                                       select p).Where(t => t.IdDoctor == astmaa8.IdDoctor).ToList();
+                    foreach (var teachercom in teachercoms)
                     {
-                        subjectsofTeasher.TotalOfHour = totalHour;
+                        teachercom.Total = totalHour;
+                        context.SaveChanges();
                     }
                 }
                 else
                 {
-                    var subjectsofTeashers = (from p in context.SubjectTeachers
-                                              select p).ToList();
-                    int? shortage = teacher.Quorum - totalHour;
+                    var teacher = (from p in context.AstmaraBs
+                                   select p).Where(t => t.IdDoctor == astmaa8.IdDoctor).ToList();
+                    int? shortage = NumOfQuorum - totalHour;
                     if (shortage <= 10)
                     {
-                        context.SubjectTeachers.Add(new SubjectTeacher()
+                        context.AstmaraBs.Add(new AstmaraB()
                         {
-                            IdTeacher = teacher.Id,
-                            IdSubject = 5,
-                            SumOfSubject = shortage,
+                            IdDoctor = astmaa8.IdDoctor,
+                            Subject = "انشطة ثقافية",
+                            Sum = shortage,
                         }
                         );
-                        complitehour();
+
                     }
                     else if (shortage <= 20 & shortage > 10)
                     {
@@ -91,18 +123,20 @@ namespace Astmara6.Controls.Print_Data.Child
                             shortage2 = (shortage / 2) + 1;
 
 
-                        for (int i = 5; i < 7; i++)
-                        {
-                            context.SubjectTeachers.Add(new SubjectTeacher()
-                            {
-                                IdTeacher = teacher.Id,
-                                IdSubject = i,
-                                SumOfSubject = shortage2,
-                            }
-                           );
 
+                        context.AstmaraBs.Add(new AstmaraB()
+                        {
+                            IdDoctor = astmaa8.IdDoctor,
+                            Subject = "انشطة ثقافية",
+                            Sum = shortage2,
                         }
-                        complitehour();
+                       );
+                        context.AstmaraBs.Add(new AstmaraB()
+                        {
+                            IdDoctor = astmaa8.IdDoctor,
+                            Subject = "انشطة اجتماعية",
+                            Sum = shortage2,
+                        });
                     }
                     else if (shortage > 20)
                     {
@@ -111,22 +145,31 @@ namespace Astmara6.Controls.Print_Data.Child
                             shortage2 = (shortage / 3);
                         else
                             shortage2 = (shortage / 3) + 1;
-                        for (int i = 5; i <= 7; i++)
-                        {
-                            context.SubjectTeachers.Add(new SubjectTeacher()
-                            {
-                                IdTeacher = teacher.Id,
-                                IdSubject = i,
-                                SumOfSubject = shortage2,
-                            }
-                           );
-                        }
-                        //complitehour();
-                    }
 
+                        context.AstmaraBs.Add(new AstmaraB()
+                        {
+                            IdDoctor = astmaa8.IdDoctor,
+                            Subject = "انشطة ثقافية",
+                            Sum = shortage2,
+                        }
+                       );
+                        context.AstmaraBs.Add(new AstmaraB()
+                        {
+                            IdDoctor = astmaa8.IdDoctor,
+                            Subject = "انشطة اجتماعية",
+                            Sum = shortage2,
+                        });
+                        context.AstmaraBs.Add(new AstmaraB()
+                        {
+                            IdDoctor = astmaa8.IdDoctor,
+                            Subject = "انشطة رياضية",
+                            Sum = shortage2,
+                        });
+                    }
+                    context.SaveChanges();
                 }
             }
-            context.SaveChanges();
+            totalHours();
         }
 
         private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
