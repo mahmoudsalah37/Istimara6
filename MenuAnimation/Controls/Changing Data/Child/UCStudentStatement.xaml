@@ -93,7 +93,7 @@
                 <DataGridTextColumn Binding="{Binding Id}" Header="" Visibility="Hidden" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Subject.Code}" Header="كود المادة" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Subject.Name}" Header="المادة" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Section.TypeOfSection}" Header="القسم" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Branch.Section.TypeOfSection}" Header="القسم" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Branch.Name}" Header="الشعبة" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Level.Name}" Header="المستوي" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding NumberOfStudent}" Header="عدد الطلاب"/>

@@ -1,12 +1,6 @@
 ﻿using System.Windows.Controls;
 using Astmara6.Data;
-using Astmara6.Model;
-using MenuAnimado1.Controls;
-using System;
-using System.Windows;
-using System.Windows.Controls;
 using System.Linq;
-using System.Collections.Generic;
 
 
 namespace Astmara6.Controls.Print_Data.Child

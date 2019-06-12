@@ -1,16 +1,12 @@
 ﻿using MenuAnimado1.Controls;
 using System.Data;
 using System.Linq;
-﻿using Astmara6;
 using System.Windows;
 using System.Windows.Controls;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using Astmara6.Model;
 using Astmara6.Data;
 using System;
-using System.Linq;
 namespace Astmara6Con.Controls
 {
     /// <summary>
@@ -145,7 +141,6 @@ namespace Astmara6Con.Controls
                 Teachers.NickName = teacherrow.NickName;
                 context.SaveChanges();
                 loadData();
-                MessageBox.Show("تم تعديل الصف بنجاح");
             }
             catch (Exception)
             {
@@ -171,7 +166,6 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
 
-                MessageBox.Show("تم مسح العنصر بنجاح");
         }
                 catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                     "تـأكد من انه غير مرتبط باي مادة  اولاً"); }
@@ -186,7 +180,6 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
 
-                MessageBox.Show("تم مسح كل البيانات");
             }
             catch (Exception) {
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +

@@ -82,9 +82,6 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
 
-
-                MessageBox.Show("تم تعديل الصف بنجاح");
-
             }
             catch (Exception Ex)
             {
@@ -109,7 +106,6 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
 
-                MessageBox.Show("تم مسح العنصر بنجاح");
             }
             catch (Exception) {
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
@@ -127,7 +123,6 @@ namespace Astmara6Con.Controls
                 context.SaveChanges();
                 loadData();
 
-                MessageBox.Show("تم مسح كل البيانات");
             }
             catch (Exception) {
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
@@ -145,7 +140,6 @@ namespace Astmara6Con.Controls
                 });
                 context.SaveChanges();
                 loadData();
-                MessageBox.Show("تم حفظ العملية بنجاح");
                 TBNameDepartment.Text = "";
             }
             catch (Exception)

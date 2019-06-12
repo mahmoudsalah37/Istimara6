@@ -5,7 +5,6 @@ using System.Windows.Controls;
 using System.Collections.Generic;
 using System;
 using Astmara6.Data;
-using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace Astmara6Con.Controls
