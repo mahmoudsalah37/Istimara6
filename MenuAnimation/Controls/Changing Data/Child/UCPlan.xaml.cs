@@ -19,11 +19,29 @@ namespace Astmara6Con.Controls
         private ComboboxItem item;
         private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
         private readonly CollegeContext context = new CollegeContext();
-
+        private void getDepartments()
+        {
+            var listSection = (from p in context.Sections
+                               select p).ToList();
+            foreach (var section in listSection)
+            {
+                item = new ComboboxItem();
+                item.Text = section.TypeOfSection;
+                item.Value = section.Id;
+                CBDepartments.Items.Add(item);
+            }
+        }
         private void getBranches()
         {
+            string x = "null";
+            ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+            if (it != null)
+            {
+                CBBRanches.Items.Clear();
+                x = it.Text;
+            }
             var listBranches = (from p in context.Branches
-                                 select p).ToList();
+                                 select p).Where(t=>t.Section.TypeOfSection==x).ToList();
             foreach (var branch in listBranches)
             {
                 item = new ComboboxItem();
@@ -32,36 +50,28 @@ namespace Astmara6Con.Controls
                 CBBRanches.Items.Add(item);
             }
         }
+       
         private void getDoctors()
         {
+            string x = "null";
+            ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+            if (it != null)
+            {
+                CBDoctorsName.Items.Clear();
+                x = it.Text;
+            }
             var listTeachers = (from p in context.Teachers
-                                select p).ToList();
+                                select p).Where(t=>t.Section.TypeOfSection==x).ToList();
             foreach (var teacher in listTeachers)
             {
-                //if (teacher.WorkHour.AcademicOrVirtual == true)
-                //{
+                
                     item = new ComboboxItem();
                     item.Text = teacher.Name;
                     item.Value = teacher.Id;
                     CBDoctorsName.Items.Add(item);
-                //}
+                
             }
         }
-        //private void getAssitants()
-        //{
-        //    var listTeachers = (from p in context.Teachers
-        //                        select p).ToList();
-        //    foreach (var teacher in listTeachers)
-        //    {
-        //        if (teacher.WorkHour.AcademicOrVirtual == false)
-        //        {
-        //            item = new ComboboxItem();
-        //            item.Text = teacher.Name;
-        //            item.Value = teacher.Id;
-        //            CBAssistantsName.Items.Add(item);
-        //        }
-        //    }
-        //}
         private void getSubjects()
         {
             var studentStatments = (from p in context.StudentStatments
@@ -102,7 +112,7 @@ namespace Astmara6Con.Controls
             InitializeComponent();
             getBranches();
             getDoctors();
-            //getAssitants();
+            getDepartments();
             getSubjects();
             getLevels();
             loadData();
@@ -333,7 +343,7 @@ namespace Astmara6Con.Controls
             LErrorBranch.Content = "";
             LErrorDoctor.Content = "";
             LErrorSubject.Content = "";
-            if (checkLevel() && checkDoctor() && checkSubject())
+            if (checkLevel() && checkDoctor()&& checkBranch() && checkSubject())
                 btnAdd.IsEnabled = true;
             else
             {
@@ -361,6 +371,12 @@ namespace Astmara6Con.Controls
         private void CBLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             checkover();
+        }
+
+        private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            getBranches();
+            getDoctors();
         }
     }
 }
