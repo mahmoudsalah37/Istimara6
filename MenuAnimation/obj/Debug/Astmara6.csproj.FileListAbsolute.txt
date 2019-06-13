@@ -314,7 +314,6 @@ E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.g.cs
-E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\App.g.cs
@@ -349,7 +348,6 @@ E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCIstimaraBDoctors.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\UCDataPrint.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCPlan.baml
-E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\UCHome.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Changing Data\Child\UCStudentStatement.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\FRMMainWindow.baml
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Astmara6.g.resources
@@ -642,3 +640,5 @@ E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.ResolveComReference.cache
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlanPrint.g.cs
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Print Data\Child\UCPlanPrint.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCHome.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCHome.baml
