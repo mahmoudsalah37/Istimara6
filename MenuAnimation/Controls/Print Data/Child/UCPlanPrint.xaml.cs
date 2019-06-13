@@ -31,7 +31,10 @@ namespace Astmara6.Controls.Print_Data.Child
 
         private void BtnExportData_Click(object sender, RoutedEventArgs e)
         {
-            Print.data2Exel(DGPlanShow);
+            Dispatcher.Invoke(() =>
+            {
+                Print.data2Exel(this, DGPlanShow);
+            });
         }
     }
 }

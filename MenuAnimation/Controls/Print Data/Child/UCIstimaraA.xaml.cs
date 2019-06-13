@@ -157,7 +157,11 @@ namespace Astmara6.Controls.Print_Data.Child
         
         private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Print.data2Exel(DGAstmaraA);
+            Dispatcher.Invoke(() =>
+            {
+                Print.data2Exel(this, DGAstmaraA);
+
+            });
         }
 
 
