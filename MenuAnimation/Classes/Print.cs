@@ -13,7 +13,7 @@ namespace Astmara6.Classes
 
             try
             {
-                excel.Visible = true; //www.yazilimkodlama.com
+                excel.Visible = true; 
                 Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
                 Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
                

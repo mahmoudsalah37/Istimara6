@@ -15,17 +15,38 @@ namespace Astmara6.Controls.Print_Data.Child
     /// </summary>
     public partial class UCPlanPrint : UserControl
     {
+        private readonly CollegeContext context = new CollegeContext();
+        private ComboboxItem item;
+        private void getDepartments()
+        {
+            var listSection = (from p in context.Sections
+                               select p).ToList();
+            foreach (var section in listSection)
+            {
+                item = new ComboboxItem();
+                item.Text = section.TypeOfSection;
+                item.Value = section.Id;
+                CBDepartments.Items.Add(item);
+            }
+        }
         public void loadData()
         {
+            string x = "null";
+            ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+            if (it != null)
+            {
+                x = it.Text;
+            }
             var subjectTeachers = (from p in context.SubjectTeachers
-                                   select p).ToList();
+                                   select p).Where(t=>t.Teacher.Section.TypeOfSection==x).ToList();
             DGPlanShow.ItemsSource = subjectTeachers;
 
         }
-        private readonly CollegeContext context = new CollegeContext();
+       
         public UCPlanPrint()
         {
             InitializeComponent();
+            getDepartments();
             loadData();
         }
 
@@ -35,6 +56,11 @@ namespace Astmara6.Controls.Print_Data.Child
             {
                 Print.data2Exel(this, DGPlanShow);
             });
+        }
+
+        private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            loadData();
         }
     }
 }
