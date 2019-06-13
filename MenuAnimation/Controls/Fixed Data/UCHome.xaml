@@ -7,11 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="484" d:DesignWidth="746">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="364" Margin="157,-89,0,0" VerticalAlignment="Top" Width="412" Source="E:\ah\استمارات  (2017-2018)الترم الثانى/1.png" Stretch="UniformToFill"/>
+        <Image HorizontalAlignment="Left" Height="129" Margin="118,322,0,0" VerticalAlignment="Top" Width="511" Source="E:\ah\استمارات  (2017-2018)الترم الثانى/1.png" Stretch="UniformToFill"/>
         <Label Content="تم التصميم و التنفيذ بواسطة طلاب قسم حاسب الي في كلية علوم جامعة بنها " HorizontalAlignment="Left" Margin="47,238,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
         <Label Content="تحت اشراف دكتورنا العظيم د. جمال " HorizontalAlignment="Left" Margin="210,280,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
         <Label Content="الجميع الحقوق محفوظة لصالح لكلية العلوم جامعة بنها ©  2019" HorizontalAlignment="Left" Margin="210,448,0,0" VerticalAlignment="Top" Foreground="#FF3580BF"/>
-
+        <MediaElement Name="MEVedio" HorizontalAlignment="Left" Height="223" Margin="166,10,0,0" VerticalAlignment="Top" Width="397" Source="E:\graduate project\git\Istimara6\MenuAnimation\Assets\vedio2.mp4" Stretch="UniformToFill"/>
 
     </Grid>
 </UserControl>
