@@ -78,7 +78,26 @@ namespace Astmara6.Controls.Print_Data.Child
 
                 foreach (SubjectTeacher update in updates)
                 {
-                    if(update.Teacher.WorkHour.AcademicOrVirtual == true)
+                    int countDo = (from p in context.SubjectTeachers
+                                    select p).Where(t => t.Level.Id == update.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == update.Subject.Id).ToList().Count();
+                    bool checkdoc= false;
+                    if (update.Teacher.WorkHour.AcademicOrVirtual == true)
+                        checkdoc = true;
+                    if (countDo > 1 & checkdoc)
+                    {
+                        int i = 0;
+                        var us = updates.Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true).ToList();
+                        foreach (var u in us)
+                        {
+                            i++;
+                            if (i != 1)
+                            {
+                                u.NumOfPaper = 0;
+                                context.SaveChanges();
+                            }
+                        }
+                    }
+                    if (update.Teacher.WorkHour.AcademicOrVirtual == true)
                     {
                         if (checkDivtionDoc == true)
                         {

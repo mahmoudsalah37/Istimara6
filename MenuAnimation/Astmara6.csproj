@@ -152,7 +152,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\UCHome.xaml">
+    <Page Include="Controls\Fixed Data\UCHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,7 +232,7 @@
     <Compile Include="Controls\Changing Data\Child\UCPlan.xaml.cs">
       <DependentUpon>UCPlan.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\UCHome.xaml.cs">
+    <Compile Include="Controls\Fixed Data\UCHome.xaml.cs">
       <DependentUpon>UCHome.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Changing Data\Child\UCStudentStatement.xaml.cs">
