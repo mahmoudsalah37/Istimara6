@@ -38,7 +38,7 @@ namespace Astmara6.Controls.Print_Data.Child
                 x = it.Text;
             }
             var subjectTeachers = (from p in context.SubjectTeachers
-                                   select p).Where(t=>t.Branch.Section.TypeOfSection==x).ToList();
+                                   select p).Where(t=>t.Branch.Section.TypeOfSection==x).ToList().OrderBy(t=>t.IdLevel).OrderBy(t=>t.IdSubject);
             DGAstmaraA.ItemsSource = subjectTeachers;
 
         }
@@ -58,6 +58,7 @@ namespace Astmara6.Controls.Print_Data.Child
             int? indSuperVision=4;
             int? indExperimentOrVersial=0;
             var listLevelAndSubject= (from p in context.SubjectTeachers
+
                      select p).Select(t=> new {t.Level,t.Subject,t.Branch.Section.TypeOfSection }).Distinct().ToList();
             foreach (var levelAndSubject in listLevelAndSubject)
             {
@@ -119,14 +120,15 @@ namespace Astmara6.Controls.Print_Data.Child
                             if (i != 1)
                             {
                                 u.NumOfPaper = 0;
-                                context.SaveChanges();
                             }
                         }
+                        context.SaveChanges();
                     }
                     if (update.Teacher.WorkHour.AcademicOrVirtual == true)
                     {
                         if (checkDivtionDoc == true)
                         {
+
                           
                            for(int i = 1; i <= DivtionDoc; i++)
                            {
@@ -162,9 +164,12 @@ namespace Astmara6.Controls.Print_Data.Child
 
                                 }
                            }
+
+                                update.NumberOfSuperVision = indSuperVision + DivtionDoc;
+                                checkDivtionDoc = false;                           
                         }
                         else
-                        update.NumberOfSuperVision = indSuperVision;
+                            update.NumberOfSuperVision = indSuperVision;
                     }
                     else
                     {
@@ -206,19 +211,18 @@ namespace Astmara6.Controls.Print_Data.Child
             foreach (var subjectTeacher in subjectTeachers)
             {
                 subjectTeacher.SumOfSubject = (subjectTeacher.NumOfPaper + subjectTeacher.NumberOfSuperVision);
-                context.SaveChanges();
             }
+            context.SaveChanges();
         }
-        public void totalhoursCalc()
-        {
-
-        }
+     
         
         private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Dispatcher.Invoke(() =>
             {
-                Print.data2Exel(this, DGAstmaraA);
+                string semester = TransferData.Semester;
+                string year = TransferData.Year;
+                Print.data2Exel(this, DGAstmaraA,1, semester, year);
 
             });
         }
