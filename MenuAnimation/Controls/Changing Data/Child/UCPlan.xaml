@@ -13,6 +13,27 @@
         <Color x:Key="1">#FF3580BF</Color>
     </UserControl.Resources>
     <Grid>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+
+        <Label Content="كود المادة " HorizontalAlignment="Left" Margin="200,215,0,0" VerticalAlignment="Top" Height="27" Width="68">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Label.Foreground>
+        </Label>
+        </materialDesign:TransitioningContent>
+
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
+
+        <TextBox x:Name="TBCode" HorizontalAlignment="Left" Height="26" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="كود المادة  " Margin="115,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionBrush="{x:Null}" TextChanged="TBCode_TextChanged" >
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Color2}"/>
+            </TextBox.BorderBrush>
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
+            </TextBox.Background>
+        </TextBox>
+        </materialDesign:TransitioningContent>
+
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
             <ComboBox Margin="547,134,0,0" x:Name="CBDepartments" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectedIndex="-1" SelectionChanged="CBDepartments_SelectionChanged" >
                 <ComboBox.BorderBrush>
