@@ -30,7 +30,7 @@
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-        <ComboBox Margin="59,134,0,0" x:Name="CBDoctorsName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="هيئة التدريس" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectionChanged="CBDoctorsName_SelectionChanged">
+            <ComboBox Margin="59,134,0,0" x:Name="CBDoctorsName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="هيئة التدريس" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectionChanged="CBDoctorsName_SelectionChanged">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>

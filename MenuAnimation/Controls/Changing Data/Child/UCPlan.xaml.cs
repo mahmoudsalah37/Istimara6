@@ -211,28 +211,53 @@ namespace Astmara6Con.Controls
 
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذاالعنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
             {
-                SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
-                SubjectTeacher subject = (from p in context.SubjectTeachers
-                                          where p.Id == subjectTeacher.Id
-                                          select p).Single();
-                context.SubjectTeachers.Remove(subject);
-                context.SaveChanges();
-                loadData();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+                try
+                {
+                    SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+                    SubjectTeacher subject = (from p in context.SubjectTeachers
+                                              where p.Id == subjectTeacher.Id
+                                              select p).Single();
+                    context.SubjectTeachers.Remove(subject);
+                    context.SaveChanges();
+                    loadData();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
             }
         }
 
         private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
         {
-            context.SubjectTeachers.RemoveRange(context.SubjectTeachers);
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
+                { 
+                context.SubjectTeachers.RemoveRange(context.SubjectTeachers);
             context.SaveChanges();
             loadData();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
+
         }
         private bool checkBranch()
         {

@@ -14,7 +14,9 @@ namespace Astmara6Con.Controls
 
         public UCFixedData()
         {
+
             InitializeComponent();
+            Form.ButtonOpenMenu.Visibility = Visibility.Visible;
         }
 
         private void BtNLevels_Click(object sender, RoutedEventArgs e)

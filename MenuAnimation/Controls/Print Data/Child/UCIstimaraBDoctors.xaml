@@ -10,16 +10,33 @@
              d:DesignHeight="484" d:DesignWidth="800">
     <Grid>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
-        <ComboBox Margin="334,52,0,0" x:Name="CBDepartments" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectedIndex="-1" SelectionChanged="CBDepartments_SelectionChanged" BorderBrush="#FF2196F3" />
+        <ComboBox Margin="507,59,0,0" x:Name="CBDepartments" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectedIndex="-1" SelectionChanged="CBDepartments_SelectionChanged" BorderBrush="#FF2196F3" />
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
 
-        <Label Content="القسم" HorizontalAlignment="Left" Margin="470,65,0,0" VerticalAlignment="Top" Background="{x:Null}">
+        <Label Content="القسم" HorizontalAlignment="Left" Margin="643,72,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>
                 <SolidColorBrush Color="#FF2196F3"/>
             </Label.Foreground>
         </Label>
         </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+
+        <Label Content="اسم الدكتور" HorizontalAlignment="Left" Margin="325,71,0,0" VerticalAlignment="Top" Background="{x:Null}">
+            <Label.Foreground>
+                <SolidColorBrush Color="#FF2196F3"/>
+            </Label.Foreground>
+        </Label>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
+
+        <ComboBox Margin="136,58,0,0" x:Name="CBDoctorsName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم الدكتور" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectionChanged="CBDoctorsName_SelectionChanged">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="#FF2196F3"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
+        </materialDesign:TransitioningContent>
+
         <Button x:Name="btnExportData" Content="استخراح" HorizontalAlignment="Left" Margin="10,442,0,0" VerticalAlignment="Top" Width="75" Click="BtnExportData_Click"/>
         <DataGrid HorizontalAlignment="Left" x:Name="DGAstmraBDoc" AutoGenerateColumns="False" Height="327" FlowDirection="RightToLeft" Margin="101,147,0,0" VerticalAlignment="Top" Width="651">
             <DataGrid.Columns>

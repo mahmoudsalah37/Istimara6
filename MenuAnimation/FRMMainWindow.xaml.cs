@@ -5,6 +5,7 @@ using System.Data.Entity;
 using Astmara6.Data;
 using System.Linq;
 using System;
+using Astmara6.Controls.Fixed_Data;
 
 namespace Astmara6Con
 {
@@ -19,7 +20,7 @@ namespace Astmara6Con
         {
             InitializeComponent();
             gridShow.Children.Clear();
-            gridShow.Children.Add(new UCFixedData());
+            gridShow.Children.Add(new UCLogin());
             CollegeContext model = new CollegeContext();
             if (model.Database.CreateIfNotExists())
             {

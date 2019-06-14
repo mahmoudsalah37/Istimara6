@@ -3,6 +3,8 @@ using Astmara6.Data;
 using System.Linq;
 using Astmara6.Classes;
 using Astmara6.Model;
+using System.Windows;
+using System;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -25,6 +27,27 @@ namespace Astmara6.Controls.Print_Data.Child
                 CBDepartments.Items.Add(item);
             }
         }
+        private void getDoctors()
+        {
+            string x = "null";
+            ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+            if (it != null)
+            {
+                CBDoctorsName.Items.Clear();
+                x = it.Text;
+            }
+            var listTeachers = (from p in context.Teachers
+                                select p).Where(t => t.Section.TypeOfSection == x &&t.WorkHour.AcademicOrVirtual==false).ToList();
+            foreach (var teacher in listTeachers)
+            {
+
+                item = new ComboboxItem();
+                item.Text = teacher.Name;
+                item.Value = teacher.Id;
+                CBDoctorsName.Items.Add(item);
+
+            }
+        }
         public void loadData()
         {
             string x = "null";
@@ -34,7 +57,7 @@ namespace Astmara6.Controls.Print_Data.Child
                 x = it.Text;
             }
             var astmaraBs = (from p in context.AstmaraBs
-                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false& t.Teacher.Section.TypeOfSection == x).ToList();
+                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true & t.Teacher.Section.TypeOfSection == x).ToList();
             DGAstmraBDoc.ItemsSource = astmaraBs;
 
         }
@@ -42,6 +65,7 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             InitializeComponent();
             getDepartments();
+            getDoctors();
             context.AstmaraBs.RemoveRange(context.AstmaraBs);
             context.SaveChanges();
             insertdata();
@@ -203,7 +227,36 @@ namespace Astmara6.Controls.Print_Data.Child
 
         private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            CBDoctorsName.Items.Clear();
+            getDoctors();
             loadData();
+
+        }
+
+        private void CBDoctorsName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            try
+            {
+                string x = "null";
+                string y = "null";
+                ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+                ComboboxItem ad = CBDoctorsName.SelectedItem as ComboboxItem;
+                if (it != null || ad != null)
+                {
+                    x = it.Text;
+                    y = ad.Text;
+
+
+                }
+                var astmaraBs = (from p in context.AstmaraBs
+                                 select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false & t.Teacher.Name == y & t.Teacher.Section.TypeOfSection == x).ToList();
+                DGAstmraBDoc.ItemsSource = astmaraBs;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+            }
         }
     }
 }

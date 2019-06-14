@@ -149,7 +149,10 @@ namespace Astmara6Con.Controls
 
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذاالعنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
                 StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
                 StudentStatment student = (from p in context.StudentStatments
@@ -164,26 +167,39 @@ namespace Astmara6Con.Controls
                 MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
             }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
         }
 
         private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
             {
+                try
+                {
                 context.StudentStatments.RemoveRange(context.StudentStatments);
                 context.SaveChanges();
                 loadData();
-            }
-            catch (Exception)
-            {
+                }
+                catch (Exception)
+                {
                 MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
+                }
             }
-        }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
+}
 
         private bool checkBranch()
         {
-            ComboboxItem item = CBDepartments.SelectedItem as ComboboxItem;
+            ComboboxItem item = CBBranches.SelectedItem as ComboboxItem;
             int id;
             if (item != null)
                 id = (int)item.Value;

@@ -341,3 +341,7 @@ E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe
 E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCLogin.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Login.g.cs
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Controls\Fixed Data\UCLogin.baml
+E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\obj\Debug\Login.baml
