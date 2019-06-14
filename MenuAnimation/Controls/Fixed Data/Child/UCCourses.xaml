@@ -12,7 +12,8 @@
         <Color x:Key="Color1">#89AA1616</Color>
         <Color x:Key="1">#FF3580BF</Color>
         <Color x:Key="Color2">#FFECE3E3</Color>
-        <CollectionViewSource x:Key="subjectsViewSource" />
+        <Astmara6:Astmara6DataSet4 x:Key="astmara6DataSet4"/>
+        <CollectionViewSource x:Key="subjectsViewSource" Source="{Binding Subjects, Source={StaticResource astmara6DataSet4}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource subjectsViewSource}">
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">

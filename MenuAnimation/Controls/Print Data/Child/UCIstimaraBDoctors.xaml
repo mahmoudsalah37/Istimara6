@@ -44,7 +44,6 @@
                 <DataGridTextColumn Binding="{Binding Teacher.WorkHour.Rank}" Header="الدرجة"/>
                 <DataGridTextColumn Binding="{Binding Teacher.WorkHour.Quorum}" Header="النصب القانوني"/>
                 <DataGridTextColumn Binding="{Binding Subject}" IsReadOnly="True" Header="المواد التي يقوم بتدريسها"/>
-                <DataGridTextColumn Binding="{Binding Level.Name}" IsReadOnly="True"  Header="المستوي"/>
                 <DataGridTextColumn Binding="{Binding Paper}" IsReadOnly="True"  Header="نظري"/>
                 <DataGridTextColumn Binding="{Binding Virtial}" IsReadOnly="True" Header="عملي"/>
                 <DataGridTextColumn Binding="{Binding Experment}" IsReadOnly="True" Header="تمارين"/>

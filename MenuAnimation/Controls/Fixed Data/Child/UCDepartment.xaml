@@ -12,10 +12,6 @@
     <UserControl.Resources>
         <Color x:Key="1">#FF3580BF</Color>
       
-
-        <!--<Astmara6:Astmara6DataSet x:Key="astmara6DataSet"/>-->
-        <!--<CollectionViewSource x:Key="levelsViewSource" Source="{Binding Levels, Source={StaticResource astmara6DataSet}}"/>-->
-
     </UserControl.Resources>
     <Grid>
 
@@ -50,9 +46,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-
-        <DataGrid x:Name="DGDepartmentView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True" Margin="510,281,0,3" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="DGDepartmentView_SelectionChanged">
-
+        <DataGrid x:Name="DGDepartmentView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True"  Margin="510,281,0,3" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="DGDepartmentView_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn  Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="SizeToHeader"  Visibility="Hidden" />
                 <DataGridTextColumn Binding="{Binding TypeOfSection}" Header="الأقسام" Width="Auto"/>

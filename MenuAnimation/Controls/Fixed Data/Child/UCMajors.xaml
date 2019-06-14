@@ -12,7 +12,10 @@
     <UserControl.Resources>
         <Color x:Key="1">#FF3580BF</Color>
         <Color x:Key="Color1\">#FFECE3E3</Color>
-        <CollectionViewSource x:Key="sectionsViewSource" />
+        <Astmara6:Astmara6DataSet3 x:Key="astmara6DataSet3"/>
+        <CollectionViewSource x:Key="sectionsViewSource" Source="{Binding Sections, Source={StaticResource astmara6DataSet3}}"/>
+        <Astmara6:Astmara6DataSet2 x:Key="astmara6DataSet2"/>
+        <CollectionViewSource x:Key="branchesViewSource" Source="{Binding Branches, Source={StaticResource astmara6DataSet2}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource sectionsViewSource}">
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
@@ -54,7 +57,7 @@
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="DGMajorsView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True"  Margin="523,284,10,0" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="BranchesDataGrid_SelectionChanged" BindingGroup="{Binding Id, Mode=OneWay}">
+        <DataGrid x:Name="DGMajorsView" AutoGenerateColumns="False" FlowDirection="RightToLeft" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource branchesViewSource}}" Margin="523,284,10,0" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="BranchesDataGrid_SelectionChanged" BindingGroup="{Binding Id, Mode=OneWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Visibility="Hidden" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="idSectionColumn" Binding="{Binding IdSection}" Header="Id Section" Visibility="Hidden" Width="SizeToHeader"/>

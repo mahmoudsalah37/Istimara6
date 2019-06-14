@@ -54,7 +54,7 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             Dispatcher.Invoke(() =>
             {
-                Print.data2Exel(this, DGPlanShow,2,"","");
+                Print.data2Exel(this, DGPlanShow);
             });
         }
 

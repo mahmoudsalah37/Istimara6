@@ -57,7 +57,7 @@ namespace Astmara6.Controls.Print_Data.Child
                 x = it.Text;
             }
             var astmaraBs = (from p in context.AstmaraBs
-                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false& t.Teacher.Section.TypeOfSection == x).OrderBy(t=>t.IdDoctor).ToList();
+                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true & t.Teacher.Section.TypeOfSection == x).ToList();
             DGAstmraBDoc.ItemsSource = astmaraBs;
 
         }
@@ -220,9 +220,8 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             Dispatcher.Invoke(() =>
             {
-                string semester = TransferData.Semester;
-                string year = TransferData.Year;
-                Print.data2Exel(this, DGAstmraBDoc,3,semester,year);
+                Print.data2Exel(this, DGAstmraBDoc);
+
             });
         }
 
