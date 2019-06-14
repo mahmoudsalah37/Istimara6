@@ -58,8 +58,15 @@ namespace Astmara6Con.Controls
 
         private void getBranches()
         {
+            string x = "null";
+            ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+            if (it != null)
+            {
+                CBBranches.Items.Clear();
+                x = it.Text;
+            }
             var listBranhes = (from p in context.Branches
-                              select p).ToList();
+                              select p).Where(t=>t.Section.TypeOfSection==x).ToList();
             foreach (var branch in listBranhes)
             {
                 item = new ComboboxItem();
@@ -310,6 +317,7 @@ namespace Astmara6Con.Controls
         }
         private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            getBranches();
             checkover();
         }
 

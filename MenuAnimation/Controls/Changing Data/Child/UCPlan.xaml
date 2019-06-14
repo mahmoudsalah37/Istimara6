@@ -16,64 +16,79 @@
 
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-            <ComboBox Margin="259,134,0,0" x:Name="CBDoctorsName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="هيئة التدريس" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectionChanged="CBDoctorsName_SelectionChanged">
-                <ComboBox.BorderBrush>
-                    <SolidColorBrush Color="{DynamicResource 1}"/>
-                </ComboBox.BorderBrush>
-            </ComboBox>
+        <ComboBox Margin="59,134,0,0" x:Name="CBDoctorsName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="هيئة التدريس" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectionChanged="CBDoctorsName_SelectionChanged">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
+        <ComboBox Margin="547,134,0,0" x:Name="CBDepartments" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم القسم" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True" SelectedIndex="-1" SelectionChanged="CBDepartments_SelectionChanged" >
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-            <ComboBox Margin="301,204,0,0" x:Name="CBSubjects" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" RenderTransformOrigin="0.524,0.528" SelectionChanged="CBSubjects_SelectionChanged">
-                <ComboBox.BorderBrush>
-                    <SolidColorBrush Color="{DynamicResource 1}"/>
-                </ComboBox.BorderBrush>
-            </ComboBox>
-        </materialDesign:TransitioningContent>
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
-
-            <ComboBox Margin="550,134,0,0" x:Name="CBBRanches" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم الشعبة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Width="116"  SelectedIndex="-1" SelectionChanged="CBDepartment_SelectionChanged">
-                <ComboBox.BorderBrush>
-                    <SolidColorBrush Color="{DynamicResource 1}"/>
-                </ComboBox.BorderBrush>
-
-            </ComboBox>
-        </materialDesign:TransitioningContent>
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
-
-            <ComboBox Margin="547,204,80,0" x:Name="CBLevels" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" RenderTransformOrigin="0.246,0.438" SelectionChanged="CBLevels_SelectionChanged">
-                <ComboBox.BorderBrush>
-                    <SolidColorBrush Color="{DynamicResource Color2}"/>
-                </ComboBox.BorderBrush>
-            </ComboBox>
+        <ComboBox Margin="301,204,0,0" x:Name="CBSubjects" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" RenderTransformOrigin="0.524,0.528" SelectionChanged="CBSubjects_SelectionChanged">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
 
-            <Label Content="هيئة التدريس" HorizontalAlignment="Left" Margin="423,147,0,0" VerticalAlignment="Top">
+            <Label Content="القسم" HorizontalAlignment="Left" Margin="683,134,0,0" VerticalAlignment="Top" Background="{x:Null}">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
             </Label>
         </materialDesign:TransitioningContent>
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-            <Label Content="كود المادة" HorizontalAlignment="Left" Margin="193,217,0,0" VerticalAlignment="Top" Grid.Column="1" Visibility="Hidden">
-                <Label.Foreground>
-                    <SolidColorBrush Color="{DynamicResource 1}"/>
-                </Label.Foreground>
-            </Label>
+        <ComboBox Margin="316,134,0,0" x:Name="CBBRanches" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم الشعبة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  Width="116"  SelectedIndex="-1" SelectionChanged="CBDepartment_SelectionChanged">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </ComboBox.BorderBrush>
+
+        </ComboBox>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
+
+        <ComboBox Margin="547,204,80,0" x:Name="CBLevels" VerticalAlignment="Top" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" RenderTransformOrigin="0.246,0.438" SelectionChanged="CBLevels_SelectionChanged">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Color2}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
 
-            <Label Content="الشعب" HorizontalAlignment="Left" Margin="691,147,0,0" VerticalAlignment="Top">
-                <Label.Foreground>
-                    <SolidColorBrush Color="{DynamicResource 1}"/>
-                </Label.Foreground>
-            </Label>
+        <Label Content="هيئة التدريس" HorizontalAlignment="Left" Margin="223,147,0,0" VerticalAlignment="Top">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Label.Foreground>
+        </Label>
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
 
-            <Label Content="المستوي" HorizontalAlignment="Left" Margin="446,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.697,0.609">
+        <Label Content="الشعب" HorizontalAlignment="Left" Margin="457,147,0,0" VerticalAlignment="Top">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Label.Foreground>
+        </Label>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+
+        <Label Content="المستوي" HorizontalAlignment="Left" Margin="683,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.697,0.609">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource 1}"/>
+            </Label.Foreground>
+        </Label>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+
+            <Label Content="اسم المادة" HorizontalAlignment="Left" Margin="422,217,0,0" VerticalAlignment="Top">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
@@ -108,21 +123,11 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="اسم المادة" HorizontalAlignment="Left" Margin="674,216,0,0" VerticalAlignment="Top">
-            <Label.Foreground>
-                <SolidColorBrush Color="{DynamicResource 1}"/>
-            </Label.Foreground>
-        </Label>
-        <ComboBox Margin="83.6,203,0,0" x:Name="CBCode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المستوي" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="0" RenderTransformOrigin="0.246,0.438" Grid.Column="1" Visibility="Hidden">
-            <ComboBox.BorderBrush>
-                <SolidColorBrush Color="{DynamicResource Color2}"/>
-            </ComboBox.BorderBrush>
-
-        </ComboBox>
+        
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="60.6,306,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607" Grid.Column="1" Visibility="Hidden"/>
         <Button x:Name="BTNDelete" Content="حذف" HorizontalAlignment="Left" Margin="177,301,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNDelete_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNDeleteAll" Content="حذف الكل" HorizontalAlignment="Left" Margin="141,334,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="BTNDeleteAll_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
-        <Label Name="LErrorBranch" Content="" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="544,173,0,0" VerticalAlignment="Top" Width="116" Height="26" Foreground="#DDFF0B0B"/>
+        <Label Name="LErrorBranch" Content="" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="350,174,0,0" VerticalAlignment="Top" Width="116" Height="26" Foreground="#DDFF0B0B"/>
         <Label x:Name="LErrorDoctor" Content="" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="255,173,0,0" VerticalAlignment="Top" Width="162" Height="32" Foreground="#DDFF0B0B"/>
         <Label x:Name="LErrorLevel" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="290,242,0,0" VerticalAlignment="Top" Width="127" Height="35" Foreground="#DDFF0B0B"/>
         <Label x:Name="LErrorSubject" HorizontalAlignment="Left" Margin="518,242,0,0" FlowDirection="RightToLeft" VerticalAlignment="Top" Width="154" Height="35" Foreground="#DDFF0B0B"/>
