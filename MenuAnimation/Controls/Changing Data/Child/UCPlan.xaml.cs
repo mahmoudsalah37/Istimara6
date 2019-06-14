@@ -130,7 +130,7 @@ namespace Astmara6Con.Controls
         private void btnnext_Click(object sender, RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
-            Form.gridShow.Children.Add(new UCDataPrint());
+            Form.gridShow.Children.Add(new UCSendData());
             STRNamePage = "الاستمارات و الطباعة";
             Form.ChFormName(STRNamePage);
         }
