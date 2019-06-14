@@ -10,13 +10,13 @@ namespace Astmara6.Classes
         public static void data2Exel(UserControl v, DataGrid dataGrid)
         {
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-
+            excel.DefaultSheetDirection = (int)Constants.xlRTL;
             try
             {
-                excel.Visible = true; //www.yazilimkodlama.com
+                excel.Visible = true; 
                 Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
                 Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
-               
+                sheet1.DisplayRightToLeft = true;
                     for (int j = 0; j < dataGrid.Columns.Count; j++)
                     {
                         v.Dispatcher.Invoke(() =>

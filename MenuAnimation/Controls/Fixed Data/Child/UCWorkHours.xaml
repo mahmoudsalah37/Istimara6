@@ -64,11 +64,11 @@
         </DataGrid>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
 
-            <RadioButton Name="RBPaper" Content="نظري" HorizontalAlignment="Left" Margin="229,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" IsChecked="True"/>
+            <RadioButton Name="RBPaper" Content="مدرس" HorizontalAlignment="Left" Margin="229,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" IsChecked="True"/>
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.8}">
 
-            <RadioButton Name="RBVirtual" Content="عملي" HorizontalAlignment="Left" Margin="133,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF"/>
+            <RadioButton Name="RBVirtual" Content="معاون" HorizontalAlignment="Left" Margin="133,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF"/>
         </materialDesign:TransitioningContent>
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="380,293,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="380,326,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>

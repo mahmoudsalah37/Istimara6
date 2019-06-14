@@ -169,3 +169,8 @@ E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CoreCo
 E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csproj.CopyComplete
 E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe
 E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.pdb
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.csprojAssemblyReference.cache
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\Astmara6.exe.manifest
+E:\graduate project\git\Istimara6\MenuAnimation\bin\Debug\Astmara6.application
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.exe.manifest
+E:\graduate project\git\Istimara6\MenuAnimation\obj\Debug\Astmara6.application

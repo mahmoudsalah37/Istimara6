@@ -39,14 +39,14 @@ namespace Astmara6.Controls.Print_Data.Child
             int? indExperimentOrVersial=0;
             var listLevelAndSubject= (from p in context.SubjectTeachers
                      select p).Select(t=> new {t.Level,t.Subject }).Distinct().ToList();
-            foreach (var levelAndSubject in listLevelAndSubject)
+            foreach (var teacher in listLevelAndSubject)
             {
                 int? superVision = (from p in context.SubjectTeachers
-                                    select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Subject.Id == levelAndSubject.Subject.Id).First().TotalSuperVision;
+                                    select p).Where(t => t.Level.Id == teacher.Level.Id && t.Subject.Id == teacher.Subject.Id).First().TotalSuperVision;
                 int countDoc = (from p in context.SubjectTeachers
-                                select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
+                                select p).Where(t => t.Level.Id == teacher.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == teacher.Subject.Id).ToList().Count();
                 int countAss = (from p in context.SubjectTeachers
-                                select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == false && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
+                                select p).Where(t => t.Level.Id == teacher.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == false && t.Subject.Id == teacher.Subject.Id).ToList().Count();
                 
                 bool checkDivtionDoc = false;
                 bool checkDivtionAss = false;
@@ -74,7 +74,7 @@ namespace Astmara6.Controls.Print_Data.Child
                 }
 
                 var updates = (from p in context.SubjectTeachers
-                               select p).Where(t => t.Level.Id == levelAndSubject.Level.Id && t.Subject.Id == levelAndSubject.Subject.Id).ToList();
+                               select p).Where(t => t.Level.Id == teacher.Level.Id && t.Subject.Id == teacher.Subject.Id).ToList();
 
                 foreach (SubjectTeacher update in updates)
                 {
@@ -93,16 +93,19 @@ namespace Astmara6.Controls.Print_Data.Child
                             if (i != 1)
                             {
                                 u.NumOfPaper = 0;
-                                context.SaveChanges();
                             }
                         }
+                        context.SaveChanges();
                     }
                     if (update.Teacher.WorkHour.AcademicOrVirtual == true)
                     {
                         if (checkDivtionDoc == true)
                         {
-                            update.NumberOfSuperVision = indSuperVision+DivtionDoc;
-                            checkDivtionDoc = false;
+                            if (indSuperVision <= 6)
+                            {
+                                update.NumberOfSuperVision = indSuperVision + DivtionDoc;
+                                checkDivtionDoc = false;
+                            }
                         }
                         else
                         update.NumberOfSuperVision = indSuperVision;
@@ -147,13 +150,10 @@ namespace Astmara6.Controls.Print_Data.Child
             foreach (var subjectTeacher in subjectTeachers)
             {
                 subjectTeacher.SumOfSubject = (subjectTeacher.NumOfPaper + subjectTeacher.NumberOfSuperVision);
-                context.SaveChanges();
             }
+            context.SaveChanges();
         }
-        public void totalhoursCalc()
-        {
-
-        }
+     
         
         private void BtnExportData_Click(object sender, System.Windows.RoutedEventArgs e)
         {
