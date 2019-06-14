@@ -196,7 +196,7 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             Dispatcher.Invoke(() =>
             {
-                Print.data2Exel(this, DGAstmraBDoc);
+                Print.data2Exel(this, DGAstmraBDoc,2,"","");
 
             });
         }

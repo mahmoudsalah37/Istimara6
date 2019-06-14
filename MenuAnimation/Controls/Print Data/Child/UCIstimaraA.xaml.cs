@@ -38,7 +38,7 @@ namespace Astmara6.Controls.Print_Data.Child
                 x = it.Text;
             }
             var subjectTeachers = (from p in context.SubjectTeachers
-                                   select p).Where(t=>t.Branch.Section.TypeOfSection==x).ToList();
+                                   select p).Where(t=>t.Branch.Section.TypeOfSection==x).ToList().OrderBy(t=>t.IdLevel).OrderBy(t=>t.IdSubject);
             DGAstmaraA.ItemsSource = subjectTeachers;
 
         }
@@ -122,14 +122,11 @@ namespace Astmara6.Controls.Print_Data.Child
                     {
                         if (checkDivtionDoc == true)
                         {
-                            if (indSuperVision <= 6)
-                            {
                                 update.NumberOfSuperVision = indSuperVision + DivtionDoc;
-                                checkDivtionDoc = false;
-                            }
+                                checkDivtionDoc = false;                           
                         }
                         else
-                        update.NumberOfSuperVision = indSuperVision;
+                            update.NumberOfSuperVision = indSuperVision;
                     }
                     else
                     {
@@ -180,7 +177,7 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             Dispatcher.Invoke(() =>
             {
-                Print.data2Exel(this, DGAstmaraA);
+                Print.data2Exel(this, DGAstmaraA,1, TBSemester.Text, TBYear.Text);
 
             });
         }
