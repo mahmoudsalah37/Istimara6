@@ -5,6 +5,7 @@ using System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using Astmara6.Classes;
+using Astmara6.Model;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -15,11 +16,29 @@ namespace Astmara6.Controls.Print_Data.Child
     {
         
         private readonly CollegeContext context = new CollegeContext();
-
+        private ComboboxItem item;
+        private void getDepartments()
+        {
+            var listSection = (from p in context.Sections
+                               select p).ToList();
+            foreach (var section in listSection)
+            {
+                item = new ComboboxItem();
+                item.Text = section.TypeOfSection;
+                item.Value = section.Id;
+                CBDepartments.Items.Add(item);
+            }
+        }
         public void loadData()
         {
-           var subjectTeachers = (from p in context.SubjectTeachers
-                                   select p).ToList();
+            string x = "null";
+            ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+            if (it != null)
+            {
+                x = it.Text;
+            }
+            var subjectTeachers = (from p in context.SubjectTeachers
+                                   select p).Where(t=>t.Branch.Section.TypeOfSection==x).ToList();
             DGAstmaraA.ItemsSource = subjectTeachers;
 
         }
@@ -28,6 +47,7 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             
             InitializeComponent();
+            getDepartments();
             teacherProced();
             loadData();
         }
@@ -38,15 +58,16 @@ namespace Astmara6.Controls.Print_Data.Child
             int? indSuperVision=0;
             int? indExperimentOrVersial=0;
             var listLevelAndSubject= (from p in context.SubjectTeachers
-                     select p).Select(t=> new {t.Level,t.Subject }).Distinct().ToList();
-            foreach (var teacher in listLevelAndSubject)
+
+                     select p).Select(t=> new {t.Level,t.Subject,t.Branch.Section.TypeOfSection }).Distinct().ToList();
+            foreach (var levelAndSubject in listLevelAndSubject)
             {
                 int? superVision = (from p in context.SubjectTeachers
-                                    select p).Where(t => t.Level.Id == teacher.Level.Id && t.Subject.Id == teacher.Subject.Id).First().TotalSuperVision;
+                                    select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection==levelAndSubject.TypeOfSection & t.Subject.Id == levelAndSubject.Subject.Id).First().TotalSuperVision;
                 int countDoc = (from p in context.SubjectTeachers
-                                select p).Where(t => t.Level.Id == teacher.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == teacher.Subject.Id).ToList().Count();
+                                select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
                 int countAss = (from p in context.SubjectTeachers
-                                select p).Where(t => t.Level.Id == teacher.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == false && t.Subject.Id == teacher.Subject.Id).ToList().Count();
+                                select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Teacher.WorkHour.AcademicOrVirtual == false && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
                 
                 bool checkDivtionDoc = false;
                 bool checkDivtionAss = false;
@@ -74,12 +95,12 @@ namespace Astmara6.Controls.Print_Data.Child
                 }
 
                 var updates = (from p in context.SubjectTeachers
-                               select p).Where(t => t.Level.Id == teacher.Level.Id && t.Subject.Id == teacher.Subject.Id).ToList();
+                               select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Subject.Id == levelAndSubject.Subject.Id).ToList();
 
                 foreach (SubjectTeacher update in updates)
                 {
                     int countDo = (from p in context.SubjectTeachers
-                                    select p).Where(t => t.Level.Id == update.Level.Id && t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == update.Subject.Id).ToList().Count();
+                                    select p).Where(t => t.Level.Id == update.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == update.Subject.Id).ToList().Count();
                     bool checkdoc= false;
                     if (update.Teacher.WorkHour.AcademicOrVirtual == true)
                         checkdoc = true;
@@ -164,8 +185,10 @@ namespace Astmara6.Controls.Print_Data.Child
             });
         }
 
-
-
+        private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            loadData();
+        }
     }
     
 }

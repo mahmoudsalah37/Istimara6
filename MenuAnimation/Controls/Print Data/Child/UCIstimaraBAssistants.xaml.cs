@@ -2,6 +2,7 @@
 using Astmara6.Data;
 using System.Linq;
 using Astmara6.Classes;
+using Astmara6.Model;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -11,17 +12,36 @@ namespace Astmara6.Controls.Print_Data.Child
     public partial class UCIstimaraBAssistants : UserControl
     {
         private readonly CollegeContext context = new CollegeContext();
-
+        private ComboboxItem item;
+        private void getDepartments()
+        {
+            var listSection = (from p in context.Sections
+                               select p).ToList();
+            foreach (var section in listSection)
+            {
+                item = new ComboboxItem();
+                item.Text = section.TypeOfSection;
+                item.Value = section.Id;
+                CBDepartments.Items.Add(item);
+            }
+        }
         public void loadData()
         {
+            string x = "null";
+            ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+            if (it != null)
+            {
+                x = it.Text;
+            }
             var astmaraBs = (from p in context.AstmaraBs
-                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).ToList();
+                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false& t.Teacher.Section.TypeOfSection == x).ToList();
             DGAstmraBDoc.ItemsSource = astmaraBs;
 
         }
         public UCIstimaraBAssistants()
         {
             InitializeComponent();
+            getDepartments();
             context.AstmaraBs.RemoveRange(context.AstmaraBs);
             context.SaveChanges();
             insertdata();
@@ -179,6 +199,11 @@ namespace Astmara6.Controls.Print_Data.Child
                 Print.data2Exel(this, DGAstmraBDoc);
 
             });
+        }
+
+        private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            loadData();
         }
     }
 }
