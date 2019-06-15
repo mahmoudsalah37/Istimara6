@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Astmara6Con.Controls.UCSendData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Astmara6Con.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Height="484" Width="746">
+    <UserControl.Resources>
+        <Color x:Key="Color1">#FF3580BF</Color>
+    </UserControl.Resources>
+    <Grid FlowDirection="RightToLeft">
+        <TextBox x:Name="TBSemester"  HorizontalAlignment="Left" Height="30" Margin="313,186,0,0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#FFECE3E3" materialDesign:HintAssist.Hint="الترم الدراسي"/>
+        <TextBox x:Name="TBYear" Height="34" Margin="313,227,313,0"   TextWrapping="Wrap" Text="" VerticalAlignment="Top" Background="#FFECE3E3" materialDesign:HintAssist.Hint="السنه الدراسي"/>
+        <Button Content="الدخول" HorizontalAlignment="Left" Margin="332,266,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
+</UserControl>

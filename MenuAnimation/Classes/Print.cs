@@ -53,29 +53,38 @@ namespace Astmara6.Classes
                         start = 1;
                         break;
                     case 2:
-                        sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[1, 17]].Merge();
+                        sheet1.Range[sheet1.Cells[1, 4], sheet1.Cells[1, 11]].Merge();
                         sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[1, 17]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                        sheet1.Cells[1, 1].Value2 = "استمارة ب د";
+                        sheet1.Cells[1, 4].Value2 = "استمارة ب د";
 
-                        sheet1.Range[sheet1.Cells[2, 1], sheet1.Cells[2, 17]].Merge();
-                        sheet1.Range[sheet1.Cells[2, 1], sheet1.Cells[2, 17]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                        sheet1.Cells[2, 1].Value2 = year + " :للعام الدراسي" + "                       " + semester + " :الفصل الدراسي";
+                        sheet1.Range[sheet1.Cells[2, 4], sheet1.Cells[2, 11]].Merge();
+                        sheet1.Range[sheet1.Cells[2, 1], sheet1.Cells[2, 10]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                        sheet1.Cells[2, 4].Value2 = year + " :للعام الدراسي" + "                       " + semester + " :الفصل الدراسي";
 
-                        sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 16]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
-                        plusRow = 3;
+                        sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[4, 3]].Merge();
+                        //sheet1.Cells[1, 1].image = "Assets/Logo_Uni.png";
+
+                        sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 10]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                        sheet1.Cells[5, 11].Value2 = "ملاحظات";
+                        plusRow = 4;
                         start = 0;
                         break;
                     case 3:
-                        sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[1, 17]].Merge();
+                        sheet1.Range[sheet1.Cells[1, 4], sheet1.Cells[1, 11]].Merge();
                         sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[1, 17]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                        sheet1.Cells[1, 1].Value2 = "استمارة ب م";
+                        sheet1.Cells[1, 4].Value2 = "استمارة ب د";
 
-                        sheet1.Range[sheet1.Cells[2, 1], sheet1.Cells[2, 17]].Merge();
-                        sheet1.Range[sheet1.Cells[2, 1], sheet1.Cells[2, 17]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                        sheet1.Cells[2, 1].Value2 = year + " :للعام الدراسي" + "                       " + semester + " :الفصل الدراسي";
+                        sheet1.Range[sheet1.Cells[2, 4], sheet1.Cells[2, 11]].Merge();
+                        sheet1.Range[sheet1.Cells[2, 1], sheet1.Cells[2, 10]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                        sheet1.Cells[2, 4].Value2 = year + " :للعام الدراسي" + "                       " + semester + " :الفصل الدراسي";
 
-                        sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 16]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
-                        plusRow = 3;
+                        sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[4, 3]].Merge();
+                        //sheet1.Cells[1, 1].image = "Assets/Logo_Uni.png";
+
+                        sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 10]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                        sheet1.Cells[5, 11].Value2 = "ملاحظات";
+
+                        plusRow = 4;
                         start = 0;
                         break;
                 }
@@ -117,6 +126,8 @@ namespace Astmara6.Classes
                         {
                             Range myRange = (Range)sheet1.Cells[i + 2 + plusRow-1, 1];
                             string before = myRange.Value2;
+                            if (before == "" || before == null)
+                                break;
                             Range myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
                             string after = myRange1.Value2;
                             while (before == after)
@@ -131,13 +142,55 @@ namespace Astmara6.Classes
                             sheet1.Range[sheet1.Cells[i + 1 + plusRow, 1], sheet1.Cells[i + 1 + plusRow, 16]].Borders[XlBordersIndex.xlEdgeBottom].Weight = 2d; ;
                         }
                         break;
+                    case 2:
+                        for (int i = 1; i <= dataGrid.Items.Count; i++)
+                        {
+                            Range myRange = (Range)sheet1.Cells[i + 2 + plusRow - 1, 1];
+                            string before = myRange.Value2;
+                            if (before == "" || before == null)
+                                break;
+                            Range myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
+                            string after = myRange1.Value2;
+                            while (before == after)
+                            {
+                                Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 1], sheet1.Cells[i + 2 + plusRow, 3]];
+                                myRange2.Value2 = "";
+                                sheet1.Cells[i + 2 + plusRow, 10].Value2 = "";
+                                i++;
+                                myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
+                                after = myRange1.Value2;
+                            }
+                            sheet1.Range[sheet1.Cells[i + 1 + plusRow, 1], sheet1.Cells[i + 1 + plusRow, 16]].Borders[XlBordersIndex.xlEdgeBottom].Weight = 2d; ;
+                        }
+                        break;
+                    case 3:
+                        for (int i = 1; i <= dataGrid.Items.Count; i++)
+                        {
+                            Range myRange = (Range)sheet1.Cells[i + 2 + plusRow - 1, 1];
+                            string before = myRange.Value2;
+                            if (before == "" || before == null)
+                                break;
+                            Range myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
+                            string after = myRange1.Value2;
+                            while (before == after )
+                            {
+                                Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 1], sheet1.Cells[i + 2 + plusRow, 3]];
+                                myRange2.Value2 = "";
+                                sheet1.Cells[i + 2 + plusRow, 10].Value2 = "";
+                                i++;
+                                myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
+                                after = myRange1.Value2;
+                            }
+                            sheet1.Range[sheet1.Cells[i + 1 + plusRow, 1], sheet1.Cells[i + 1 + plusRow, 16]].Borders[XlBordersIndex.xlEdgeBottom].Weight = 2d; ;
+                        }
+                        break;
                 }
 
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+}
     }
 }

@@ -177,7 +177,9 @@ namespace Astmara6.Controls.Print_Data.Child
         {
             Dispatcher.Invoke(() =>
             {
-                Print.data2Exel(this, DGAstmaraA,1, TBSemester.Text, TBYear.Text);
+                string semester = TransferData.Semester;
+                string year = TransferData.Year;
+                Print.data2Exel(this, DGAstmaraA,1, semester, year);
 
             });
         }

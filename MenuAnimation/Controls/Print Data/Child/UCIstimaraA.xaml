@@ -53,8 +53,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnExportData" Content="استخراح" HorizontalAlignment="Left" Margin="4,442,0,0" VerticalAlignment="Top" Width="75" Click="BtnExportData_Click"/>
-        <TextBox Name="TBSemester" HorizontalAlignment="Left" Height="23" Margin="10,18,0,0" FlowDirection="RightToLeft"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#FFECE3E3" materialDesign:HintAssist.Hint="الترم الدراسي"/>
-        <TextBox Name="TBYear" Height="23" Margin="10,52,670,0" FlowDirection="RightToLeft"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Background="#FFECE3E3" materialDesign:HintAssist.Hint="السنه الدراسي"/>
 
     </Grid>
 </UserControl>

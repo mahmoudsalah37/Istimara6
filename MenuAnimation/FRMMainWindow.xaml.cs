@@ -93,7 +93,7 @@ namespace Astmara6Con
         private void ListViewItem2_Selected(object sender, RoutedEventArgs e)
         {
             gridShow.Children.Clear();
-            gridShow.Children.Add(new UCDataPrint());
+            gridShow.Children.Add(new UCSendData());
             string STRNamePage = "طباعة البيانات";
             ChFormName(STRNamePage);
         }
@@ -126,7 +126,7 @@ namespace Astmara6Con
         private void printing_Click(object sender, RoutedEventArgs e)
         {
             gridShow.Children.Clear();
-            gridShow.Children.Add(new UCDataPrint());
+            gridShow.Children.Add(new UCSendData());
             string STRNamePage = "طباعة البيانات";
             ChFormName(STRNamePage);
         }
