@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Astmara6.Model;
 using System.Windows;
+using System.Collections.Generic;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -16,6 +17,7 @@ namespace Astmara6.Controls.Print_Data.Child
     {
         private readonly CollegeContext context = new CollegeContext();
         private ComboboxItem item;
+        private List<AstmaraB> astmaraBs;
         private void getDepartments()
         {
             var listSection = (from p in context.Sections
@@ -57,8 +59,8 @@ namespace Astmara6.Controls.Print_Data.Child
             {
                 x = it.Text;
             }
-            var astmaraBs = (from p in context.AstmaraBs
-                                   select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual==true & t.Teacher.Section.TypeOfSection==x).ToList();
+            astmaraBs = (from p in context.AstmaraBs
+                                   select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual==true & t.Teacher.Section.TypeOfSection==x).OrderBy(t => t.IdDoctor).ToList();
             DGAstmraBDoc.ItemsSource = astmaraBs;
 
         }
@@ -222,7 +224,8 @@ namespace Astmara6.Controls.Print_Data.Child
             {
                 string semester = TransferData.Semester;
                 string year = TransferData.Year;
-                Print.data2Exel(this, DGAstmraBDoc, 2, semester, year);
+                Print.data2ExelIstmaraBD(this, DGAstmraBDoc, astmaraBs, semester, year);
+
             });
 
         }
