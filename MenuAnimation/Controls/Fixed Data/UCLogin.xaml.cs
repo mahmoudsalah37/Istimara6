@@ -39,9 +39,9 @@ namespace Astmara6.Controls.Fixed_Data
                 String User = TBUserName.Text;
                 String pass = TBPass.Password.ToString();
                 string datauser = (from p in context.Users
-                                   select p).First().Name;
-                string datapass = (from p in context.Users
                                    select p).First().Password;
+                string datapass = (from p in context.Users
+                                   select p).First().Name;
                 if (User == datauser & pass == datapass)
                 {
                     MessageBox.Show("(; مرحبا");
