@@ -55,7 +55,7 @@ namespace Astmara6.Controls.Print_Data.Child
 
         private void teacherProced()
         {
-            int? indSuperVision=0;
+            int? indSuperVision=4;
             int? indExperimentOrVersial=0;
             var listLevelAndSubject= (from p in context.SubjectTeachers
 
@@ -66,6 +66,7 @@ namespace Astmara6.Controls.Print_Data.Child
                                     select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection==levelAndSubject.TypeOfSection & t.Subject.Id == levelAndSubject.Subject.Id).First().TotalSuperVision;
                 int countDoc = (from p in context.SubjectTeachers
                                 select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
+
                 int countAss = (from p in context.SubjectTeachers
                                 select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Teacher.WorkHour.AcademicOrVirtual == false && t.Subject.Id == levelAndSubject.Subject.Id).ToList().Count();
                 
@@ -75,11 +76,16 @@ namespace Astmara6.Controls.Print_Data.Child
                 int? DivtionASS = 0;
                 if (countDoc > 0)
                 {
-                    indSuperVision = superVision / countDoc;
-                    if (superVision % countDoc != 0)
+                    int? numOfSec = (from p in context.SubjectTeachers
+                                     select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == levelAndSubject.Subject.Id).First().NumberOfSections;
+                    if (numOfSec>=2)
                     {
                         checkDivtionDoc = true;
-                        DivtionDoc = superVision % countDoc;
+                    }
+                    DivtionDoc = superVision / 4;
+                    if (superVision % 4 != 0)
+                    {
+                        DivtionDoc ++;
                     }
                 }
                 if (countAss > 0)
@@ -122,6 +128,43 @@ namespace Astmara6.Controls.Print_Data.Child
                     {
                         if (checkDivtionDoc == true)
                         {
+
+                          
+                           for(int i = 1; i <= DivtionDoc; i++)
+                           {
+                                if (i == 1)
+                                {
+                                    update.NumberOfSuperVision = indSuperVision;
+                                    totalHours();
+                                }
+                                else
+                                {
+                                    totalHours();
+                                    var sortedDoc = (from p in context.Teachers
+                                                     select p).Where(t=>t.idSection==update.Branch.IdSection).OrderBy(t => t.TotalHours);
+                                    int? NewDocId = sortedDoc.First().Id;
+                                    context.SubjectTeachers.Add(new SubjectTeacher()
+                                    {
+                                        IdBranch = update.IdBranch,
+                                        IdLevel = update.IdLevel,
+                                        IdSubject = update.IdSubject,
+                                        IdTeacher = NewDocId,
+                                        NumberOfSections = update.NumberOfSections,
+                                        TotalPaper = 0,
+                                        TotalExperment = 0,
+                                        TotalVirtual = 0,
+                                        TotalSuperVision = 0,
+                                        NumberOfExprement = 0,
+                                        NumberOfVirtual = 0,
+                                        NumOfPaper = 0,
+                                        NumberOfSuperVision = indSuperVision,
+                                        NumOfStudent=update.NumOfStudent,
+                                        SumOfSubject=indSuperVision,
+                                    });
+
+                                }
+                           }
+
                                 update.NumberOfSuperVision = indSuperVision + DivtionDoc;
                                 checkDivtionDoc = false;                           
                         }
@@ -182,6 +225,32 @@ namespace Astmara6.Controls.Print_Data.Child
                 Print.data2Exel(this, DGAstmaraA,1, semester, year);
 
             });
+        }
+        private void totalHours()
+        {
+            var subjectTeachers = (from p in context.SubjectTeachers
+                                   select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true).ToList();
+            foreach (var subjectTeacher in subjectTeachers)
+            {
+                subjectTeacher.SumOfSubject = (subjectTeacher.NumOfPaper + subjectTeacher.NumberOfSuperVision);
+            }
+
+            var teachers = (from p in context.Teachers
+                            select p).Where(t => t.WorkHour.AcademicOrVirtual == true).ToList();
+            foreach (var teacher in teachers)
+            {
+
+                int? totalHour = (from p in context.SubjectTeachers
+                                  select p).Where(t => t.IdTeacher==teacher.Id).Sum(t => t.SumOfSubject);
+                var teachs = (from p in context.Teachers
+                                 select p).Where(t =>t.Id==teacher.Id ).ToList();
+                foreach (var teach in teachs)
+                {
+                    teach.TotalHours= totalHour;
+                }
+                context.SaveChanges();
+            }
+
         }
 
         private void CBDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)

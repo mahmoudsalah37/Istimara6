@@ -177,7 +177,7 @@
             </Grid.ColumnDefinitions>
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-                <Label x:Name="formname" Content="الصفحة الرئيسية" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="59" Width="364" FontSize="36" Margin="207,29,0,0">
+                <Label x:Name="formname" Content="تسجيل الدخول " HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="59" Width="364" FontSize="36" Margin="207,29,0,0">
                     <Label.Foreground>
                         <SolidColorBrush Color="{DynamicResource Color1}"/>
                     </Label.Foreground>

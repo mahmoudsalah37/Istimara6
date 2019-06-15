@@ -84,7 +84,7 @@
         <DataGrid Name="DGTeachersView" HorizontalAlignment="Left" Height="191" AutoGenerateColumns="False" FlowDirection="RightToLeft" ItemsSource="{Binding}" Margin="300,293,0,0" VerticalAlignment="Top" Width="446">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header=" Id" />
                 <DataGridTextColumn Binding="{Binding Name}" Header="الاسم كاملاً"/>
                 <DataGridTextColumn Binding="{Binding NickName}" Header="اللقب"/>
                 <DataGridTextColumn Binding="{Binding WorkHour.Rank}" Header="الرتبة" IsReadOnly="True"/>

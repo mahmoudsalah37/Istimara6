@@ -211,28 +211,53 @@ namespace Astmara6Con.Controls
 
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذاالعنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
             {
-                SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
-                SubjectTeacher subject = (from p in context.SubjectTeachers
-                                          where p.Id == subjectTeacher.Id
-                                          select p).Single();
-                context.SubjectTeachers.Remove(subject);
-                context.SaveChanges();
-                loadData();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+                try
+                {
+                    SubjectTeacher subjectTeacher = DGPlanShow.SelectedItem as SubjectTeacher;
+                    SubjectTeacher subject = (from p in context.SubjectTeachers
+                                              where p.Id == subjectTeacher.Id
+                                              select p).Single();
+                    context.SubjectTeachers.Remove(subject);
+                    context.SaveChanges();
+                    loadData();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
             }
         }
 
         private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
         {
-            context.SubjectTeachers.RemoveRange(context.SubjectTeachers);
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
+                { 
+                context.SubjectTeachers.RemoveRange(context.SubjectTeachers);
             context.SaveChanges();
             loadData();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
+
         }
         private bool checkBranch()
         {
@@ -365,6 +390,22 @@ namespace Astmara6Con.Controls
 
         private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string name = null;
+            ComboboxItem item = CBSubjects.SelectedItem as ComboboxItem;
+            if (item != null)
+                name = item.Text;
+
+            if (name != null)
+            {
+                var listBranhes = (from p in context.Subjects
+                                   select p).Where(t => t.Name == name).ToList();
+
+                foreach (var branch in listBranhes)
+                {
+                    TBCode.Text = branch.Code;
+                }
+
+            }
             checkover();
         }
 
@@ -377,6 +418,37 @@ namespace Astmara6Con.Controls
         {
             getBranches();
             getDoctors();
+        }
+        private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string code = TBCode.Text;
+            if (code != null)
+            {
+                CBSubjects.Items.Clear();
+
+                var listBranhes = (from p in context.Subjects
+                                   select p).Where(t => t.Code == code).ToList();
+                int num = listBranhes.Count();
+                if (num == 0)
+                {
+                    getSubjects();
+                }
+                else
+                {
+                    foreach (var branch in listBranhes)
+                    {
+                        item = new ComboboxItem();
+                        item.Text = branch.Name;
+                        item.Value = branch.Id;
+                        CBSubjects.Items.Add(item);
+                    }
+                }
+            }
+            else
+            {
+                getSubjects();
+            }
+
         }
     }
 }

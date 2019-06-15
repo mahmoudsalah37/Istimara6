@@ -97,7 +97,10 @@ namespace Astmara6Con.Controls
 
         private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذا العنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
                 WorkHour workHour = DGWorkHours.SelectedItem as WorkHour;
                 WorkHour row = (from p in context.WorkHours
@@ -111,12 +114,20 @@ namespace Astmara6Con.Controls
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
 
         }
 
         private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
                 context.WorkHours.RemoveRange(context.WorkHours);
                 context.SaveChanges();
@@ -127,6 +138,11 @@ namespace Astmara6Con.Controls
                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
         }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
+}
         public Boolean checkName(int length)
         {
             Boolean result1 = false;

@@ -143,7 +143,10 @@ namespace Astmara6Con
 
         private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذا العنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
                 Level LevelRow = DGLevelsView.SelectedItem as Level;
 
@@ -159,13 +162,20 @@ namespace Astmara6Con
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                          "تـأكد من ارتباط البيانات بمعومات اخري");
             }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
 
         }
 
         private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
         {
-
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
                 context.Levels.RemoveRange(context.Levels);
                 context.SaveChanges();
@@ -175,9 +185,14 @@ namespace Astmara6Con
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
-
-
         }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
+
+
+}
 
         private void TBNameLevels_TextChanged_1(object sender, TextChangedEventArgs e)
         {

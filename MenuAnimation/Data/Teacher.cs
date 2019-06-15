@@ -27,6 +27,8 @@ namespace Astmara6.Data
 
         public int? idSection { get; set; }
 
+        public int? TotalHours { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AstmaraB> AstmaraBs { get; set; }
 

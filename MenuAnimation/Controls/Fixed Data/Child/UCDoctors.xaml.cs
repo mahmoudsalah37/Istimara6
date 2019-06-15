@@ -114,8 +114,13 @@ namespace Astmara6Con.Controls
                 int rank = (int)CBIRank.Value;
                 ComboboxItem CBIDepartment = CBDepartment.SelectedItem as ComboboxItem;
                 int department = (int)CBIDepartment.Value;
-                context.Teachers.Add(new Teacher{
-                   Name = name,NickName = nickname,IdWorkHours = rank,idSection = department });
+                context.Teachers.Add(new Teacher {
+                    Name = name,
+                    NickName = nickname,
+                    IdWorkHours = rank,
+                    idSection = department,
+                    TotalHours = 0,
+                });
                 context.SaveChanges();
                 loadData();
                 TBName.Text = "";
@@ -153,7 +158,10 @@ namespace Astmara6Con.Controls
 
         private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذا العنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
 
                 Teacher teacherrow = DGTeachersView.SelectedItem as Teacher;
@@ -169,14 +177,23 @@ namespace Astmara6Con.Controls
         }
                 catch (Exception) { MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                     "تـأكد من انه غير مرتبط باي مادة  اولاً"); }
+        }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
 }
 
         private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
             {
-                context.Teachers.RemoveRange(context.Teachers);
 
+                try
+                {
+                context.AstmaraBs.RemoveRange(context.AstmaraBs);
+                context.Teachers.RemoveRange(context.Teachers);
                 context.SaveChanges();
                 loadData();
 
@@ -185,9 +202,12 @@ namespace Astmara6Con.Controls
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                                       "تـأكد من انه لأ يوجد اي احد مرتبط باي مادة  اولاً");
             }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
 
-
-            context.Teachers.RemoveRange(context.Teachers);
             context.SaveChanges();
             loadData();
         }

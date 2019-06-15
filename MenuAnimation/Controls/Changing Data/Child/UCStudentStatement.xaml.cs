@@ -149,7 +149,10 @@ namespace Astmara6Con.Controls
 
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذاالعنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
                 StudentStatment studentStatment = DGStudentStatments.SelectedItem as StudentStatment;
                 StudentStatment student = (from p in context.StudentStatments
@@ -164,26 +167,39 @@ namespace Astmara6Con.Controls
                 MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
             }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
         }
 
         private void BTNDeleteAll_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
             {
+                try
+                {
                 context.StudentStatments.RemoveRange(context.StudentStatments);
                 context.SaveChanges();
                 loadData();
-            }
-            catch (Exception)
-            {
+                }
+                catch (Exception)
+                {
                 MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
+                }
             }
-        }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
+}
 
         private bool checkBranch()
         {
-            ComboboxItem item = CBDepartments.SelectedItem as ComboboxItem;
+            ComboboxItem item = CBBranches.SelectedItem as ComboboxItem;
             int id;
             if (item != null)
                 id = (int)item.Value;
@@ -333,12 +349,62 @@ namespace Astmara6Con.Controls
 
         private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string name = null;
+            ComboboxItem item = CBSubjects.SelectedItem as ComboboxItem;
+            if(item!=null)
+             name = item.Text;
+
+            if(name != null)
+            {
+                var listBranhes = (from p in context.Subjects
+                                   select p).Where(t => t.Name==name).ToList();
+            
+                    foreach (var branch in listBranhes)
+                    {
+                    TBCode.Text = branch.Code;
+                    }
+                
+            }
+
             checkover();
+
         }
 
         private void TBNumberStudents_TextChanged(object sender, TextChangedEventArgs e)
         {
             checkover();
+        }
+
+        private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string code = TBCode.Text;
+            if (code != null)
+            {
+                CBSubjects.Items.Clear();
+
+                var listBranhes = (from p in context.Subjects
+                                   select p).Where(t => t.Code==code).ToList();
+                int num = listBranhes.Count();
+                if (num==0)
+                {
+                    getSubjects();
+                }
+                else
+                {
+                    foreach (var branch in listBranhes)
+                    {
+                        item = new ComboboxItem();
+                        item.Text = branch.Name;
+                        item.Value = branch.Id;
+                        CBSubjects.Items.Add(item);
+                    }
+                }
+            }
+            else
+            {
+                getSubjects();
+            }
+
         }
     }
 }

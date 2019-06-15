@@ -59,16 +59,17 @@
                 <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Rank}" Header="الرتبة"/>
                 <DataGridTextColumn Binding="{Binding Quorum}" Header="عدد ساعات العمل "/>
-                <DataGridTextColumn Binding="{Binding AcademicOrVirtual}" Header="نظري ؟"/>
+                <DataGridTextColumn Binding="{Binding AcademicOrVirtual}" Header="هيئة تدريس"/>
             </DataGrid.Columns>
         </DataGrid>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
 
-            <RadioButton Name="RBPaper" Content="مدرس"  HorizontalAlignment="Left"  Margin="229,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" IsChecked="True" GroupName="check1"/>
+            <RadioButton Name="RBPaper" Content="هيئة تدريس" GroupName="check1" HorizontalAlignment="Left" Margin="210,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" IsChecked="True"/>
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.8}">
 
-            <RadioButton Name="RBVirtual" Content="معاون" HorizontalAlignment="Left" Margin="133,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" GroupName="check1"/>
+            <RadioButton Name="RBVirtual" Content="معاونين" GroupName="check1" HorizontalAlignment="Left" Margin="133,218,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" IsChecked="False"/>
+
         </materialDesign:TransitioningContent>
         <Button x:Name="BTNEdit" Content="تعديل" HorizontalAlignment="Left" Margin="380,293,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNEdit_Click" Background="#FF303030" BorderBrush="#FF303030" RenderTransformOrigin="0.583,1.607"/>
         <Button x:Name="BTNRemove" Content="حذف" HorizontalAlignment="Left" Margin="380,326,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="BTNRemove_Click_1" Background="#FF303030" BorderBrush="#FF303030"/>

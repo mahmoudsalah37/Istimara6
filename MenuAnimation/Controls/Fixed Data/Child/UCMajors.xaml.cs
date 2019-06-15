@@ -119,7 +119,10 @@ namespace Astmara6Con.Controls
 
         private void BTNRemove_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذا العنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
 
                 Branch BranchRow = DGMajorsView.SelectedItem as Branch;
@@ -136,11 +139,19 @@ namespace Astmara6Con.Controls
                 MessageBox.Show("حدث خطب ما برجاء المحاولة مرة أخري" +
                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
+            }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
 
         }
         private void BTNRemoveAll_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح كل البيانات؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
             {
                 context.Branches.RemoveRange(context.Branches);
 
@@ -153,6 +164,11 @@ namespace Astmara6Con.Controls
                                         "تـأكد من ارتباط البيانات بمعومات اخري");
             }
         }
+            else
+            {
+                MessageBox.Show("لاتقلق لم تمسح اي بيانات");
+            }
+}
         public bool check(int length, string name)
         {
 
