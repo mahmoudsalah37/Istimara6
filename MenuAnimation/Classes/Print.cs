@@ -350,15 +350,27 @@ namespace Astmara6.Classes
                 });
             }
         }
-        public static void data2ExelIstmaraBA(UserControl v, DataGrid dataGrid, List<SubjectTeacher> subjectTeachers, string semester, string year)
+        public static void data2ExelPlan(UserControl v, DataGrid dataGrid, List<SubjectTeacher> subjectTeachers, string semester, string year)
         {
-            int plusRow = 0;
+            int plusRow = 4;
             int start = 1;
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             excel.DefaultSheetDirection = (int)Constants.xlRTL;
             Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             excel.Visible = true;
             Worksheet sheet1 = workbook.ActiveSheet as Worksheet;
+            sheet1.Range[sheet1.Cells[1, 4], sheet1.Cells[1, 11]].Merge();
+            sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[1, 17]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            sheet1.Cells[1, 4].Value2 = "الخطة";
+
+            sheet1.Range[sheet1.Cells[2, 4], sheet1.Cells[2, 11]].Merge();
+            sheet1.Range[sheet1.Cells[2, 1], sheet1.Cells[2, 10]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            sheet1.Cells[2, 4].Value2 = year + " :للعام الدراسي" + "                       " + semester + " :الفصل الدراسي";
+
+            sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[4, 3]].Merge();
+
+            sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 5]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+
             for (int j = 0; j < dataGrid.Columns.Count - start; j++)
             {
                 v.Dispatcher.Invoke(() =>
@@ -390,6 +402,7 @@ namespace Astmara6.Classes
                 //myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
                 //myRange.Value2 = subjectTeachers[j].Total.ToString();
             }
+            
         }
 
             public static void data2Exel(UserControl v, DataGrid dataGrid, int IDPage, string semester, string year)

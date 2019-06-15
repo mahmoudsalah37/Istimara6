@@ -57,7 +57,7 @@ namespace Astmara6.Controls.Print_Data.Child
             {
                 string semester = TransferData.Semester;
                 string year = TransferData.Year;
-                Print.data2ExelIstmaraBA( this,  DGPlanShow, subjectTeachers,  semester,  year);
+                Print.data2ExelPlan( this,  DGPlanShow, subjectTeachers,  semester,  year);
             });
         }
 
