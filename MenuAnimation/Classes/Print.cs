@@ -203,9 +203,9 @@ namespace Astmara6.Classes
                     //        myRange.Value2 = subjectTeachers[j].NumberOfSuperVision.ToString();
 
                     int y = list[k].Id;
-                    int? section = astmaraBs[k].Teacher.idSection;
+                    //int? section = astmaraBs[k].Teacher.idSection;
                     var list1 = (from p in context.AstmaraBs
-                                 select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true & t.Teacher.idSection == section & t.IdDoctor == y).ToList();
+                                 select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true & t.IdDoctor == y).ToList();
                     for (int j = 0; j < list1.Count; j++)
                     {
                         Range myRange = (Range)sheet1.Cells[j + 2 + plusRow, 1];
@@ -311,9 +311,9 @@ namespace Astmara6.Classes
                     //        myRange.Value2 = subjectTeachers[j].NumberOfSuperVision.ToString();
 
                     int y = list[k].Id;
-                    int? section = astmaraBs[k].Teacher.idSection;
+                    //int? section = astmaraBs[k].Teacher.idSection;
                     var list1 = (from p in context.AstmaraBs
-                                 select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false & t.Teacher.idSection == section & t.IdDoctor == y).ToList();
+                                 select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false & t.IdDoctor == y).ToList();
                     for (int j = 0; j < list1.Count; j++)
                     {
                         Range myRange = (Range)sheet1.Cells[j + 2 + plusRow, 1];

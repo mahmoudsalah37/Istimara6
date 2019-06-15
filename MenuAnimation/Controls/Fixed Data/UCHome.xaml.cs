@@ -17,10 +17,10 @@ namespace Astmara6Con.Controls
             InitializeComponent();
             //MEVedio.Source = new Uri("ms-appx:///Assets/vedio2.mp4");
             //MEVedio.SetValue = Astmara6.Properties.Resources.vedio2;
-            var path = System.IO.Directory.GetDirectories("Assets\vedio2.mp4").ToString();
-           MEVedio.Source = new Uri(path);
+            //var path = System.IO.Directory.GetDirectories("Assets\vedio2.mp4").ToString();
+           //MEVedio.Source = new Uri(path);
 
-            MEVedio.Play();
+            //MEVedio.Play();
             //System.IO.Directory.GetCurrentDirectory().ToString() + "Assets\vedio2.mp4";
         }
 
