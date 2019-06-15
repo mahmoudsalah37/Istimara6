@@ -203,9 +203,9 @@ namespace Astmara6.Classes
                     //        myRange.Value2 = subjectTeachers[j].NumberOfSuperVision.ToString();
 
                     int y = list[k].Id;
-                    //int? section = astmaraBs[k].Teacher.idSection;
+                    int? section = astmaraBs[k].Teacher.idSection;
                     var list1 = (from p in context.AstmaraBs
-                                 select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true & t.IdDoctor == y).ToList();
+                                 select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true & t.Teacher.idSection == section & t.IdDoctor == y).ToList();
                     for (int j = 0; j < list1.Count; j++)
                     {
                         Range myRange = (Range)sheet1.Cells[j + 2 + plusRow, 1];
@@ -227,7 +227,7 @@ namespace Astmara6.Classes
                         myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
                         myRange.Value2 = list1[j].Total.ToString();
                     }
-                    for (int i = 1; i <= list.Count(); i++)
+                    for (int i = 1; i <= list1.Count(); i++)
                     {
                         Range myRange1 = (Range)sheet1.Range[sheet1.Cells[i + 2 + plusRow, 1], sheet1.Cells[i + 2 + plusRow, 3]];
 
@@ -335,7 +335,7 @@ namespace Astmara6.Classes
                         myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
                         myRange.Value2 = list1[j].Total.ToString();
                     }
-                    for (int i = 1; i <= list.Count(); i++)
+                    for (int i = 1; i <= list1.Count(); i++)
                     {
                         Range myRange1 = (Range)sheet1.Range[sheet1.Cells[i + 2 + plusRow, 1], sheet1.Cells[i + 2 + plusRow, 3]];
 
@@ -350,9 +350,49 @@ namespace Astmara6.Classes
                 });
             }
         }
+        public static void data2ExelIstmaraBA(UserControl v, DataGrid dataGrid, List<SubjectTeacher> subjectTeachers, string semester, string year)
+        {
+            int plusRow = 0;
+            int start = 1;
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            excel.DefaultSheetDirection = (int)Constants.xlRTL;
+            Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+            excel.Visible = true;
+            Worksheet sheet1 = workbook.ActiveSheet as Worksheet;
+            for (int j = 0; j < dataGrid.Columns.Count - start; j++)
+            {
+                v.Dispatcher.Invoke(() =>
+                {
+                    Range myRange = (Range)sheet1.Cells[1 + plusRow, j + 1];
+                    sheet1.Cells[1 + plusRow, j + 1].Font.Bold = true;
+                    sheet1.Columns[j + 1].ColumnWidth = 15;
+                    myRange.Value2 = dataGrid.Columns[j + start].Header;
+                });
+            }
+            for (int j = 0; j < subjectTeachers.Count; j++)
+            {
+                Range myRange = (Range)sheet1.Cells[j + 2 + plusRow, 1];
+                myRange.Value2 = subjectTeachers[j].Teacher.Name.ToString();
+                myRange = (Range)sheet1.Cells[j + 2 + plusRow, 2];
+                myRange.Value2 = subjectTeachers[j].Subject.Code.ToString();
+                myRange = (Range)sheet1.Cells[j + 2 + plusRow, 3];
+                myRange.Value2 = subjectTeachers[j].Subject.Name.ToString();
+                myRange = (Range)sheet1.Cells[j + 2 + plusRow, 4];
+                myRange.Value2 = subjectTeachers[j].Branch.Name.ToString();
+                myRange = (Range)sheet1.Cells[j + 2 + plusRow, 5];
+                myRange.Value2 = subjectTeachers[j].Level.Name.ToString();
+                //myRange = (Range)sheet1.Cells[j + 2 + plusRow, 6];
+                //myRange.Value2 = subjectTeachers[j].Virtial.ToString();
+                //myRange = (Range)sheet1.Cells[j + 2 + plusRow, 7];
+                //myRange.Value2 = subjectTeachers[j].Experment.ToString();
+                //myRange = (Range)sheet1.Cells[j + 2 + plusRow, 8];
+                //myRange.Value2 = subjectTeachers[j].Sum.ToString();
+                //myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
+                //myRange.Value2 = subjectTeachers[j].Total.ToString();
+            }
+        }
 
-
-        public static void data2Exel(UserControl v, DataGrid dataGrid, int IDPage, string semester, string year)
+            public static void data2Exel(UserControl v, DataGrid dataGrid, int IDPage, string semester, string year)
         {
 
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
