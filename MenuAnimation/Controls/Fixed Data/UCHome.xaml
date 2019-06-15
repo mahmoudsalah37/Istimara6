@@ -11,7 +11,7 @@
         <Label Content="تم التصميم و التنفيذ بواسطة طلاب قسم حاسب الي في كلية علوم جامعة بنها " HorizontalAlignment="Left" Margin="47,238,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
         <Label Content="تحت اشراف دكتورنا العظيم د. جمال " HorizontalAlignment="Left" Margin="210,280,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
         <Label Content="الجميع الحقوق محفوظة لصالح لكلية العلوم جامعة بنها ©  2019" HorizontalAlignment="Left" Margin="210,448,0,0" VerticalAlignment="Top" Foreground="#FF3580BF"/>
-        <MediaElement Name="MEVedio" HorizontalAlignment="Left" Height="223" Margin="166,10,0,0" VerticalAlignment="Top" Width="397" Source="E:\graduate project\git\Istimara6\MenuAnimation\Assets\vedio2.mp4" Stretch="UniformToFill"/>
+        <MediaElement Name="MEVedio" HorizontalAlignment="Left" Height="223" Margin="166,10,0,0" VerticalAlignment="Top" Width="397" LoadedBehavior="Manual"   Stretch="UniformToFill"/>
 
     </Grid>
 </UserControl>
