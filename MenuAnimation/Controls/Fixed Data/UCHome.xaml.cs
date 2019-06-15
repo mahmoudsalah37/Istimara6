@@ -20,7 +20,8 @@ namespace Astmara6Con.Controls
             //var path = System.IO.Directory.GetDirectories("Assets\vedio2.mp4").ToString();
             //MEVedio.Source = new Uri(path);
 
-            MEVedio.Play();
+
+            //MEVedio.Play();
             //System.IO.Directory.GetCurrentDirectory().ToString() + "Assets\vedio2.mp4";
         }
 
