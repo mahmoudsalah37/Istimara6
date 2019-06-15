@@ -6,6 +6,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using Astmara6.Classes;
 using Astmara6.Model;
+using System.Collections.Generic;
 
 namespace Astmara6.Controls.Print_Data.Child
 {
@@ -17,6 +18,7 @@ namespace Astmara6.Controls.Print_Data.Child
         
         private readonly CollegeContext context = new CollegeContext();
         private ComboboxItem item;
+        private List<SubjectTeacher> subjectTeachers;
         private void getDepartments()
         {
             var listSection = (from p in context.Sections
@@ -37,7 +39,7 @@ namespace Astmara6.Controls.Print_Data.Child
             {
                 x = it.Text;
             }
-            var subjectTeachers = (from p in context.SubjectTeachers
+            subjectTeachers = (from p in context.SubjectTeachers
                                    select p).Where(t=>t.Branch.Section.TypeOfSection==x).ToList();
             DGAstmaraA.ItemsSource = subjectTeachers;
 
@@ -220,7 +222,7 @@ namespace Astmara6.Controls.Print_Data.Child
             {
                 string semester = TransferData.Semester;
                 string year = TransferData.Year;
-                Print.data2Exel(this, DGAstmaraA, 1, semester, year);
+                Print.data2ExelIstmaraA(this, DGAstmaraA, subjectTeachers, semester, year);
 
             });
         }
