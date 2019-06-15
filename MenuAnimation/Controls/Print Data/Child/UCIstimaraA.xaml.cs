@@ -18,7 +18,7 @@ namespace Astmara6.Controls.Print_Data.Child
         
         private readonly CollegeContext context = new CollegeContext();
         private ComboboxItem item;
-        private List<SubjectTeacher> subjectTeachers;
+        private List<AstmaraA> subjectTeachers;
         private void getDepartments()
         {
             var listSection = (from p in context.Sections
@@ -40,8 +40,7 @@ namespace Astmara6.Controls.Print_Data.Child
                 x = it.Text;
             }
 
-            var subjectTeachers = (from p in context.AstmaraAs
-
+             subjectTeachers = (from p in context.AstmaraAs
                                    select p).Where(t=>t.Branch.Section.TypeOfSection==x).ToList();
             DGAstmaraA.ItemsSource = subjectTeachers;
 

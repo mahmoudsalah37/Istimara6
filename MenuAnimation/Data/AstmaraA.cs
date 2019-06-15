@@ -9,7 +9,6 @@ namespace Astmara6.Data
     [Table("AstmaraA")]
     public partial class AstmaraA
     {
-       
         public int Id { get; set; }
 
         public int? IdBranch { get; set; }
