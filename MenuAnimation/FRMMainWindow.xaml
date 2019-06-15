@@ -175,7 +175,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
-            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
+            
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}" Margin="0,-34,0,34">
 
                 <Label x:Name="formname" Content="تسجيل الدخول " HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="59" Width="364" FontSize="36" Margin="207,29,0,0">
                     <Label.Foreground>
@@ -190,6 +191,7 @@
                         <ImageBrush ImageSource="Assets/science.jpg" Stretch="Uniform"/>
                     </Ellipse.Fill>
                 </Ellipse>
+                
                 <TextBlock Text="جامعة بنها" Foreground="White" FontSize="28" FontFamily="Nirmala UI Semilight" Margin="10,100,125,0" VerticalAlignment="Top" Height="100"/>
                 <StackPanel Margin="0 150">
                     <Grid Height="28" Margin="20,50,32,0">
@@ -236,6 +238,7 @@
                         <ColumnDefinition Width="492*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                 </Grid>
 
                 <Rectangle Margin="0,461,0,-5">

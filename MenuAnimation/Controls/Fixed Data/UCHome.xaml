@@ -1,17 +1,18 @@
 ﻿<UserControl x:Class="Astmara6Con.Controls.UCHome"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Astmara6Con.Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Astmara6Con"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="484" d:DesignWidth="746">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="129" Margin="118,322,0,0" VerticalAlignment="Top" Width="511" Source="E:\ah\استمارات  (2017-2018)الترم الثانى/1.png" Stretch="UniformToFill"/>
+        <Image HorizontalAlignment="Left" Height="280" Margin="174,194,0,0" VerticalAlignment="Top" Width="389" Source="E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\Assets\1.png"  Stretch="UniformToFill"/>
         <Label Content="تم التصميم و التنفيذ بواسطة طلاب قسم حاسب الي في كلية علوم جامعة بنها " HorizontalAlignment="Left" Margin="47,238,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
-        <Label Content="تحت اشراف دكتورنا العظيم د. جمال " HorizontalAlignment="Left" Margin="210,280,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
+        <Label Content="تحت اشراف دكتورن د. جمال " HorizontalAlignment="Left" Margin="261,280,0,0" VerticalAlignment="Top" Foreground="#FF3580BF" FontSize="20"/>
         <Label Content="الجميع الحقوق محفوظة لصالح لكلية العلوم جامعة بنها ©  2019" HorizontalAlignment="Left" Margin="210,448,0,0" VerticalAlignment="Top" Foreground="#FF3580BF"/>
-        <MediaElement Name="MEVedio" HorizontalAlignment="Left" Height="223" Margin="166,10,0,0" VerticalAlignment="Top" Width="397" LoadedBehavior="Manual"   Stretch="UniformToFill"/>
+        <MediaElement Name="MEVedio" HorizontalAlignment="Left" Height="223" Margin="166,10,0,0" VerticalAlignment="Top" Width="397" Source="E:\ah\استمارات  (2017-2018)الترم الثانى\New folder\f\Istimara6\MenuAnimation\Assets\vedio2.mp4" LoadedBehavior="Manual"   Stretch="UniformToFill"/>
 
     </Grid>
 </UserControl>
