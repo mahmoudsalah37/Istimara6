@@ -34,24 +34,31 @@ namespace Astmara6.Controls.Fixed_Data
 
         private void BTNLogin_Click(object sender, RoutedEventArgs e)
         {
-            String User = TBUserName.Text;
-            String pass = TBPass.Password.ToString();
-            string datauser = (from p in context.Users
-                               select p).First().Password;
-            string datapass = (from p in context.Users
-                               select p).First().Name;
-            if (User == datauser & pass == datapass)
+            try
             {
-                MessageBox.Show("(; مرحبا");
-                Form.gridShow.Children.Clear();
-                Form.gridShow.Children.Add(new UCFixedData());
-                string STRNamePage = "الصفحة الرئيسية";
-                Form.ChFormName(STRNamePage);
-                Form.ButtonOpenMenu.Visibility = Visibility.Visible;
-            }
-            else
+                String User = TBUserName.Text;
+                String pass = TBPass.Password.ToString();
+                string datauser = (from p in context.Users
+                                   select p).First().Name;
+                string datapass = (from p in context.Users
+                                   select p).First().Password;
+                if (User == datauser & pass == datapass)
+                {
+                    MessageBox.Show("(; مرحبا");
+                    Form.gridShow.Children.Clear();
+                    Form.gridShow.Children.Add(new UCFixedData());
+                    string STRNamePage = "الصفحة الرئيسية";
+                    Form.ChFormName(STRNamePage);
+                    Form.ButtonOpenMenu.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    MessageBox.Show("راجع بياناتك مرة اخري ");
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("راجع بياناتك مرة اخري ");
+                MessageBox.Show(ex.Message);
+
             }
 
         }

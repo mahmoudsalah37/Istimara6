@@ -191,26 +191,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Astmara6DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Astmara6DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Astmara6DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Astmara6DataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Astmara6DataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Astmara6DataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Astmara6DataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Astmara6DataSet4.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Classes\CheckInput.cs" />
     <Compile Include="Classes\Print.cs" />
     <Compile Include="Classes\TransferData.cs" />
@@ -268,6 +248,7 @@
     <Compile Include="Controls\Print Data\UCSendData.xaml.cs">
       <DependentUpon>UCSendData.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\AstmaraA.cs" />
     <Compile Include="Data\AstmaraB.cs" />
     <Compile Include="Data\Branch.cs" />
     <Compile Include="Data\CollegeContext.cs" />
@@ -311,50 +292,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Astmara6DataSet1.xsc">
-      <DependentUpon>Astmara6DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Astmara6DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Astmara6DataSet1.xss">
-      <DependentUpon>Astmara6DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet2.xsc">
-      <DependentUpon>Astmara6DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Astmara6DataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Astmara6DataSet2.xss">
-      <DependentUpon>Astmara6DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet3.xsc">
-      <DependentUpon>Astmara6DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Astmara6DataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Astmara6DataSet3.xss">
-      <DependentUpon>Astmara6DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet4.xsc">
-      <DependentUpon>Astmara6DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="Astmara6DataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Astmara6DataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Astmara6DataSet4.xss">
-      <DependentUpon>Astmara6DataSet4.xsd</DependentUpon>
-    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
