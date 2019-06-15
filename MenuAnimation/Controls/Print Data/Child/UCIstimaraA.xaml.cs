@@ -275,13 +275,47 @@ namespace Astmara6.Controls.Print_Data.Child
                         {
                             if (update.TotalExperment == 0)
                             {
-                                update.NumberOfVirtual = indExperimentOrVersial;
-                                update.NumberOfExprement = 0;
+                                context.AstmaraAs.Add(new AstmaraA()
+                                {
+                                    IdBranch = update.IdBranch,
+                                    IdLevel = update.IdLevel,
+                                    IdSubject = update.IdSubject,
+                                    IdTeacher = update.IdTeacher,
+                                    NumberOfSections = update.NumberOfSections,
+                                    TotalPaper = update.TotalPaper,
+                                    TotalExperment = update.TotalExperment,
+                                    TotalVirtual = update.TotalVirtual,
+                                    TotalSuperVision = update.TotalSuperVision,
+                                    NumberOfExprement = 0,
+                                    NumberOfVirtual = indExperimentOrVersial,
+                                    NumOfPaper = update.NumOfPaper,
+                                    NumberOfSuperVision = 0,
+                                    NumOfStudent = update.NumOfStudent,
+                                    SumOfSubject = indSuperVision,
+                                });
+                                totalHours();
+    
                             }
                             else
                             {
-                                update.NumberOfExprement = indExperimentOrVersial;
-                                update.NumberOfVirtual = 0;
+                                context.AstmaraAs.Add(new AstmaraA()
+                                {
+                                    IdBranch = update.IdBranch,
+                                    IdLevel = update.IdLevel,
+                                    IdSubject = update.IdSubject,
+                                    IdTeacher = update.IdTeacher,
+                                    NumberOfSections = update.NumberOfSections,
+                                    TotalPaper = update.TotalPaper,
+                                    TotalExperment = update.TotalExperment,
+                                    TotalVirtual = update.TotalVirtual,
+                                    TotalSuperVision = update.TotalSuperVision,
+                                    NumberOfExprement = indExperimentOrVersial,
+                                    NumberOfVirtual = 0,
+                                    NumOfPaper = update.NumOfPaper,
+                                    NumberOfSuperVision = 0,
+                                    NumOfStudent = update.NumOfStudent,
+                                    SumOfSubject = indSuperVision,
+                                });
                             }
                         }
 

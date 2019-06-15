@@ -73,13 +73,13 @@ namespace Astmara6.Controls.Print_Data.Child
         }
         public void insertdata()
         {
-            var subjectTeachers = (from p in context.SubjectTeachers
+            var subjectTeachers = (from p in context.AstmaraAs
                                    select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).ToList();
             foreach (var subjectTeacher in subjectTeachers)
             {
                 subjectTeacher.SumOfSubject = (subjectTeacher.NumberOfExprement + subjectTeacher.NumberOfVirtual);
             }
-            var teachers = (from p in context.SubjectTeachers
+            var teachers = (from p in context.AstmaraAs
                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == false).ToList();
             foreach (var teacher in teachers)
             {
