@@ -154,7 +154,7 @@ namespace Astmara6Con.Controls
                 int ?numSection = numberOfStudent / 25;
                 if (numberOfStudent % 25 != 0)
                 {
-                    numSection = numSection++;
+                    numSection = numSection+1;
                 }
                 int? totalp= context.Subjects.Where(t => t.Id == subject).Single().Academic;
                 int? totalv = context.Subjects.Where(t => t.Id == subject).Single().Virtual;

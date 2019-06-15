@@ -238,7 +238,7 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
 
-                <Rectangle Margin="0,461,0,-32">
+                <Rectangle Margin="0,461,0,-5">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="{DynamicResource Color1}"/>
                     </Rectangle.Fill>
