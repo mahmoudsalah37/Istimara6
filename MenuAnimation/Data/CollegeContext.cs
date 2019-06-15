@@ -12,6 +12,7 @@ namespace Astmara6.Data
         {
         }
 
+        public virtual DbSet<AstmaraA> AstmaraAs { get; set; }
         public virtual DbSet<AstmaraB> AstmaraBs { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
         public virtual DbSet<Level> Levels { get; set; }
@@ -27,6 +28,11 @@ namespace Astmara6.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Branch>()
+                .HasMany(e => e.AstmaraAs)
+                .WithOptional(e => e.Branch)
+                .HasForeignKey(e => e.IdBranch);
+
+            modelBuilder.Entity<Branch>()
                 .HasMany(e => e.StudentStatments)
                 .WithOptional(e => e.Branch)
                 .HasForeignKey(e => e.IdBranch);
@@ -35,6 +41,11 @@ namespace Astmara6.Data
                 .HasMany(e => e.SubjectTeachers)
                 .WithOptional(e => e.Branch)
                 .HasForeignKey(e => e.IdBranch);
+
+            modelBuilder.Entity<Level>()
+                .HasMany(e => e.AstmaraAs)
+                .WithOptional(e => e.Level)
+                .HasForeignKey(e => e.IdLevel);
 
             modelBuilder.Entity<Level>()
                 .HasMany(e => e.AstmaraBs)
@@ -62,6 +73,11 @@ namespace Astmara6.Data
                 .HasForeignKey(e => e.idSection);
 
             modelBuilder.Entity<Subject>()
+                .HasMany(e => e.AstmaraAs)
+                .WithOptional(e => e.Subject)
+                .HasForeignKey(e => e.IdSubject);
+
+            modelBuilder.Entity<Subject>()
                 .HasMany(e => e.StudentStatments)
                 .WithOptional(e => e.Subject)
                 .HasForeignKey(e => e.IdSubject);
@@ -70,6 +86,11 @@ namespace Astmara6.Data
                 .HasMany(e => e.SubjectTeachers)
                 .WithOptional(e => e.Subject)
                 .HasForeignKey(e => e.IdSubject);
+
+            modelBuilder.Entity<Teacher>()
+                .HasMany(e => e.AstmaraAs)
+                .WithOptional(e => e.Teacher)
+                .HasForeignKey(e => e.IdTeacher);
 
             modelBuilder.Entity<Teacher>()
                 .HasMany(e => e.AstmaraBs)

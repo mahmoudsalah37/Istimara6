@@ -11,6 +11,7 @@ namespace Astmara6.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Teacher()
         {
+            AstmaraAs = new HashSet<AstmaraA>();
             AstmaraBs = new HashSet<AstmaraB>();
             SubjectTeachers = new HashSet<SubjectTeacher>();
         }
@@ -28,6 +29,9 @@ namespace Astmara6.Data
         public int? idSection { get; set; }
 
         public int? TotalHours { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AstmaraA> AstmaraAs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AstmaraB> AstmaraBs { get; set; }

@@ -74,7 +74,7 @@ namespace Astmara6.Controls.Print_Data.Child
         }
         public void insertdata()
         {
-            var teachers = (from p in context.SubjectTeachers
+            var teachers = (from p in context.AstmaraAs
                             select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true).ToList();
             foreach(var teacher in teachers)
             {
@@ -100,7 +100,7 @@ namespace Astmara6.Controls.Print_Data.Child
 
         private void totalHours()
         {
-            var subjectTeachers = (from p in context.SubjectTeachers
+            var subjectTeachers = (from p in context.AstmaraAs
                                    select p).Where(t => t.Teacher.WorkHour.AcademicOrVirtual == true).ToList();
             foreach(var subjectTeacher in subjectTeachers)
             {
