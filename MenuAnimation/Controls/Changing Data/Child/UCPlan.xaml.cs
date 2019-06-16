@@ -33,6 +33,7 @@ namespace Astmara6Con.Controls
                 CBDepartments.Items.Add(item);
             }
         }
+
         private void getBranches()
         {
             string x = "null";
@@ -80,10 +81,14 @@ namespace Astmara6Con.Controls
                                  select  p.Subject ).Distinct().ToList();
             foreach (var subjectTeacher in studentStatments)
             {
-                    item = new ComboboxItem();
-                    item.Text = subjectTeacher.Name;
-                    item.Value = subjectTeacher.Id;
-                    CBSubjects.Items.Add(item);
+                item = new ComboboxItem();
+                item.Text = subjectTeacher.Name;
+                item.Value = subjectTeacher.Id;
+                CBSubjects.Items.Add(item);
+                item = new ComboboxItem();
+                item.Text = subjectTeacher.Code;
+                item.Value = subjectTeacher.Id;
+                CBCode.Items.Add(item);
             }
         }
         private void getLevels()
@@ -400,27 +405,6 @@ namespace Astmara6Con.Controls
             checkover();
         }
 
-        private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string name = null;
-            ComboboxItem item = CBSubjects.SelectedItem as ComboboxItem;
-            if (item != null)
-                name = item.Text;
-
-            if (name != null)
-            {
-                var listBranhes = (from p in context.Subjects
-                                   select p).Where(t => t.Name == name).ToList();
-
-                foreach (var branch in listBranhes)
-                {
-                    TBCode.Text = branch.Code;
-                }
-
-            }
-            checkover();
-        }
-
         private void CBLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             checkover();
@@ -431,37 +415,31 @@ namespace Astmara6Con.Controls
             getBranches();
             getDoctors();
         }
-        private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
+     
+
+
+
+        private void CBCode_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            string code = TBCode.Text;
 
-            if (code != null)
+        private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboboxItem CBIRank = CBSubjects.SelectedItem as ComboboxItem;
+            if (CBCode != null)
             {
-                CBSubjects.Items.Clear();
-
-                var listBranhes = (from p in context.Subjects
-                                   select p).Where(t => t.Code == code).ToList();
-                int num = listBranhes.Count();
-                if (num == 0)
-                {
-                    getSubjects();
-                }
-                else
-                {
-                    foreach (var branch in listBranhes)
-                    {
-                        item = new ComboboxItem();
-                        item.Text = branch.Name;
-                        item.Value = branch.Id;
-                        CBSubjects.Items.Add(item);
-                    }
-                }
+                int value = (int)CBIRank.Value;
+                CBCode.SelectedValue = value;
             }
-            else
+        }
+
+        private void CBCode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboboxItem CBIRank = CBCode.SelectedItem as ComboboxItem;
+            if (CBCode != null)
             {
-                getSubjects();
+                int value = (int)CBIRank.Value;
+                CBSubjects.SelectedValue = value;
             }
-
         }
     }
 }
