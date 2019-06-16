@@ -35,7 +35,7 @@
         </materialDesign:TransitioningContent>
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-            <TextBox x:Name="TBSEC" HorizontalAlignment="Left" Height="26" FlowDirection="RightToLeft" PreviewTextInput="NumberValidationTextBox"  materialDesign:HintAssist.Hint="عدد الاقسام  " Margin="50,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionBrush="{x:Null}" TextChanged="TBCode_TextChanged" >
+            <TextBox x:Name="TBSEC" HorizontalAlignment="Left" Height="26" FlowDirection="RightToLeft" PreviewTextInput="NumberValidationTextBox"  materialDesign:HintAssist.Hint="عدد الاقسام  " Margin="50,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionBrush="{x:Null}"  >
                 <TextBox.BorderBrush>
                     <SolidColorBrush Color="{DynamicResource Color2}"/>
                 </TextBox.BorderBrush>
@@ -119,14 +119,14 @@
             </Label.Foreground>
         </Label>
         </materialDesign:TransitioningContent>
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}" Margin="0,2,0,-2">
+        <!--<materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}" Margin="0,2,0,-2">-->
 
             <Label Content="اسم المادة" HorizontalAlignment="Left" Margin="422,217,0,0" VerticalAlignment="Top">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource 1}"/>
                 </Label.Foreground>
             </Label>
-        </materialDesign:TransitioningContent>
+        <!--</materialDesign:TransitioningContent>-->
         <Button x:Name="btnAdd" Content="اضافة" IsEnabled="False" HorizontalAlignment="Left" Margin="177,253,0,0" VerticalAlignment="Top" Width="68" Height="28" Click="BtnAdd_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource 1}"/>

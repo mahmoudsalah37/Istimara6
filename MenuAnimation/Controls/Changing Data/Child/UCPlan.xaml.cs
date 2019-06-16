@@ -143,8 +143,8 @@ namespace Astmara6Con.Controls
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 ComboboxItem CBIDepartment = CBBRanches.SelectedItem as ComboboxItem;
                 int department = (int)CBIDepartment.Value;
                 ComboboxItem CBIDoctor = CBDoctorsName.SelectedItem as ComboboxItem;
@@ -193,13 +193,14 @@ namespace Astmara6Con.Controls
 
                 );
                 context.SaveChanges();
+                MessageBox.Show("تمت الاضافة بنجاح");
                 loadData();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
 
-            }
+            //}
         }
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
@@ -210,7 +211,6 @@ namespace Astmara6Con.Controls
                 SubjectTeacher subject = (from p in context.SubjectTeachers
                                           where p.Id == subjectTeacher.Id
                                           select p).Single();
-                //subject.NumberOfStudent = subjectTeacher.NumberOfStudent;
                 context.SaveChanges();
                 loadData();
             }
@@ -434,6 +434,7 @@ namespace Astmara6Con.Controls
         private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
         {
             string code = TBCode.Text;
+
 
             if (code != null)
             {

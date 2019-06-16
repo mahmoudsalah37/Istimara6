@@ -6,7 +6,6 @@ using Astmara6.Data;
 using System.Linq;
 using System;
 using Astmara6.Controls.Fixed_Data;
-using Astmara6.Controls.Fixed_Data.Child;
 
 namespace Astmara6Con
 {
