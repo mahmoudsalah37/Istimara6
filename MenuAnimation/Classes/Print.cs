@@ -24,7 +24,7 @@ namespace Astmara6.Classes
                 Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
                 sheet1.DisplayRightToLeft = true;
                 int plusRow = 4;
-                int start = 0;
+                int start = 1;
 
                 sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[1, 17]].Merge();
                 sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[1, 17]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
@@ -38,46 +38,31 @@ namespace Astmara6.Classes
                 sheet1.Range[sheet1.Cells[3, 2], sheet1.Cells[3, 16]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 sheet1.Cells[3, 2].Value2 = "القائمون بالتدريس من الكلية";
 
-                sheet1.Range[sheet1.Cells[4, 3], sheet1.Cells[4, 5]].Merge();
-                sheet1.Range[sheet1.Cells[4, 3], sheet1.Cells[4, 5]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                sheet1.Cells[4, 3].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
-                sheet1.Cells[4, 3].Value2 = "عدد الساعات المقرر بالخطة";
+                sheet1.Range[sheet1.Cells[4, 2], sheet1.Cells[4, 4]].Merge();
+                sheet1.Range[sheet1.Cells[4, 2], sheet1.Cells[4, 4]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                sheet1.Cells[4, 2].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                sheet1.Cells[4, 2].Value2 = "عدد الساعات المقرر بالخطة";
+                sheet1.Range[sheet1.Cells[4, 7], sheet1.Cells[4, 10]].Merge();
+                sheet1.Range[sheet1.Cells[4, 7], sheet1.Cells[4, 10]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                sheet1.Cells[4, 7].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                sheet1.Cells[4, 7].Value2 = "جملة عدد الساعات";
+                sheet1.Range[sheet1.Cells[4, 13], sheet1.Cells[4, 16]].Merge();
+                sheet1.Range[sheet1.Cells[4, 13], sheet1.Cells[4, 16]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                sheet1.Cells[4, 13].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                sheet1.Cells[4, 13].Value2 = "جملة عدد الساعات";
 
-                sheet1.Range[sheet1.Cells[4, 8], sheet1.Cells[4, 11]].Merge();
-                sheet1.Range[sheet1.Cells[4, 8], sheet1.Cells[4, 11]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                sheet1.Cells[4, 8].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
-                sheet1.Cells[4, 8].Value2 = "جملة عدد الساعات";
+                sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 16]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                plusRow = 4;
+                start = 1;
 
-                sheet1.Range[sheet1.Cells[4, 14], sheet1.Cells[4, 17]].Merge();
-                sheet1.Range[sheet1.Cells[4, 14], sheet1.Cells[4, 17]].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                sheet1.Cells[4, 14].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
-                sheet1.Cells[4, 14].Value2 = "جملة عدد الساعات";
 
-                sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 17]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
-                sheet1.Range[sheet1.Cells[4, 6], sheet1.Cells[4, 7]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
-
-                sheet1.Range[sheet1.Cells[4, 6], sheet1.Cells[5, 6]].Merge();
-                sheet1.Range[sheet1.Cells[4, 7], sheet1.Cells[5, 7]].Merge();
                 for (int j = 0; j < dataGrid.Columns.Count - start; j++)
                 {
                     v.Dispatcher.Invoke(() =>
                     {
-                        if (j == 5 && j == 6)
-                            excel.Intersect(sheet1.Cells[plusRow, j + 1], sheet1.UsedRange).Cells.Orientation = XlOrientation.xlUpward;
-                        else if((2<=j && j<=9) || (12<=j && j<=15))
-                            excel.Intersect(sheet1.Cells[1 + plusRow, j + 1], sheet1.UsedRange).Cells.Orientation = XlOrientation.xlUpward;
-                        
-                        if (j==0 || j==10 || j==11)
-                            sheet1.Columns[j + 1].ColumnWidth = 15;
-
-                        if(j==1)
-                            sheet1.Columns[j + 1].ColumnWidth = 23;
-
                         Range myRange = (Range)sheet1.Cells[1 + plusRow, j + 1];
-                        if (j == 5 || j == 6)
-                             myRange = (Range)sheet1.Cells[ plusRow, j + 1];
-
                         sheet1.Cells[1 + plusRow, j + 1].Font.Bold = true;
+                        sheet1.Columns[j + 1].ColumnWidth = 15;
                         myRange.Value2 = dataGrid.Columns[j + start].Header;
                     });
                 }
@@ -87,43 +72,41 @@ namespace Astmara6.Classes
                     v.Dispatcher.Invoke(() =>
                     {
                         Range myRange = (Range)sheet1.Cells[j + 2 + plusRow, 1];
-                        myRange.Value2 = subjectTeachers[j].Level.Name.ToString();
+                        myRange.Value2 = subjectTeachers[j].Subject.Name.ToString();
                         myRange = (Range)sheet1.Cells[j + 2 + plusRow, 2];
-                        myRange.Value2 = subjectTeachers[j].Subject.Name.ToString() +" "+ subjectTeachers[j].Subject.Code.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 3];
                         myRange.Value2 = subjectTeachers[j].Subject.Academic.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 4];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 3];
                         myRange.Value2 = subjectTeachers[j].Subject.Virtual.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 5];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 4];
                         myRange.Value2 = subjectTeachers[j].Subject.Exprement.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 6];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 5];
                         myRange.Value2 = subjectTeachers[j].NumOfStudent.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 7];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 6];
                         myRange.Value2 = subjectTeachers[j].NumberOfSections.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 8];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 7];
                         myRange.Value2 = subjectTeachers[j].TotalPaper.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 8];
                         myRange.Value2 = subjectTeachers[j].TotalVirtual.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 10];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
                         myRange.Value2 = subjectTeachers[j].TotalExperment.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 11];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 10];
                         myRange.Value2 = subjectTeachers[j].TotalSuperVision.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 12];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 11];
                         myRange.Value2 = subjectTeachers[j].Teacher.Name.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 13];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 12];
                         myRange.Value2 = subjectTeachers[j].Teacher.WorkHour.Rank.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 14];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 13];
                         myRange.Value2 = subjectTeachers[j].NumOfPaper.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 15];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 14];
                         myRange.Value2 = subjectTeachers[j].NumberOfVirtual.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 16];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 15];
                         myRange.Value2 = subjectTeachers[j].NumberOfExprement.ToString();
-                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 17];
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 16];
                         myRange.Value2 = subjectTeachers[j].NumberOfSuperVision.ToString();
                     });
 
                 }
-             
+
                 for (int i = 1; i <= dataGrid.Items.Count; i++)
                 {
                     Range myRange = (Range)sheet1.Cells[i + 2 + plusRow - 1, 1];
@@ -134,22 +117,23 @@ namespace Astmara6.Classes
                     string after = myRange1.Value2;
                     while (before == after)
                     {
-                        Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 2], sheet1.Cells[i + 2 + plusRow, 11]];
+                        Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 2], sheet1.Cells[i + 2 + plusRow, 9]];
                         myRange2.Value2 = "";
                         myRange1.Value2 = "";
                         i++;
                         myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
                         after = myRange1.Value2;
                     }
-                    sheet1.Range[sheet1.Cells[i + 1 + plusRow, 1], sheet1.Cells[i + 1 + plusRow, 17]].Borders[XlBordersIndex.xlEdgeBottom].Weight = 2d; ;
+                    sheet1.Range[sheet1.Cells[i + 1 + plusRow, 1], sheet1.Cells[i + 1 + plusRow, 16]].Borders[XlBordersIndex.xlEdgeBottom].Weight = 2d; ;
                 }
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         public static void data2ExelIstmaraBD(UserControl v, DataGrid dataGrid, List<AstmaraB> astmaraBs, string semester, string year)
         {
             object missing = Type.Missing;
@@ -181,12 +165,14 @@ namespace Astmara6.Classes
 
                     sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[4, 3]].Merge();
 
-                    sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 8]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
-                    sheet1.Cells[5, 9].Value2 = "ملاحظات";
+                    sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 10]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                    sheet1.Cells[5, 11].Value2 = "ملاحظات";
                     plusRow = 4;
                     start = 0;
 
-                    for (int j = 0; j < dataGrid.Columns.Count - start-1; j++)
+
+
+                    for (int j = 0; j < dataGrid.Columns.Count - start; j++)
                     {
                         v.Dispatcher.Invoke(() =>
                         {
@@ -196,6 +182,11 @@ namespace Astmara6.Classes
                             myRange.Value2 = dataGrid.Columns[j + start].Header;
                         });
                     }
+
+
+
+
+
                     //        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 10];
                     //        myRange.Value2 = subjectTeachers[j].TotalSuperVision.ToString();
                     //        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 11];
@@ -233,17 +224,15 @@ namespace Astmara6.Classes
                         myRange.Value2 = list1[j].Experment.ToString();
                         myRange = (Range)sheet1.Cells[j + 2 + plusRow, 8];
                         myRange.Value2 = list1[j].Sum.ToString();
-                        
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
+                        myRange.Value2 = list1[j].Total.ToString();
                     }
-                    Range myRange3 = (Range)sheet1.Cells[list1.Count+6, 8];
-                    myRange3.Value2 = list1[list1.Count -1].Total.ToString();
-                    myRange3.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Green);
-                    myRange3 = (Range)sheet1.Cells[list1.Count + 6, 9];
-                    myRange3.Value2 = "ساعة";
                     for (int i = 1; i <= list1.Count(); i++)
                     {
                         Range myRange1 = (Range)sheet1.Range[sheet1.Cells[i + 2 + plusRow, 1], sheet1.Cells[i + 2 + plusRow, 3]];
 
+                        Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 9], sheet1.Cells[i + 2 + plusRow, 9]];
+                        myRange2.Value2 = "";
                         myRange1.Value2 = "";
 
                     }
@@ -268,6 +257,7 @@ namespace Astmara6.Classes
             {
                 v.Dispatcher.Invoke(() =>
                 {
+
                     sheet1.Name = list[k].Name.ToString();
                     sheet1.DisplayRightToLeft = true;
                     int plusRow = 4;
@@ -283,14 +273,14 @@ namespace Astmara6.Classes
 
                     sheet1.Range[sheet1.Cells[1, 1], sheet1.Cells[4, 3]].Merge();
 
-                    sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 8]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
-                    sheet1.Cells[5, 9].Value2 = "ملاحظات";
+                    sheet1.Range[sheet1.Cells[5, 1], sheet1.Cells[5, 10]].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                    sheet1.Cells[5, 11].Value2 = "ملاحظات";
                     plusRow = 4;
                     start = 0;
 
 
 
-                    for (int j = 0; j < dataGrid.Columns.Count - start-1; j++)
+                    for (int j = 0; j < dataGrid.Columns.Count - start; j++)
                     {
                         v.Dispatcher.Invoke(() =>
                         {
@@ -342,17 +332,15 @@ namespace Astmara6.Classes
                         myRange.Value2 = list1[j].Experment.ToString();
                         myRange = (Range)sheet1.Cells[j + 2 + plusRow, 8];
                         myRange.Value2 = list1[j].Sum.ToString();
-                        
+                        myRange = (Range)sheet1.Cells[j + 2 + plusRow, 9];
+                        myRange.Value2 = list1[j].Total.ToString();
                     }
-                    Range myRange3 = (Range)sheet1.Cells[list1.Count + 6, 8];
-                    myRange3.Value2 = list1[list1.Count - 1].Total.ToString();
-                    myRange3.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Green);
-                    myRange3 = (Range)sheet1.Cells[list1.Count + 6, 9];
-                    myRange3.Value2 = "ساعة";
                     for (int i = 1; i <= list1.Count(); i++)
                     {
                         Range myRange1 = (Range)sheet1.Range[sheet1.Cells[i + 2 + plusRow, 1], sheet1.Cells[i + 2 + plusRow, 3]];
 
+                        Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 9], sheet1.Cells[i + 2 + plusRow, 9]];
+                        myRange2.Value2 = "";
                         myRange1.Value2 = "";
 
                     }
