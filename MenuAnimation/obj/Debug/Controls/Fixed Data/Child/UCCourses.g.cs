@@ -53,7 +53,6 @@ namespace Astmara6Con.Controls {
         #line hidden
         
         
-        #line 29 "..\..\..\..\..\Controls\Fixed Data\Child\UCCourses.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox TBNameCourse;
         

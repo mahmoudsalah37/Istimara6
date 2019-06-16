@@ -6,6 +6,7 @@ using Astmara6.Data;
 using System.Linq;
 using System;
 using Astmara6.Controls.Fixed_Data;
+using Astmara6.Controls.Fixed_Data.Child;
 
 namespace Astmara6Con
 {
@@ -129,6 +130,14 @@ namespace Astmara6Con
             gridShow.Children.Clear();
             gridShow.Children.Add(new UCSendData());
             string STRNamePage = "طباعة البيانات";
+            ChFormName(STRNamePage);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            gridShow.Children.Clear();
+            gridShow.Children.Add(new UCEditLogin());
+            string STRNamePage = "سجل الدخول اولا  ";
             ChFormName(STRNamePage);
         }
     }

@@ -9,9 +9,6 @@
     <WindowChrome.WindowChrome>
 
         <WindowChrome CaptionHeight="0" />
-
-        <!--CaptionHeight="0"بيتحط في ال windowchrome لو عايز اخليه ثابت -->
-
     </WindowChrome.WindowChrome>
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
@@ -93,7 +90,7 @@
                 </TransformGroup>
             </StackPanel.RenderTransform>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="100" HorizontalAlignment="Center">
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10" Click="Button_Click">
                     <materialDesign:PackIcon Kind="Settings" Width="40" Height="40"/>
                 </Button>
                 <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="94" Height="Auto" Margin="10,0,10,10" RenderTransformOrigin="0.5,0.5" Click="button_Click_2">

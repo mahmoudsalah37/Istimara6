@@ -71,17 +71,6 @@
                 <materialDesign:PackIcon Kind="FloorPlan" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3580BF" Height="57" Width="41"/>
             </Button>
         </materialDesign:TransitioningContent>
-        <!--<Image Margin="163,49,372,48" Source="/MenuAnimado1;component/12.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform AngleY="0.006"/>
-                    <RotateTransform Angle="0.122"/>
-                    <TranslateTransform Y="-0.002"/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>-->
-
-
+       
     </Grid>
 </UserControl>

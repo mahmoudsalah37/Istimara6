@@ -7,6 +7,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
 using System.Collections.Generic;
+using Astmara6.Classes;
+using System.Windows.Input;
 
 namespace Astmara6Con.Controls
 {
@@ -126,7 +128,10 @@ namespace Astmara6Con.Controls
             STRNamePage = "بيان الطلاب";
             Form.ChFormName(STRNamePage);
         }
-
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            CheckInput.numberOnly(e);
+        }
         private void btnnext_Click(object sender, RoutedEventArgs e)
         {
             Form.gridShow.Children.Clear();
@@ -144,15 +149,22 @@ namespace Astmara6Con.Controls
                 int department = (int)CBIDepartment.Value;
                 ComboboxItem CBIDoctor = CBDoctorsName.SelectedItem as ComboboxItem;
                 int doctor = (int)CBIDoctor.Value;
-                //ComboboxItem CBIAssistant = CBAssistantsName.SelectedItem as ComboboxItem;
-                //int assistant = (int)CBIAssistant.Value;
+               
                 ComboboxItem CBISubject = CBSubjects.SelectedItem as ComboboxItem;
                 ComboboxItem CBILevel = CBLevels.SelectedItem as ComboboxItem;
                 int subject = (int)CBISubject.Value;
                 int level = (int)CBILevel.Value;
                 int ?numberOfStudent = context.StudentStatments.Where(t => t.IdSubject == subject && t.IdLevel == level).Single().NumberOfStudent;
-                int ?numSection = numberOfStudent / 25;
-                if (numberOfStudent % 25 != 0)
+                int div = 0;
+                if (TBSEC.Text == "") {
+                     div = 25;
+                }
+                else
+                {
+                    div = int.Parse(TBSEC.Text);
+                }
+                int ?numSection = numberOfStudent / div;
+                if (numberOfStudent % div != 0)
                 {
                     numSection = numSection+1;
                 }
@@ -422,6 +434,7 @@ namespace Astmara6Con.Controls
         private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
         {
             string code = TBCode.Text;
+
             if (code != null)
             {
                 CBSubjects.Items.Clear();
