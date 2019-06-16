@@ -24,14 +24,14 @@
 
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-        <TextBox x:Name="TBCode" HorizontalAlignment="Left" Height="26" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="كود المادة  " Margin="115,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionBrush="{x:Null}" TextChanged="TBCode_TextChanged" >
-            <TextBox.BorderBrush>
+        <ComboBox x:Name="CBCode" HorizontalAlignment="Left" Height="26" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="كود المادة  " Margin="115,215,0,0"  VerticalAlignment="Top" Width="81" DataContextChanged="CBCode_DataContextChanged" SelectionChanged="CBCode_SelectionChanged" >
+            <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Color2}"/>
-            </TextBox.BorderBrush>
-            <TextBox.Background>
+            </ComboBox.BorderBrush>
+            <ComboBox.Background>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
-            </TextBox.Background>
-        </TextBox>
+            </ComboBox.Background>
+        </ComboBox>
         </materialDesign:TransitioningContent>
 
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
@@ -60,7 +60,7 @@
         
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-        <ComboBox Margin="301,204,0,0" x:Name="CBSubjects" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" RenderTransformOrigin="0.524,0.528" SelectionChanged="CBSubjects_SelectionChanged">
+            <ComboBox Margin="301,204,0,0" x:Name="CBSubjects" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Background="#FFECE3E3" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="اسم المادة" Style="{StaticResource MaterialDesignFloatingHintComboBox}" IsEditable="True" IsTextSearchCaseSensitive="True"  SelectedIndex="-1" RenderTransformOrigin="0.524,0.528" SelectionChanged="CBSubjects_SelectionChanged">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource 1}"/>
             </ComboBox.BorderBrush>
