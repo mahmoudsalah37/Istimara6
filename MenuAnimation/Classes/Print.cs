@@ -126,19 +126,19 @@ namespace Astmara6.Classes
              
                 for (int i = 1; i <= dataGrid.Items.Count; i++)
                 {
-                    Range myRange = (Range)sheet1.Cells[i + 2 + plusRow - 1, 1];
+                    Range myRange = (Range)sheet1.Cells[i + 2 + plusRow - 1, 2];
                     string before = myRange.Value2;
                     if (before == "" || before == null)
                         break;
-                    Range myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
+                    Range myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 2];
                     string after = myRange1.Value2;
                     while (before == after)
                     {
-                        Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 2], sheet1.Cells[i + 2 + plusRow, 11]];
+                        Range myRange2 = sheet1.Range[sheet1.Cells[i + 2 + plusRow, 1], sheet1.Cells[i + 2 + plusRow, 11]];
                         myRange2.Value2 = "";
                         myRange1.Value2 = "";
                         i++;
-                        myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 1];
+                        myRange1 = (Range)sheet1.Cells[i + 2 + plusRow, 2];
                         after = myRange1.Value2;
                     }
                     sheet1.Range[sheet1.Cells[i + 1 + plusRow, 1], sheet1.Cells[i + 1 + plusRow, 17]].Borders[XlBordersIndex.xlEdgeBottom].Weight = 2d; ;
