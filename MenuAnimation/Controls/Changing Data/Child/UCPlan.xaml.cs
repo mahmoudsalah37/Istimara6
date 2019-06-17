@@ -125,7 +125,7 @@ namespace Astmara6Con.Controls
         {
             Form.gridShow.Children.Clear();
             Form.gridShow.Children.Add(new UCStudentStatement());
-            STRNamePage = "بيان الطلاب";
+            STRNamePage = "بيانات الطلاب";
             Form.ChFormName(STRNamePage);
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -143,8 +143,8 @@ namespace Astmara6Con.Controls
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 ComboboxItem CBIDepartment = CBBRanches.SelectedItem as ComboboxItem;
                 int department = (int)CBIDepartment.Value;
                 ComboboxItem CBIDoctor = CBDoctorsName.SelectedItem as ComboboxItem;
@@ -154,7 +154,8 @@ namespace Astmara6Con.Controls
                 ComboboxItem CBILevel = CBLevels.SelectedItem as ComboboxItem;
                 int subject = (int)CBISubject.Value;
                 int level = (int)CBILevel.Value;
-                int ?numberOfStudent = context.StudentStatments.Where(t => t.IdSubject == subject && t.IdLevel == level).Single().NumberOfStudent;
+                int ?numberOfStudent = (from p in context.StudentStatments
+                                        select p).Where(t => t.IdSubject == subject && t.IdLevel == level).First().NumberOfStudent;
                 int div = 0;
                 if (TBSEC.Text == "") {
                      div = 25;
@@ -183,24 +184,26 @@ namespace Astmara6Con.Controls
                     IdLevel = level,
                     IdSubject = subject,
                     NumberOfSections = numSection,
-                    TotalPaper=totalp,
-                    TotalVirtual=totalv*numSection,
-                    TotalExperment=totalE*numSection,
-                    TotalSuperVision=numSection*supervision,
-                     NumOfPaper = totalPdoc,
-                     NumOfStudent=numberOfStudent,
+                    TotalPaper = totalp,
+                    TotalVirtual = totalv * numSection,
+                    TotalExperment = totalE * numSection,
+                    TotalSuperVision = numSection * supervision,
+                    NumOfPaper = totalPdoc,
+                    NumberOfSuperVision = int.Parse(TBSUPER.Text),
+                    NumOfStudent = numberOfStudent,
+                    SumOfSubject = int.Parse(TBSUPER.Text) + totalPdoc,
                 }
 
                 );
                 context.SaveChanges();
                 MessageBox.Show("تمت الاضافة بنجاح");
                 loadData();
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("يوجد خطأ تأكد من البيانات و حاول مرة اخري");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("تأكد من وجود المادة في بيان الطلاب ووجودعدد كافي من الطلاب ");
 
-            //}
+            }
         }
 
         private void BTNEdit_Click(object sender, RoutedEventArgs e)
@@ -221,6 +224,57 @@ namespace Astmara6Con.Controls
             };
         }
 
+        public void superhours()
+        {
+            try
+            {
+                ComboboxItem it = CBDepartments.SelectedItem as ComboboxItem;
+                string department = it.Text;
+                ComboboxItem i2 = CBLevels.SelectedItem as ComboboxItem;
+                string level = i2.Text;
+                ComboboxItem i3 = CBSubjects.SelectedItem as ComboboxItem;
+                string subject = i3.Text;
+                int? numberOfStudent = (from p in context.StudentStatments
+                                        select p).Where(t => t.Subject.Name == subject & t.Branch.Section.TypeOfSection == department & t.Level.Name == level).First().NumberOfStudent;
+                int div = 0;
+                if (TBSEC.Text == "")
+                {
+                    div = 25;
+                }
+                else
+                {
+                    div = int.Parse(TBSEC.Text);
+                }
+                int? numSection = numberOfStudent / div;
+                if (numberOfStudent % div != 0)
+                {
+                    numSection = numSection + 1;
+                }
+                int? totalv = context.Subjects.Where(t => t.Name == subject).Single().Virtual;
+                int? totalE = context.Subjects.Where(t => t.Name == subject).Single().Exprement;
+                int? supervision = totalE + totalv;
+                var subjectdoc = (from p in context.SubjectTeachers
+                                  select p).Where(t => t.Subject.Name == subject & t.Branch.Section.TypeOfSection == department & t.Level.Name == level).ToList();
+                int? count = subjectdoc.Count();
+                int? totalsuper = supervision * numSection;
+                if (count == null)
+                {
+                    LALnumber.Content = totalsuper.ToString();
+                }
+                else
+                {
+                    foreach (var ss in subjectdoc)
+                    {
+                        totalsuper = totalsuper - ss.NumberOfSuperVision;
+                    }
+                    LALnumber.Content = totalsuper.ToString();
+
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+        }
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("سوف يتم مسح هذاالعنصر؟", "تأكيد الحذف ", System.Windows.MessageBoxButton.YesNo);
@@ -402,6 +456,7 @@ namespace Astmara6Con.Controls
 
         private void CBSubjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            superhours();
             string name = null;
             ComboboxItem item = CBSubjects.SelectedItem as ComboboxItem;
             if (item != null)
@@ -423,6 +478,7 @@ namespace Astmara6Con.Controls
 
         private void CBLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            superhours();
             checkover();
         }
 
@@ -430,39 +486,49 @@ namespace Astmara6Con.Controls
         {
             getBranches();
             getDoctors();
+            superhours();
         }
         private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
         {
+
             string code = TBCode.Text;
-
-
-            if (code != null)
+            ComboboxItem item = CBSubjects.SelectedItem as ComboboxItem;
+            if (item == null)
             {
-                CBSubjects.Items.Clear();
 
-                var listBranhes = (from p in context.Subjects
-                                   select p).Where(t => t.Code == code).ToList();
-                int num = listBranhes.Count();
-                if (num == 0)
+                if (code != null)
                 {
-                    getSubjects();
+                    CBSubjects.Items.Clear();
+
+                    var listBranhes = (from p in context.Subjects
+                                       select p).Where(t => t.Code == code).ToList();
+                    int num = listBranhes.Count();
+                    if (num == 0)
+                    {
+                        getSubjects();
+                    }
+                    else
+                    {
+                        foreach (var branch in listBranhes)
+                        {
+                            item = new ComboboxItem();
+                            item.Text = branch.Name;
+                            item.Value = branch.Id;
+                            CBSubjects.Items.Add(item);
+                        }
+                    }
                 }
                 else
                 {
-                    foreach (var branch in listBranhes)
-                    {
-                        item = new ComboboxItem();
-                        item.Text = branch.Name;
-                        item.Value = branch.Id;
-                        CBSubjects.Items.Add(item);
-                    }
+                    getSubjects();
                 }
             }
-            else
-            {
-                getSubjects();
-            }
 
+        }
+
+        private void TBSEC_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            superhours();
         }
     }
 }

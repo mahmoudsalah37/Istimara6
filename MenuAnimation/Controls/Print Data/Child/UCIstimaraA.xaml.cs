@@ -80,9 +80,11 @@ namespace Astmara6.Controls.Print_Data.Child
                 int? DivtionASS = 0;
                 if (countDoc > 0)
                 {
-                    int? numOfSec = (from p in context.SubjectTeachers
+                    int? numofsec = (from p in context.SubjectTeachers
                                      select p).Where(t => t.Level.Id == levelAndSubject.Level.Id & t.Branch.Section.TypeOfSection == levelAndSubject.TypeOfSection & t.Teacher.WorkHour.AcademicOrVirtual == true && t.Subject.Id == levelAndSubject.Subject.Id).First().NumberOfSections;
-                    if (numOfSec>=2)
+
+                
+                    if (numofsec>=2)
                     {
                         checkDivtionDoc = true;
                     }
@@ -132,11 +134,36 @@ namespace Astmara6.Controls.Print_Data.Child
                         foreach (var u in us)
                         {
                             i++;
-                            if (i != 1)
+                            if (countDo <= 3)
                             {
-                                u.NumOfPaper = 0;
+                                int? totnumofpaper = 0;
+                                int? totsuper = 0;
+                                int? numofpaper = u.NumOfPaper / countDo;
+                                int? super = u.NumberOfSuperVision / countDo;
+                                if (u.NumOfPaper % countDo != 0 || u.NumberOfSuperVision % countDo!=0)
+                                {
+                                    totnumofpaper = u.NumOfPaper%countDo;
+                                    totsuper = u.NumberOfSuperVision % countDo;
+                                }
+                                if (i == 1)
+                                {
+                                    u.NumOfPaper = totnumofpaper + numofpaper;
+                                    u.NumberOfSuperVision = totsuper + super;
+                                
+                                }
+                                else
+                                {
+                                    u.NumOfPaper = numofpaper;
+                                    u.NumberOfSuperVision = super;
+                                
+                                }
                                 context.SaveChanges();
                             }
+                            //if (i != 1)
+                            //{
+                            //    u.NumOfPaper = 0;
+                            //    context.SaveChanges();
+                            //}
                         }
                     }
                     if (update.Teacher.WorkHour.AcademicOrVirtual == true)
@@ -153,7 +180,7 @@ namespace Astmara6.Controls.Print_Data.Child
                                 }
                                 if (i == 0)
                                 {
-                                  
+
                                     context.AstmaraAs.Add(new AstmaraA()
                                     {
                                         IdBranch = update.IdBranch,
@@ -168,15 +195,16 @@ namespace Astmara6.Controls.Print_Data.Child
                                         NumberOfExprement = update.NumberOfExprement,
                                         NumberOfVirtual = update.NumberOfVirtual,
                                         NumOfPaper = update.NumOfPaper,
-                                        NumberOfSuperVision = indSuperVision,
+                                        NumberOfSuperVision = update.NumberOfSuperVision,
                                         NumOfStudent = update.NumOfStudent,
-                                        SumOfSubject = indSuperVision + update.NumOfPaper,
+                                        SumOfSubject = update.NumberOfSuperVision + update.NumOfPaper,
                                     });
                                     totalHours();
+                                    totalsupvision = totalsupvision - update.NumberOfSuperVision;
                                 }
                                 else
                                 {
-                                    
+
                                     var sortedDoc = (from p in context.Teachers
                                                      select p).Where(t => t.idSection == update.Branch.IdSection).OrderBy(t => t.TotalHours);
                                     int? NewDocId = sortedDoc.First().Id;
@@ -187,20 +215,24 @@ namespace Astmara6.Controls.Print_Data.Child
                                         IdSubject = update.IdSubject,
                                         IdTeacher = NewDocId,
                                         NumberOfSections = update.NumberOfSections,
-                                        TotalPaper = null,
-                                        TotalExperment = null,
-                                        TotalVirtual = null,
-                                        TotalSuperVision = null,
-                                        NumberOfExprement = null,
-                                        NumberOfVirtual = null,
-                                        NumOfPaper = null,
+                                        TotalPaper = 0,
+                                        TotalExperment = 0,
+                                        TotalVirtual = 0,
+                                        TotalSuperVision = 0,
+                                        NumberOfExprement = 0,
+                                        NumberOfVirtual = 0,
+                                        NumOfPaper =0,
                                         NumberOfSuperVision = indSuperVision,
                                         NumOfStudent = update.NumOfStudent,
                                         SumOfSubject = indSuperVision
                                     });
                                     totalHours();
+                                    totalsupvision = totalsupvision - indSuperVision;
                                 }
-                                totalsupvision = totalsupvision - 4;
+
+                                if (totalsupvision == 0)
+                                    break;
+
 
                                 
                            }
@@ -223,7 +255,7 @@ namespace Astmara6.Controls.Print_Data.Child
                                 NumOfPaper = update.NumOfPaper,
                                 NumberOfSuperVision = indSuperVision,
                                 NumOfStudent = update.NumOfStudent,
-                                SumOfSubject = indSuperVision+update.NumOfPaper,
+                                SumOfSubject = indSuperVision + update.NumOfPaper,
                             });
                             totalHours();
 
@@ -247,10 +279,10 @@ namespace Astmara6.Controls.Print_Data.Child
                                     TotalExperment = update.TotalExperment,
                                     TotalVirtual = update.TotalVirtual,
                                     TotalSuperVision = update.TotalSuperVision,
-                                    NumberOfExprement = null,
+                                    NumberOfExprement = 0,
                                     NumberOfVirtual = indExperimentOrVersial + DivtionASS,
                                     NumOfPaper = update.NumOfPaper,
-                                    NumberOfSuperVision = null,
+                                    NumberOfSuperVision = 0,
                                     NumOfStudent = update.NumOfStudent,
                                     SumOfSubject = indSuperVision,
                                 });
@@ -271,9 +303,9 @@ namespace Astmara6.Controls.Print_Data.Child
                                     TotalVirtual = update.TotalVirtual,
                                     TotalSuperVision = update.TotalSuperVision,
                                     NumberOfExprement = indExperimentOrVersial + DivtionASS,
-                                    NumberOfVirtual = null,
+                                    NumberOfVirtual = 0,
                                     NumOfPaper = update.NumOfPaper,
-                                    NumberOfSuperVision = null,
+                                    NumberOfSuperVision = 0,
                                     NumOfStudent = update.NumOfStudent,
                                     SumOfSubject = indSuperVision,
                                 });
@@ -296,10 +328,10 @@ namespace Astmara6.Controls.Print_Data.Child
                                     TotalExperment = update.TotalExperment,
                                     TotalVirtual = update.TotalVirtual,
                                     TotalSuperVision = update.TotalSuperVision,
-                                    NumberOfExprement = null,
+                                    NumberOfExprement = 0,
                                     NumberOfVirtual = indExperimentOrVersial,
                                     NumOfPaper = update.NumOfPaper,
-                                    NumberOfSuperVision = null,
+                                    NumberOfSuperVision = 0,
                                     NumOfStudent = update.NumOfStudent,
                                     SumOfSubject = indSuperVision,
                                 });
@@ -320,9 +352,9 @@ namespace Astmara6.Controls.Print_Data.Child
                                     TotalVirtual = update.TotalVirtual,
                                     TotalSuperVision = update.TotalSuperVision,
                                     NumberOfExprement = indExperimentOrVersial,
-                                    NumberOfVirtual = null,
+                                    NumberOfVirtual = 0,
                                     NumOfPaper = update.NumOfPaper,
-                                    NumberOfSuperVision = null,
+                                    NumberOfSuperVision = 0,
                                     NumOfStudent = update.NumOfStudent,
                                     SumOfSubject = indSuperVision,
                                 });

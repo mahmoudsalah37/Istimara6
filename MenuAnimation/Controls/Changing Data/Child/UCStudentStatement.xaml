@@ -98,7 +98,7 @@
             
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:0.8}">
 
-                <TextBox x:Name="TBNumberStudents" HorizontalAlignment="Left" Height="26" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="عدد الطلاب" Margin="175,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionBrush="{x:Null}" TextChanged="TBNumberStudents_TextChanged">
+                <TextBox x:Name="TBNumberStudents" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="26" FlowDirection="RightToLeft"   materialDesign:HintAssist.Hint="عدد الطلاب" Margin="175,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionBrush="{x:Null}" TextChanged="TBNumberStudents_TextChanged">
                     <TextBox.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource Color2}"/>
                     </TextBox.BorderBrush>

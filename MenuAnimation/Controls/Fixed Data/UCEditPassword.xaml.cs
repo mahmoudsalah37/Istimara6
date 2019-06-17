@@ -27,11 +27,11 @@ namespace Astmara6.Controls.Fixed_Data.Child
         public UCEditPassword()
         {
             InitializeComponent();
-            
+
             string datauser = (from p in context.Users
-                               select p).First().Password;
-            string datapass = (from p in context.Users
                                select p).First().Name;
+            string datapass = (from p in context.Users
+                               select p).First().Password;
             TBUserName.Text = datapass;
             TBUserName_Copy.Text = datauser;
             
