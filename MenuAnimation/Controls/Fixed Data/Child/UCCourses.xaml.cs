@@ -314,12 +314,12 @@ namespace Astmara6Con.Controls
 
 
             }
-            else if (checkVirtual==false & checkExp==false)
-            {
-                BTNAdd.IsEnabled = false;
-                LErrorVirtual.Content = "افرغ احدهما";
-                LErrorExprement.Content = "افرغ احدهما";
-            }
+            //else if (checkVirtual==false & checkExp==false)
+            //{
+            //    BTNAdd.IsEnabled = false;
+            //    LErrorVirtual.Content = "افرغ احدهما";
+            //    LErrorExprement.Content = "افرغ احدهما";
+            //}
 
         }
         private void TBPaper_TextChanged(object sender, TextChangedEventArgs e)

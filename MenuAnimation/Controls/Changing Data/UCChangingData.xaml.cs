@@ -24,7 +24,7 @@ namespace MenuAnimado1.Controls
         {
             Form.gridShow.Children.Clear();
             Form.gridShow.Children.Add(new UCStudentStatement());
-            STRNamePage = "بيان الطلاب";
+            STRNamePage = "بيانات الطلاب";
             Form.ChFormName(STRNamePage);
         }
 

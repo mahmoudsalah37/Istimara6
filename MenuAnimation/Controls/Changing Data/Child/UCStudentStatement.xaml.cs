@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using Astmara6.Model;
 using System;
 using System.Collections.Generic;
+using Astmara6.Classes;
+using System.Windows.Input;
 
 namespace Astmara6Con.Controls
 {
@@ -18,7 +20,10 @@ namespace Astmara6Con.Controls
         private ComboboxItem item;
         private readonly FRMMainWindow Form = Application.Current.Windows[0] as FRMMainWindow;
         private readonly CollegeContext context = new CollegeContext();
-
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            CheckInput.numberOnly(e);
+        }
         private void getDepartments()
         {
             var listSection = (from p in context.Sections
@@ -378,25 +383,29 @@ namespace Astmara6Con.Controls
         private void TBCode_TextChanged(object sender, TextChangedEventArgs e)
         {
             string code = TBCode.Text;
-            if (code != null)
+            ComboboxItem item = CBSubjects.SelectedItem as ComboboxItem;
+            if (item == null)
             {
-                CBSubjects.Items.Clear();
+                if (code != null)
+                {
+                    CBSubjects.Items.Clear();
 
-                var listBranhes = (from p in context.Subjects
-                                   select p).Where(t => t.Code==code).ToList();
-                int num = listBranhes.Count();
-                if (num==0)
-                {
-                    getSubjects();
-                }
-                else
-                {
-                    foreach (var branch in listBranhes)
+                    var listBranhes = (from p in context.Subjects
+                                       select p).Where(t => t.Code == code).ToList();
+                    int num = listBranhes.Count();
+                    if (num == 0)
                     {
-                        item = new ComboboxItem();
-                        item.Text = branch.Name;
-                        item.Value = branch.Id;
-                        CBSubjects.Items.Add(item);
+                        getSubjects();
+                    }
+                    else
+                    {
+                        foreach (var branch in listBranhes)
+                        {
+                            item = new ComboboxItem();
+                            item.Text = branch.Name;
+                            item.Value = branch.Id;
+                            CBSubjects.Items.Add(item);
+                        }
                     }
                 }
             }

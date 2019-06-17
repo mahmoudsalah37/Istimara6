@@ -26,7 +26,7 @@
             </TextBox.BorderBrush>
         </TextBox>
 
-        <TextBox x:Name="TBNickName" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:مغربي" HorizontalAlignment="Left" Height="28" Margin="282,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" TextChanged="TBNickName_TextChanged">
+        <TextBox x:Name="TBNickName" FlowDirection="RightToLeft" materialDesign:HintAssist.Hint="مثال:105م" HorizontalAlignment="Left" Height="28" Margin="282,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" TextChanged="TBNickName_TextChanged">
 
             <TextBox.Background>
                 <SolidColorBrush Color="{DynamicResource Color3}"/>
@@ -41,7 +41,7 @@
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <Label Content="اللقب" HorizontalAlignment="Left" Margin="393,164,0,0" VerticalAlignment="Top" Background="{x:Null}">
+        <Label Content="الكود" HorizontalAlignment="Left" Margin="393,164,0,0" VerticalAlignment="Top" Background="{x:Null}">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource Color1}"/>
             </Label.Foreground>
